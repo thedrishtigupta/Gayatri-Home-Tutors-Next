@@ -1,0 +1,36 @@
+/* styles/globals.css — Next.js-specific global additions */
+
+/* ── Form feedback ──────────────────────────────────────────────── */
+.form-success {
+  background: rgba(11, 169, 91, 0.15);
+  border: 1px solid rgb(11, 169, 91);
+  color: rgb(11, 169, 91);
+  padding: 14px 18px;
+  border-radius: 10px;
+  font-size: 15px;
+  margin-bottom: 16px;
+}
+
+.form-error {
+  background: rgba(237, 32, 61, 0.15);
+  border: 1px solid rgb(237, 32, 61);
+  color: rgb(237, 32, 61);
+  padding: 14px 18px;
+  border-radius: 10px;
+  font-size: 15px;
+  margin-bottom: 16px;
+}
+
+/* ── Book-button (used on About CTA) ────────────────────────────── */
+/* .book-button a {
+  display: inline-block;
+  background-color: var(--color-primary-yellow);
+  color: var(--color-grey-bg);
+  font-weight: bold;
+  font-size: 16px;
+  padding: 16px 32px;
+  border-radius: 12px;
+  filter: drop-shadow(8px 8px 0px var(--color-grey-bg));
+  text-decoration: none;
+}
+.book-button a:hover { filter: brightness(0.9); } */

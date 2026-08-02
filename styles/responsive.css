@@ -1,0 +1,283 @@
+/* ============================================================
+   RESPONSIVE STYLES
+   Breakpoints:
+     Large desktop  → > 1280px
+     Tablet         → 640px – 1024px
+     Mobile         → < 640px
+   Global overflow guard at top.
+   ============================================================ */
+
+/* ── Global: prevent any element from causing horizontal scroll ── */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+/* ── Large Desktop: cap content so it doesn't over-stretch ── */
+@media (min-width: 1280px) {
+  .header-nav,
+  .navbar {
+    width: min(1200px, 100%);
+  }
+  .container {
+    width: min(1200px, 100%);
+  }
+}
+
+
+/* ── Tablet (640px – 1024px) ── */
+@media (max-width: 1024px) {
+
+  /* Navbar */
+  .header-nav { width: 100%; padding: 0 24px; }
+  .navbar     { width: 100%; padding: 0 24px; }
+  .center-nav { display: none; }
+  .right-nav span { display: none; }
+
+  /* Fix 1: logo no longer overflows header */
+  .left-nav,
+  .left-nav a { height: 100%; align-items: center; }
+  .GHT-logo   { height: 40px; display: flex; align-items: center; }
+  .GHT-text h1 { font-size: 18px; line-height: 1.2; }
+  .GHT-text p  { font-size: 10px; }
+
+  /* Hero */
+  .container { width: 100%; padding: 0 24px; }
+  .hero-top-sec { flex-direction: column; align-items: center; padding: 0 16px; gap: 40px; }
+  .container h1 { font-size: 44px; margin: 20px 0; }
+  .container p  { font-size: 18px; margin: 0 0 32px 0; height: auto; }
+
+  /* Fix 2: hero image takes full width */
+  .right-container  { width: 100%; }
+  .hero-image-tab   { width: 100%; max-width: 100%; height: 280px; margin-top: 0; }
+
+  /* Hero stats */
+  .hero-bottom-strip { width: 100%; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 40px; }
+  .hero-bot-strip-el { width: 140px; }
+  .hero-bot-strip-top { font-size: 28px; }
+
+  /* Sections */
+  .sections   { padding: 60px 24px 0; margin: 60px 0; }
+  .sections h1 { font-size: 48px; }
+  .sections-p  { width: 100%; font-size: 18px; padding: 0 16px; }
+  .section-body { padding: 24px; }
+
+  /* About */
+  .about-mission { margin: 0 40px; padding: 60px 16px; }
+  .our-values    { padding: 60px 40px; }
+  .lower-values-grid  { grid-template-columns: repeat(2, 1fr); }
+  .lower-choose-grid  { grid-template-columns: repeat(2, 1fr); }
+
+  /* Testimonial cards — fix overflow */
+  .card-section { overflow: hidden; padding: 60px 24px; }
+  .card-track   { flex-direction: column; transform: none; align-items: center; gap: 24px; width: 100%; }
+  .card         { width: 100%; max-width: 480px; transform: none !important; filter: none; }
+  .card:hover   { transform: translateY(-6px) !important; }
+
+  /* Services */
+  .subjects-grid     { grid-template-columns: repeat(3, 1fr); }
+  .subjects-grid-els { width: 100%; }
+  .lower-area-grid   { grid-template-columns: repeat(2, 1fr); }
+
+  /* Contact */
+  .contact-grid { grid-template-columns: 1fr; margin: 0 24px; gap: 40px; }
+
+  /* Footer */
+  footer { margin: 24px 16px; padding: 40px 32px 24px; }
+  .upper-footer  { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .upper-footer .foot-grid-els:first-child { grid-column: 1 / -1; }
+  .foot-grid-els p { margin: 0 0 0 0 !important; max-width: 100%; }
+
+  /* Pages hero */
+  .pages-hero { margin: 80px 0 0; }
+  .page-hero-heading h1 { font-size: 48px; }
+  .page-hero-heading p  { font-size: 18px; }
+
+  /* Pages CTA — keep flex-row on tablet so sticky right col works */
+  .pages-cta { flex-direction: row; align-items: flex-start; padding: 60px 40px; gap: 48px; }
+  .left-cta { max-width: 60%; }
+  .left-cta h2 { font-size: 42px; margin: 16px 0; }
+  .left-cta h4 { width: 100%; font-size: 20px; }
+
+  /* Fix 3: services right CTA card full width + centered */
+  .right-cta          { width: 100%; display: flex; justify-content: center; }
+  #services-right-cta { width: 100%; max-width: 480px; margin-top: 0; }
+
+  /* Tutor grid */
+  .tutor-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* Terms */
+  .terms-container { width: 100%; padding: 40px 24px; }
+
+  /* Become tutor */
+  /* tutor-right-cta: sticky on tablet (row layout), static on mobile (column layout) */
+  #tutor-cta { align-items: start; }
+  #tutor-right-cta { position: sticky; top: 80px; height: fit-content; }
+}
+
+
+/* ── Mobile (< 640px) ── */
+@media (max-width: 640px) {
+
+  /* Show hamburger, hide desktop nav */
+  .mobile-menu-btn { display: flex !important; }
+  .right-nav       { display: none; }
+
+  /* Hamburger icon */
+  .mobile-menu-btn {
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    cursor: pointer;
+    padding: 8px;
+    background: none;
+    border: none;
+  }
+  .mobile-menu-btn span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background-color: var(--color-white-bg);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  /* Mobile dropdown nav */
+  .mobile-nav-open {
+    display: flex !important;
+    flex-direction: column;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-grey-bg);
+    padding: 16px 0 24px;
+    z-index: 999;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    gap: 0;
+  }
+  .mobile-nav-open a {
+    padding: 14px 24px;
+    font-size: 16px;
+    border-radius: 0;
+    width: 100%;
+  }
+
+  /* Navbar */
+  .header-nav { width: 100%; padding: 0 16px; height: 60px; }
+  .navbar     { width: 100%; padding: 0 16px; height: 60px; }
+
+  /* Fix 1 mobile: same logo fix */
+  .left-nav,
+  .left-nav a { height: 100%; align-items: center; }
+  .GHT-logo   { height: 36px; display: flex; align-items: center; }
+  .GHT-text h1 { font-size: 16px; line-height: 1.2; }
+  .GHT-text p  { font-size: 9px; }
+
+  /* Hero */
+  .hero-section { height: auto; padding-top: 80px; padding-bottom: 40px; margin-bottom: 0; }
+  .hero-top-sec { padding: 0 8px; gap: 32px; }
+  .container h1 { font-size: 32px; margin: 16px 0; }
+  .container p  { font-size: 16px; margin: 0 0 24px 0; height: auto; }
+  .main-book    { flex-direction: column; gap: 12px; }
+  .main-book a  { width: 100%; text-align: center; padding: 14px 24px; font-size: 15px; }
+
+  /* Fix 2 mobile: hero image full width */
+  .right-container { width: 100%; }
+  .hero-image-tab  { width: 100%; max-width: 100%; height: 220px; }
+
+  /* Hero stats */
+  .hero-bottom-strip { display: grid; grid-template-columns: 1fr 1fr; width: 100%; gap: 8px; margin-top: 32px; }
+  .hero-bot-strip-el  { width: 100%; padding: 12px; }
+  .hero-bot-strip-top { font-size: 24px; }
+  .hero-bot-strip-bot { font-size: 13px; }
+
+  /* Sections */
+  .sections        { padding: 40px 16px 0; margin: 40px 0; }
+  .sections h1     { font-size: 36px; }
+  .sections-p      { font-size: 15px; padding: 0 8px; }
+  .section-container { margin-bottom: 48px; }
+  .section-body    { padding: 16px; }
+
+  /* About */
+  .about-mission   { margin: 0; padding: 40px 16px; }
+  .mission-content-p { font-size: 18px; }
+  .our-values      { padding: 40px 20px; margin-bottom: 32px; }
+  .upper-values h2 { font-size: 28px; text-align: center; }
+  .lower-values-grid  { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .grid-els-p      { width: 100%; font-size: 13px; }
+  .lower-choose-grid  { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .choose-grid-els p  { font-size: 13px; }
+  .about-strip p   { font-size: 16px; text-align: center; }
+
+  /* Testimonial cards — fix overflow */
+  .card-section  { overflow: hidden; padding: 40px 16px; margin: 0; }
+  .card-track    { flex-direction: column; transform: none; align-items: center; gap: 24px; width: 100%; }
+  .card          { width: 100%; max-width: 100%; transform: none !important; filter: none; }
+  .card:hover    { transform: translateY(-6px) !important; }
+
+  /* Services */
+  .subjects-section  { margin-bottom: 60px; }
+  .subjects-section h2 { font-size: 26px; margin-bottom: 32px; }
+  .subjects-grid     { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .subjects-grid-els { width: 100%; padding: 12px 16px; }
+  .lower-area-grid   { grid-template-columns: 1fr; }
+  .find-area-h2      { font-size: 26px; }
+  .find-area-p       { width: 100%; font-size: 16px; margin-bottom: 32px; }
+
+  /* Contact */
+  .contact-grid { margin: 0 16px; gap: 32px; }
+  #book-demo-form-container { padding: 20px 16px; }
+  .form-row     { grid-template-columns: 1fr; }
+
+  /* Footer */
+  footer { margin: 16px 8px; padding: 32px 20px 20px; border-radius: 12px; }
+  .upper-footer   { grid-template-columns: 1fr; gap: 32px; }
+  .upper-footer .foot-grid-els:first-child { grid-column: 1 / -1; }
+  #footer-heading { font-size: 24px; }
+  .foot-grid-els p { margin: 0 0 0 0 !important; max-width: 100%; font-size: 14px; }
+  .bottom-footer  { margin-top: 32px; padding-top: 20px; }
+
+  /* Pages hero */
+  .pages-hero { margin: 60px 0 0; }
+  .pages-hero-container { padding: 40px 0; }
+  .page-hero-heading h1 { font-size: 32px; text-align: center; }
+  .page-hero-heading p  { font-size: 15px; text-align: center; padding: 0 16px; }
+
+  /* Pages CTA */
+  .pages-cta    { flex-direction: column; padding: 40px 20px; gap: 32px; margin-bottom: 40px; }
+  .left-cta h2  { font-size: 36px; margin: 12px 0; }
+  .left-cta h4  { width: 100%; font-size: 18px; margin-bottom: 20px; }
+  .cta-text     { font-size: 16px; margin-bottom: 28px; }
+  #services-p   { width: 100%; }
+
+  /* Fix 3 mobile: right CTA full width centered */
+  .right-cta          { width: 100%; display: flex; justify-content: center; }
+  #services-right-cta { width: 100%; max-width: 100%; margin-top: 0; padding: 20px 16px; }
+  .right-mid-cta-btn  { width: 100%; }
+
+  /* Tutor grid */
+  .tutor-grid { grid-template-columns: 1fr; }
+  .upper-tutor-card { flex-direction: row; gap: 16px; }
+  .tutor-img  { width: 90px; height: 90px; border-radius: 12px; }
+
+  /* Terms */
+  .terms-container { padding: 24px 16px; }
+  .accordion-header { font-size: 15px; padding: 14px 16px; filter: drop-shadow(4px 4px 0px var(--color-grey-bg)); }
+
+  /* Become tutor */
+  #tutor-right-cta { position: static; }
+  #tutor-form-container { padding: 20px 16px; }
+  .tutor-form .form-row { grid-template-columns: 1fr; }
+
+  /* How it works */
+  .how-it-works-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* Hamburger hidden by default (desktop), shown via mobile media query above */
+.mobile-menu-btn { display: none; }
