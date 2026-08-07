@@ -4,6 +4,8 @@ import { NextResponse } from "next/server";
 import { query } from "@/lib/db";
 import { requireAdmin } from "@/lib/adminAuth";
 
+export const dynamic = "force-dynamic";
+
 // GET /api/admin/tutors?subject=Maths&area=Rohini&status=active&gender=Female&minExp=2&class=9th
 export const GET = requireAdmin(async (req) => {
   const p = new URL(req.url).searchParams;

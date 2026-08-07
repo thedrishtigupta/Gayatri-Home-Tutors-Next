@@ -57,6 +57,8 @@
 import { NextResponse } from "next/server";
 import { execute } from "@/lib/db";
 
+export const dynamic = "force-dynamic";
+
 const GENDERS  = ["Male", "Female", "Other"];
 const MARITAL  = ["Single", "Married", "Other"];
 const RESIDENT = ["Owned", "Rented", "PG/Hostel"];

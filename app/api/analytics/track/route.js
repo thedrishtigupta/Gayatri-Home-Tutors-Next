@@ -30,6 +30,8 @@
 import { NextResponse } from "next/server";
 import { execute } from "@/lib/db";
 
+export const dynamic = "force-dynamic";
+
 // A hardcoded "1" let anyone inflate the counters by POSTing this endpoint.
 // Set ANALYTICS_INTERNAL_TOKEN to a random string in production.
 const INTERNAL_TOKEN = process.env.ANALYTICS_INTERNAL_TOKEN || "1";

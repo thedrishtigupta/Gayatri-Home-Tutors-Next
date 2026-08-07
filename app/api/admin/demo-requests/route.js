@@ -4,6 +4,8 @@ import { NextResponse } from "next/server";
 import { query } from "@/lib/db";
 import { requireAdmin } from "@/lib/adminAuth";
 
+export const dynamic = "force-dynamic";
+
 // GET /api/admin/demo-requests?status=pending&search=xyz
 export const GET = requireAdmin(async (req) => {
   const { searchParams } = new URL(req.url);

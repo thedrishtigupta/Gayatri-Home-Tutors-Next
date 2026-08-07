@@ -85,6 +85,8 @@ import { NextResponse } from "next/server";
 import { query } from "@/lib/db";
 import { requireAdmin } from "@/lib/adminAuth";
 
+export const dynamic = "force-dynamic";
+
 // mysql2 returns COUNT()/SUM() as strings for BIGINT/DECIMAL, so the dashboard
 // was concatenating instead of adding ("12" + "7" -> "127"). Coerce here.
 const num = (v) => (v == null ? 0 : Number(v) || 0);
