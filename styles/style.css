@@ -1,22 +1,47 @@
 :root {
-  /* ✅ Refactored Light Theme Palette */
-  --color-primary-red: #dc2625;
-  --color-primary-blue: #0b2e6b;
-  --color-primary-yellow: #d4a017;
-  --color-primary-pink: #d4a017;
-  --color-primary-green: #16a34a;
-  --color-primary-purple: #0b2e6b;
-  --color-primary-orange: #d4a017;
+  /* ===========================================================
+     Brand palette — single source of truth (light theme)
+     Background #F8FAFC · Primary #187106 · Accent #FEE647
+     Legacy colour variable names are intentionally kept and
+     re-mapped onto this minimal palette so every existing page
+     inherits the new theme without markup changes.
+     =========================================================== */
+  --brand-primary: #187106;
+  --brand-primary-dark: #115005;
+  --brand-primary-light: #e8f2e5;
+  --brand-accent: #fee647;
+  --brand-accent-dark: #e6cd23;
+  --brand-accent-soft: #fffbe0;
+
+  --surface: #ffffff;
+  --surface-2: #f1f5f9;
+  --page-bg: #f8fafc;
+  --line: #e2e8f0;
+  --ink: #0f172a;
+  --ink-soft: #475569;
+  --ink-muted: #64748b;
+
+  --danger: #b91c1c;
+  --danger-soft: #fef2f2;
+
+  /* Legacy aliases → mapped to the minimal palette */
+  --color-primary-red: var(--danger);
+  --color-primary-blue: var(--brand-primary);
+  --color-primary-yellow: var(--brand-accent);
+  --color-primary-pink: var(--brand-accent);
+  --color-primary-green: var(--brand-primary);
+  --color-primary-purple: var(--brand-primary);
+  --color-primary-orange: var(--brand-accent);
 
   /* ✅ Neutral Colors */
-  --color-black-bg: #f8fafc;
-  --color-white-bg: #0f0f0e;
-  --color-grey-bg: #e2e8f0;
-  --color-light-white-bg: #ffffff;
+  --color-black-bg: var(--page-bg);
+  --color-white-bg: var(--ink);
+  --color-grey-bg: var(--surface-2);
+  --color-light-white-bg: var(--surface);
 
   /* Secondary Colors */
-  --color-dark-text: rgba(15, 15, 14, 0.75);
-  --color-light-yellow: rgba(212, 160, 23, 0.2);
+  --color-dark-text: var(--ink-soft);
+  --color-light-yellow: var(--brand-accent-soft);
 
   /* ✅ Fonts */
   --font-heading: var(--font-viga), sans-serif;
@@ -24,6 +49,18 @@
 
   /* ✅ Sizes */
   --heading1: 60px;
+
+  /* Radii, shadows, motion */
+  --radius-sm: 8px;
+  --radius: 14px;
+  --radius-lg: 20px;
+  --shadow-xs: 0 1px 2px rgba(15, 23, 42, 0.05);
+  --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 18px 44px rgba(15, 23, 42, 0.1);
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --t-fast: 0.16s var(--ease);
+  --t: 0.24s var(--ease);
 }
 
 .yellow{
@@ -1589,4 +1626,265 @@ footer{
   font-size: 14.5px;
   list-style-type: disc;
   line-height: 1.5;
+}
+
+/* =================================================================
+   Light-theme polish layer (2026 refresh)
+   Applied last so it refines the existing components without
+   changing any markup or class names.
+   ================================================================= */
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--page-bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Typography hierarchy ─────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--ink);
+  line-height: 1.18;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+h1 { font-size: clamp(2.1rem, 1.4rem + 2.9vw, 3.6rem); }
+h2 { font-size: clamp(1.6rem, 1.2rem + 1.7vw, 2.5rem); }
+h3 { font-size: clamp(1.25rem, 1.1rem + 0.8vw, 1.6rem); }
+p  { color: var(--ink-soft); text-wrap: pretty; }
+
+/* ── Focus visibility (accessibility) ─────────────────────────── */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid var(--brand-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* ── Links & buttons ──────────────────────────────────────────── */
+a { color: inherit; transition: color var(--t-fast), opacity var(--t-fast); }
+
+button,
+.btn,
+input[type="submit"] {
+  font-family: inherit;
+  border-radius: var(--radius-sm);
+  transition: background-color var(--t-fast), color var(--t-fast),
+              box-shadow var(--t), transform var(--t-fast), filter var(--t-fast);
+}
+button:not(:disabled):hover,
+.btn:not(:disabled):hover {
+  transform: translateY(-1px);
+}
+button:disabled { cursor: not-allowed; opacity: 0.6; }
+
+/* ── Form controls ────────────────────────────────────────────── */
+input, select, textarea {
+  font-family: inherit;
+  color: var(--ink);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  transition: border-color var(--t-fast), box-shadow var(--t-fast);
+}
+input:hover, select:hover, textarea:hover { border-color: #cbd5e1; }
+input:focus, select:focus, textarea:focus {
+  border-color: var(--brand-primary);
+  box-shadow: 0 0 0 3px rgba(24, 113, 6, 0.14);
+}
+::placeholder { color: var(--ink-muted); opacity: 1; }
+
+/* ── Cards & surfaces ─────────────────────────────────────────── */
+.card,
+.section-card,
+.tutor-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--t), transform var(--t), border-color var(--t);
+}
+.card:hover,
+.section-card:hover,
+.tutor-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+  border-color: #cbd5e1;
+}
+
+/* ── Form feedback states ─────────────────────────────────────── */
+.form-success {
+  background: var(--brand-primary-light);
+  border: 1px solid var(--brand-primary);
+  color: var(--brand-primary-dark);
+}
+.form-error {
+  background: var(--danger-soft);
+  border: 1px solid var(--danger);
+  color: var(--danger);
+}
+
+/* ── Images ───────────────────────────────────────────────────── */
+img { max-width: 100%; height: auto; }
+
+/* ── Reduced motion ───────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ==========================================================================
+   SEO landing pages, FAQ and breadcrumbs
+   Uses the brand tokens defined at the top of this file — no new colours.
+   ========================================================================== */
+.seo-wrap {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 3.5rem;
+}
+.seo-breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+  font-size: .875rem;
+  color: var(--muted, #5b6b5a);
+}
+.seo-breadcrumbs a { color: var(--primary, #187106); text-decoration: none; }
+.seo-breadcrumbs a:hover { text-decoration: underline; }
+.seo-breadcrumbs .crumb-sep { margin-left: .4rem; opacity: .5; }
+
+.seo-hero { margin-bottom: 2.5rem; }
+.seo-landing h1 {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  line-height: 1.2;
+  color: var(--text, #12210f);
+  margin: 0 0 1rem;
+}
+.seo-lede {
+  font-size: 1.0625rem;
+  line-height: 1.8;
+  color: var(--muted, #4a5a49);
+  max-width: 68ch;
+}
+.seo-cta-row { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.5rem; }
+.seo-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: .7rem 1.4rem;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+}
+.seo-btn:focus-visible { outline: 3px solid var(--accent, #FEE647); outline-offset: 2px; }
+.seo-btn-primary { background: var(--primary, #187106); color: #fff; }
+.seo-btn-primary:hover { transform: translateY(-1px); box-shadow: 0 8px 20px rgba(24,113,6,.22); }
+.seo-btn-ghost { background: var(--accent, #FEE647); color: #12210f; }
+.seo-btn-ghost:hover { transform: translateY(-1px); }
+
+.seo-block { margin: 0 0 2.5rem; }
+.seo-block h2 {
+  font-size: clamp(1.3rem, 2.5vw, 1.75rem);
+  margin: 0 0 .9rem;
+  color: var(--text, #12210f);
+}
+.seo-block h3 { font-size: 1.05rem; margin: 1.4rem 0 .6rem; }
+.seo-block p { line-height: 1.8; color: var(--muted, #4a5a49); max-width: 72ch; }
+
+.seo-chips { display: flex; flex-wrap: wrap; gap: .5rem; list-style: none; padding: 0; margin: 0; }
+.seo-chips li {
+  background: #fff;
+  border: 1px solid rgba(24,113,6,.18);
+  color: var(--text, #12210f);
+  border-radius: 999px;
+  padding: .35rem .85rem;
+  font-size: .875rem;
+}
+.seo-list, .seo-steps { padding-left: 1.15rem; margin: 0; }
+.seo-list li, .seo-steps li { line-height: 1.8; margin-bottom: .5rem; color: var(--muted, #4a5a49); }
+
+.seo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1rem;
+}
+.seo-grid > div {
+  background: #fff;
+  border: 1px solid rgba(15,23,42,.07);
+  border-radius: 14px;
+  padding: 1.1rem 1.2rem;
+  box-shadow: 0 1px 2px rgba(15,23,42,.04);
+}
+.seo-grid h3 { margin: 0 0 .4rem; font-size: 1rem; color: var(--primary, #187106); }
+.seo-grid p { margin: 0; font-size: .925rem; }
+
+.seo-faq details {
+  background: #fff;
+  border: 1px solid rgba(15,23,42,.08);
+  border-radius: 12px;
+  padding: .9rem 1.1rem;
+  margin-bottom: .65rem;
+}
+.seo-faq summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--text, #12210f);
+  list-style: none;
+  position: relative;
+  padding-right: 1.75rem;
+}
+.seo-faq summary::-webkit-details-marker { display: none; }
+.seo-faq summary::after {
+  content: "+";
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 1.25rem;
+  line-height: 1;
+  color: var(--primary, #187106);
+}
+.seo-faq details[open] summary::after { content: "–"; }
+.seo-faq summary:focus-visible { outline: 3px solid var(--accent, #FEE647); outline-offset: 3px; border-radius: 6px; }
+.seo-faq details p { margin: .7rem 0 0; }
+
+.seo-links { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: .4rem; }
+.seo-links a { color: var(--primary, #187106); text-decoration: none; line-height: 2; }
+.seo-links a:hover { text-decoration: underline; }
+.seo-more { margin-top: 1rem; }
+.seo-more a { color: var(--primary, #187106); }
+
+.seo-final-cta {
+  background: rgba(254,230,71,.25);
+  border: 1px solid rgba(24,113,6,.15);
+  border-radius: 18px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+.seo-final-cta h2 { margin: 0 0 .5rem; }
+.seo-final-cta p { margin: 0 auto; max-width: 60ch; }
+.seo-final-cta .seo-cta-row { justify-content: center; }
+
+@media (max-width: 640px) {
+  .seo-wrap { padding: 1.25rem 1rem 2.5rem; }
+  .seo-cta-row .seo-btn { flex: 1 1 100%; }
 }
