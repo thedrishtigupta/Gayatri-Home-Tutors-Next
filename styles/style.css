@@ -9,25 +9,22 @@
      =========================================================== */
   --brand-primary: #0b2e6b;
   --brand-primary-dark: #0b2e6b;
-  --brand-primary-light: rgba(11, 46, 107, 0.2);
+  --brand-primary-light: #e8f2e5;
 
   --brand-accent: #d4a017;
   --brand-accent-dark: #d4a017;
-  --brand-accent-soft: rgba(212, 160, 23, 0.2);
+  --brand-accent-soft: #fffbe0;
 
-
-  --surface: #0f0f0e;
-  --surface-2: #e2e8f0;
+  --surface: #ffffff;
+  --surface-2: #f1f5f9;
   --page-bg: #f8fafc;
   --line: #e2e8f0;
-
-  --ink: #0f0f0e;
-  --ink-soft: rgba(15, 15, 14, 0.75);
-  --ink-muted: rgba(15, 15, 14, 0.5);
-
+  --ink: #0f172a;
+  --ink-soft: #475569;
+  --ink-muted: #64748b;
 
   --danger: #dc2625;
-  --danger-soft: rgba(220, 38, 37, 0.2);
+  --danger-soft: #fef2f2;
 
   /* Legacy aliases → mapped to the minimal palette */
   --color-primary-red: var(--danger);
