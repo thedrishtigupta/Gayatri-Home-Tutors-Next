@@ -5,24 +5,29 @@
      Legacy colour variable names are intentionally kept and
      re-mapped onto this minimal palette so every existing page
      inherits the new theme without markup changes.
+  
      =========================================================== */
-  --brand-primary: #187106;
-  --brand-primary-dark: #115005;
-  --brand-primary-light: #e8f2e5;
-  --brand-accent: #fee647;
-  --brand-accent-dark: #e6cd23;
-  --brand-accent-soft: #fffbe0;
+  --brand-primary: #0b2e6b;
+  --brand-primary-dark: #0b2e6b;
+  --brand-primary-light: rgba(11, 46, 107, 0.2);
 
-  --surface: #ffffff;
-  --surface-2: #f1f5f9;
+  --brand-accent: #d4a017;
+  --brand-accent-dark: #d4a017;
+  --brand-accent-soft: rgba(212, 160, 23, 0.2);
+
+
+  --surface: #0f0f0e;
+  --surface-2: #e2e8f0;
   --page-bg: #f8fafc;
   --line: #e2e8f0;
-  --ink: #0f172a;
-  --ink-soft: #475569;
-  --ink-muted: #64748b;
 
-  --danger: #b91c1c;
-  --danger-soft: #fef2f2;
+  --ink: #0f0f0e;
+  --ink-soft: rgba(15, 15, 14, 0.75);
+  --ink-muted: rgba(15, 15, 14, 0.5);
+
+
+  --danger: #dc2625;
+  --danger-soft: rgba(220, 38, 37, 0.2);
 
   /* Legacy aliases → mapped to the minimal palette */
   --color-primary-red: var(--danger);
