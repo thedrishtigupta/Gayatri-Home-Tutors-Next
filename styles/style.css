@@ -37,7 +37,7 @@
 
   /* ✅ Neutral Colors */
   --color-black-bg: var(--page-bg);
-  --color-white-bg: var(--ink);
+  --color-white-bg: var(--surface);
   --color-grey-bg: var(--surface-2);
   --color-light-white-bg: var(--surface);
 
