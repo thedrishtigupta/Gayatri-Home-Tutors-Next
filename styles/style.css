@@ -1508,7 +1508,7 @@ footer{
 }
 
 .page-hero-heading p {
-  color: var(--color-dark-text);
+  color: var(--line);
   font-weight: 500;
   font-size: 24px;
 }
