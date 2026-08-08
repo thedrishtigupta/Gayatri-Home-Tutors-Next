@@ -37,7 +37,7 @@
 
   /* ✅ Neutral Colors */
   --color-black-bg: var(--page-bg);
-  --color-white-bg: var(--surface);
+  --color-white-bg: var(--ink);
   --color-grey-bg: var(--surface-2);
   --color-light-white-bg: var(--surface);
 
@@ -1500,7 +1500,7 @@ footer{
 }
 
 .page-hero-heading h1 {
-  color: var(--color-white-bg);
+  color: var(--color-black-bg);
   font-weight: 600;
   font-size: 60px;
   margin-bottom: 20px;
