@@ -118,8 +118,11 @@ export default function TutorPickerModal({ onPick, onClose }) {
     if (area)    qs.set("area",    area);
     // A failed filter query returns an empty body; res.json() threw
     // "Unexpected end of JSON input" and left the modal blank forever.
+    // The endpoint answers { data, page, total, ... }; older builds answered a
+    // bare array, so both shapes are accepted here.
     const { ok, data, error: err } = await adminJson(`/api/admin/tutors?${qs}`, {}, []);
-    setTutors(ok && Array.isArray(data) ? data : []);
+    const list = Array.isArray(data) ? data : Array.isArray(data?.data) ? data.data : [];
+    setTutors(ok ? list : []);
     if (!ok) setError(err);
     setLoading(false);
   }

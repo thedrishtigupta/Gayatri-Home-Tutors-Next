@@ -174,14 +174,15 @@ import AdminSidebar from "@/components/admin/AdminSidebar";
 import TutorPickerModal from "@/components/admin/TutorPickerModal";
 import TelegramModal    from "@/components/admin/TelegramModal";
 import { adminFetch, adminJson } from "@/lib/adminFetch";
+import { statusColor } from "@/lib/statusColors";
 
 const COLUMNS = [
-  { key: "pending",           label: "⏳ Pending",          color: "#f59e0b" },
-  { key: "assigned",          label: "📤 Assigned",         color: "#3b82f6" },
-  { key: "accepted",          label: "✅ Accepted",         color: "#10b981" },
-  { key: "rejected_by_tutor", label: "❌ Rejected",         color: "#ef4444" },
-  { key: "reassigned",        label: "🔁 Reassigned",       color: "#8b5cf6" },
-  { key: "dropped",           label: "🗑 Dropped",          color: "#6b7280" },
+  { key: "pending",           label: "⏳ Pending",    color: statusColor("pending") },
+  { key: "assigned",          label: "📤 Assigned",   color: statusColor("assigned") },
+  { key: "accepted",          label: "✅ Accepted",   color: statusColor("accepted") },
+  { key: "rejected_by_tutor", label: "❌ Rejected",   color: statusColor("rejected_by_tutor") },
+  { key: "reassigned",        label: "🔁 Reassigned", color: statusColor("reassigned") },
+  { key: "dropped",           label: "🗑 Dropped",    color: statusColor("dropped") },
 ];
 
 export default function ClassPipelinePage() {

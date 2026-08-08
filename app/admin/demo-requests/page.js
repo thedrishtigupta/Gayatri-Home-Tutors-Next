@@ -243,16 +243,7 @@ import AdminSidebar from "@/components/admin/AdminSidebar";
 import TutorPickerModal from "@/components/admin/TutorPickerModal";
 import TelegramModal    from "@/components/admin/TelegramModal";
 import { adminFetch, adminJson } from "@/lib/adminFetch";
-
-const STATUS_COLORS = {
-  pending:           "#f59e0b",
-  assigned:          "#3b82f6",
-  accepted:          "#10b981",
-  rejected_by_tutor: "#ef4444",
-  reassigned:        "#8b5cf6",
-  dropped:           "#6b7280",
-  cancelled:         "#374151",
-};
+import { statusColor } from "@/lib/statusColors";
 
 const STATUS_LABELS = {
   pending:           "⏳ Pending",
@@ -354,9 +345,9 @@ export default function DemoRequestsPage() {
                     </td>
                     <td>
                       <span className="status-pill" style={{
-                        background: STATUS_COLORS[r.assignment_status] + "22",
-                        color:      STATUS_COLORS[r.assignment_status],
-                        border:     `1px solid ${STATUS_COLORS[r.assignment_status]}44`,
+                        background: `${statusColor(r.assignment_status)}18`,
+                        color:      statusColor(r.assignment_status),
+                        border:     `1px solid ${statusColor(r.assignment_status)}40`,
                       }}>
                         {STATUS_LABELS[r.assignment_status] || r.assignment_status}
                       </span>
