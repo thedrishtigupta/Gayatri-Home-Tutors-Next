@@ -45,19 +45,19 @@ export default function Footer() {
           <ul>
             <li className="li-color-1">
               <a href="tel:+918505952700" className="link-icon">
-                <img src="/assets/images/call.png" className="img-icon" alt="call" />
+                <img src="/assets/images/call-blue.png" className="img-icon" alt="call" />
                 <span>+91 85059 52700</span>
               </a>
             </li>
             <li className="li-color-2">
               <a href="mailto:gayatrihometutor@gmail.com" className="link-icon">
-                <img src="/assets/images/email-black.png" className="img-icon" alt="email" />
+                <img src="/assets/images/email-blue.png" className="img-icon" alt="email" />
                 <span>Gayatrihometutor@gmail.com</span>
               </a>
             </li>
             <li className="li-color-3">
               <span className="link-icon">
-                <img src="/assets/images/location-black.png" className="img-icon" alt="location" />
+                <img src="/assets/images/location-blue.png" className="img-icon" alt="location" />
                 <span>Ranibagh, Delhi-110034</span>
               </span>
             </li>
