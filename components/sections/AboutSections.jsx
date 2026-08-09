@@ -3,16 +3,16 @@ import Link from "next/link";
 import { SectionGrid } from "../layout/SectionGrid";
 
 const VALUES = [
-  { icon: "/assets/images/bullseye.png",    color: "green-text",  title: "Excellence",        desc: "We strive for academic excellence and holistic development of every student" },
-  { icon: "/assets/images/heart-pink.png",  color: "pink-text",   title: "Care & Support",    desc: "Personalized attention and nurturing environment for optimal learning" },
-  { icon: "/assets/images/star-orange.png", color: "orange-text", title: "Quality Education", desc: "Experienced tutors with proven track records and subject expertise" },
-  { icon: "/assets/images/community.png",   color: "purple-text", title: "Community",         desc: "Building lasting relationships with students, parents, and educators" },
+  { icon: "/assets/images/bullseye-blue.png",    color: "blue-text",  title: "Excellence",        desc: "We strive for academic excellence and holistic development of every student" },
+  { icon: "/assets/images/heart-blue.png",  color: "blue-text",   title: "Care & Support",    desc: "Personalized attention and nurturing environment for optimal learning" },
+  { icon: "/assets/images/star-blue.png", color: "blue-text", title: "Quality Education", desc: "Experienced tutors with proven track records and subject expertise" },
+  { icon: "/assets/images/users-blue.png",   color: "blue-text", title: "Community",         desc: "Building lasting relationships with students, parents, and educators" },
 ];
 
 const TESTIMONIALS = [
-  { color: "pink",   i: 3, quote: "Excellent service! The Business Studies tutor for my son was highly qualified and made complex topics easy.", subject: "Business Studies", grade: "Class 12th", author: "Priya Malhotra",  location: "Shalimar Bagh, Delhi" },
-  { color: "orange", i: 2, quote: "Very reliable and professional service. The tutor arrives on time and my kids enjoy their learning sessions.", subject: "All Subjects",      grade: "Class 6th",  author: "Ayush Aggarwal", location: "Model Town, Delhi" },
-  { color: "green",  i: 1, quote: "Gayatri Home Tutor helped my daughter improve her Math scores from 65% to 92% in just 6 months.",           subject: "Mathematics",      grade: "Class 10th", author: "Karan Bansal",   location: "Rohini, Delhi" },
+  { color: "blue",   i: 3, quote: "Excellent service! The Business Studies tutor for my son was highly qualified and made complex topics easy.", subject: "Business Studies", grade: "Class 12th", author: "Priya Malhotra",  location: "Shalimar Bagh, Delhi" },
+  { color: "blue", i: 2, quote: "Very reliable and professional service. The tutor arrives on time and my kids enjoy their learning sessions.", subject: "All Subjects",      grade: "Class 6th",  author: "Ayush Aggarwal", location: "Model Town, Delhi" },
+  { color: "blue",  i: 1, quote: "Gayatri Home Tutor helped my daughter improve her Math scores from 65% to 92% in just 6 months.",           subject: "Mathematics",      grade: "Class 10th", author: "Karan Bansal",   location: "Rohini, Delhi" },
 ];
 
 const WHY_CHOOSE = [
@@ -67,21 +67,6 @@ export default function AboutSections() {
           </div>
         )}
       />
-      {/* <div className="our-values">
-        <div className="upper-values">
-          <h2 className="blue-text">Our Core Values</h2>
-          <p>The principles that guide our work</p>
-        </div>
-        <div className="lower-values-grid">
-          {VALUES.map(({ icon, color, title, desc }) => (
-            <div className="grid-els" key={title}>
-              <div className="grid-icon"><img src={icon} alt={title} /></div>
-              <h3 className={color}>{title}</h3>
-              <p className="grid-els-p">{desc}</p>
-            </div>
-          ))}
-        </div>
-      </div> */}
 
       {/* Testimonials */}
       <section className="card-section">
@@ -115,32 +100,18 @@ export default function AboutSections() {
       <SectionGrid
         title="Why Choose Us?"
         subtitle="What sets us apart from others"
-        titleColor="pink-text"
+        titleColor="blue-text"
         gridClass="lower-choose-grid"
         items={WHY_CHOOSE}
         renderItem={(text) => (
           <div className="choose-grid-els" key={text}>
             <div className="grid-icon">
-              <img src="/assets/images/checkmark.png" alt="check" />
+              <img src="/assets/images/checkmark-yellow.png" alt="check" />
             </div>
             <p>{text}</p>
           </div>
         )}
       />
-      {/* <div className="our-values">
-        <div className="upper-values">
-          <h2 className="pink-text">Why Choose Us?</h2>
-          <p>What sets us apart from others</p>
-        </div>
-        <div className="lower-choose-grid">
-          {WHY_CHOOSE.map(text => (
-            <div className="choose-grid-els" key={text}>
-              <div className="grid-icon"><img src="/assets/images/checkmark.png" alt="check" /></div>
-              <p>{text}</p>
-            </div>
-          ))}
-        </div>
-      </div> */}
     </>
   );
 }

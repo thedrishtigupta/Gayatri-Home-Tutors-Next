@@ -13,20 +13,20 @@ const SUBJECTS = [
 ];
 
 const AREAS = [
-  { color: "red-line",    name: "Pitampura",     detail: "Near Kohat Enclave, Madhuban Chowk" },
-  { color: "green-line",  name: "Paschim Vihar", detail: "A, B, C, D Block" },
-  { color: "yellow-line", name: "Ashok Vihar",   detail: "Phase 1, 2, 3, 4" },
-  { color: "yellow-line", name: "Model Town",    detail: "Model Town I, II, III" },
-  { color: "pink-line",   name: "Shalimar Bagh", detail: "Block A, B, C, D Areas" },
-  { color: "red-line",    name: "Rohini",        detail: "Sectors 3, 7, 9, 11, 13, 15" },
-  { color: "pink-line",   name: "Punjabi Bagh",  detail: "East & West Punjabi Bagh" },
+  { icon: "/assets/images/location.png" , color: "blue-line",    name: "Pitampura",     detail: "Near Kohat Enclave, Madhuban Chowk" },
+  { icon: "/assets/images/location-black.png" ,  color: "yellow-line",  name: "Paschim Vihar", detail: "A, B, C, D Block" },
+  { icon: "/assets/images/location.png" ,  color: "blue-line", name: "Ashok Vihar",   detail: "Phase 1, 2, 3, 4" },
+  { icon: "/assets/images/location-black.png" ,  color: "yellow-line", name: "Model Town",    detail: "Model Town I, II, III" },
+  { icon: "/assets/images/location.png" ,  color: "blue-line",   name: "Shalimar Bagh", detail: "Block A, B, C, D Areas" },
+  { icon: "/assets/images/location-black.png" ,  color: "yellow-line",    name: "Rohini",        detail: "Sectors 3, 7, 9, 11, 13, 15" },
+  { icon: "/assets/images/location.png" ,  color: "blue-line",   name: "Punjabi Bagh",  detail: "East & West Punjabi Bagh" },
 ];
 
 const HOW_IT_WORKS = [
-  { icon: "/assets/images/call-green.png",    color: "green-text",  step: "1. Contact", desc: "Share your requirements." },
-  { icon: "/assets/images/search-pink.png",   color: "pink-text",   step: "2. Match",   desc: "Find your desired tutor." },
-  { icon: "/assets/images/star-orange.png",   color: "orange-text", step: "3. Review",  desc: "Check credentials & rates." },
-  { icon: "/assets/images/student-purple.png",color: "purple-text", step: "4. Learn",   desc: "Start your demo class." },
+  { icon: "/assets/images/call-blue.png",    color: "blue-text",  step: "1. Contact", desc: "Share your requirements." },
+  { icon: "/assets/images/search-blue.png",   color: "blue-text",   step: "2. Match",   desc: "Find your desired tutor." },
+  { icon: "/assets/images/star-blue.png",   color: "blue-text", step: "3. Review",  desc: "Check credentials & rates." },
+  { icon: "/assets/images/hat-blue.png",color: "blue-text", step: "4. Learn",   desc: "Start your demo class." },
 ];
 
 export default function ServicesSections() {
@@ -43,7 +43,7 @@ export default function ServicesSections() {
                 <ul>
                   {subjects.map(s => (
                     <li key={s}>
-                      <img src="/assets/images/checkmark-black.png" alt="" />
+                      <img src="/assets/images/checkmark-blue.png" alt="" />
                       <p>{s}</p>
                     </li>
                   ))}
@@ -60,11 +60,11 @@ export default function ServicesSections() {
         subtitle="Expert tutors available in your locality"
         gridClass="lower-area-grid"
         items={AREAS}
-        renderItem={({ color, name, detail }) => (
+        renderItem={({ color, name, detail, icon}) => (
           <div className={`area-grid-els ${color}`} key={name}>
             <div className="contact-item">
               <div className="contact-icon blue">
-                <img src="/assets/images/location-black.png" alt="location" />
+                <img src={icon} alt="location" />
               </div>
               <div className="contact-text">
                 <h3 className="area-h3">{name}</h3>
@@ -86,7 +86,7 @@ export default function ServicesSections() {
           <div className="find-area-grid">
             {["One-on-one personalized attention", "Flexible scheduling at your convenience", "Regular assessments and progress tracking"].map(text => (
               <div className="find-area-grid-els" key={text}>
-                <div className="find-area-grid-icon"><img src="/assets/images/checkmark.png" alt="check" /></div>
+                <div className="find-area-grid-icon"><img src="/assets/images/checkmark-yellow.png" alt="check" /></div>
                 <p className="find-area-grid-els-p">{text}</p>
               </div>
             ))}

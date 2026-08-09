@@ -3,25 +3,25 @@ import BookDemoForm from "../forms/BookDemoForm";
 const CONTACT_INFO = [
   {
     color: "blue",
-    icon: "/assets/images/call.png",
+    icon: "/assets/images/callwhite.png",
     title: "Call Us",
     content: <a href="tel:+918505952700">+91 85059 52700</a>,
   },
   {
     color: "pink",
-    icon: "/assets/images/email-black.png",
+    icon: "/assets/images/email.png",
     title: "Email Us",
     content: <a href="mailto:gayatrihometutor@gmail.com">gayatrihometutor@gmail.com</a>,
   },
   {
     color: "purple",
-    icon: "/assets/images/location-black.png",
+    icon: "/assets/images/location.png",
     title: "Location",
     content: <p>Pitampura, Delhi NCR, India</p>,
   },
   {
     color: "orange",
-    icon: "/assets/images/time.png",
+    icon: "/assets/images/timewhite.png",
     title: "Office Hours",
     content: (
       <div className="office-para">

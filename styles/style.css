@@ -8,12 +8,12 @@
   
      =========================================================== */
   --brand-primary: #0b2e6b;
-  --brand-primary-dark: #0b2e6b;
+  --brand-primary-dark: #04183a;
   --brand-primary-light: #e8f2e5;
 
   --brand-accent: #d4a017;
-  --brand-accent-dark: #d4a017;
-  --brand-accent-soft: #fffbe0;
+  --brand-accent-dark: #b78507;
+  --brand-accent-soft: #fffadc;
 
   --surface: #ffffff;
   --surface-2: #f1f5f9;
@@ -594,7 +594,7 @@ footer{
 }
 
 .sections h1 {
-  color: var(--color-white-bg);
+  color: #ffffff;
   font-weight: bolder;
   font-size: 60px;
   font-family: var(--font-heading);
@@ -1031,7 +1031,7 @@ footer{
 }
 
 .choose-grid-els{
-  background-color: var(--color-grey-bg);
+  background-color: var(--color-black-bg);
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -1130,7 +1130,7 @@ footer{
 }
 
 .area-grid-els{
-  background-color: var(--color-grey-bg);
+  background-color: var(--color-black-bg);
   border-radius: 12px;
   padding: 16px 24px;
 }
@@ -1138,9 +1138,6 @@ footer{
 .area-grid-els:hover{
   transform: translateY(-4px);
   transition: 0.3s ease;
-  .contact-icon img {
-    content: url(/assets/images/location.png);
-  }
 }
 
 .area-h3{
@@ -1167,9 +1164,14 @@ footer{
   background-color: var(--color-primary-yellow);
 }
 
-.green-line:hover{
+.blue-line:hover{
   background-color: var(--color-primary-blue);
-  color: #ffffff;
+  .area-h3 {
+    color:white;
+  }
+  .area-p {
+    color:#cbd5e1;
+  }
 }
 
 .red-line:hover{
@@ -1184,7 +1186,9 @@ footer{
 
 .yellow-line:hover{
   background-color: var(--color-primary-yellow);
-  color: #000000;
+  .area-p {
+    color:#131313;
+  }
 }
 
 .find-area-h2{
@@ -1420,7 +1424,7 @@ footer{
 
 /* ===================== Become tutor page styles===================== */
 #our-tutor-heading{
-  background-color: var(--color-primary-yellow);
+  background-color: var(--color-primary-blue);
   color: #000000;
 }
 

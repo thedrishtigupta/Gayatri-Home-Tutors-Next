@@ -3,15 +3,6 @@
 
 export default function PageSection({ id, title, subtitle, children }) {
   return (
-    // <section className="sections">
-    //   <div className="section-container">
-    //     <h1 id={id}>{title}</h1>
-    //     {subtitle && <p className="sections-p">{subtitle}</p>}
-    //     <div className="section-body">
-    //       {children}
-    //     </div>
-    //   </div>
-    // </section>
     <section className="sections">
         <div className="section-container">
             <div className="section-heading" id={id}>

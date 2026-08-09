@@ -45,19 +45,19 @@ export default function Footer() {
           <ul>
             <li className="li-color-1">
               <a href="tel:+918505952700" className="link-icon">
-                <img src="/assets/images/callwhite.png" className="img-icon" alt="call" />
+                <img src="/assets/images/call.png" className="img-icon" alt="call" />
                 <span>+91 85059 52700</span>
               </a>
             </li>
             <li className="li-color-2">
               <a href="mailto:gayatrihometutor@gmail.com" className="link-icon">
-                <img src="/assets/images/email.png" className="img-icon" alt="email" />
+                <img src="/assets/images/email-black.png" className="img-icon" alt="email" />
                 <span>Gayatrihometutor@gmail.com</span>
               </a>
             </li>
             <li className="li-color-3">
               <span className="link-icon">
-                <img src="/assets/images/location.png" className="img-icon" alt="location" />
+                <img src="/assets/images/location-black.png" className="img-icon" alt="location" />
                 <span>Ranibagh, Delhi-110034</span>
               </span>
             </li>
@@ -75,7 +75,7 @@ export default function Footer() {
           <div className="social-icons-grid">
             <a href="#"><div className="social-icons"><img src="/assets/images/facebook.png"  alt="FB" className="img-icon" /></div></a>
             <a href="#"><div className="social-icons"><img src="/assets/images/instagram.png" alt="IG" className="img-icon" /></div></a>
-            <a href="#"><div className="social-icons"><img src="/assets/images/twitter.png"   alt="X"  className="img-icon" /></div></a>
+            <a href="#"><div className="social-icons"><img src="/assets/images/twitter (1).png"   alt="X"  className="img-icon" /></div></a>
             <a href="#"><div className="social-icons"><img src="/assets/images/linkedin.png"  alt="IN" className="img-icon" /></div></a>
           </div>
         </div>
