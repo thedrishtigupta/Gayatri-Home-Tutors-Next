@@ -14,7 +14,6 @@ export default function AboutPage() {
   return (
     <>
       <PagesHero
-        color="green"
         title="About Us"
         subtitle="Empowering students across Delhi NCR with personalised home tuition since 2010"
       />
@@ -27,7 +26,7 @@ export default function AboutPage() {
 
       <section className="pages-cta">
         <div className="left-cta">
-          <h2 className="red-text">Ready to Excel?</h2>
+          <h2 className="blue-text">Ready to Excel?</h2>
           <h4>Join Thousands of Students Building Strong Foundations for Lifelong Success</h4>
           <p className="cta-text">Experience the difference personalised home tuition can make.</p>
           <span className="book-button">

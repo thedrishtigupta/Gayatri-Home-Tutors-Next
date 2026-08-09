@@ -21,21 +21,21 @@ export default function Footer() {
           <ul>
             <li className="li-color-1"><Link href="/about">About Us</Link></li>
             <li className="li-color-2"><Link href="/services">Subjects</Link></li>
-            <li className="li-color-3"><Link href="/home-tutor-delhi">Home Tutor in Delhi</Link></li>
-            <li className="li-color-4"><Link href="/home-tutor-rohini">Home Tutor in Rohini</Link></li>
-            <li className="li-color-5"><Link href="/home-tutor-dwarka">Home Tutor in Dwarka</Link></li>
+            <li className="li-color-1"><Link href="/home-tutor-delhi">Home Tutor in Delhi</Link></li>
+            <li className="li-color-2"><Link href="/home-tutor-rohini">Home Tutor in Rohini</Link></li>
+            <li className="li-color-1"><Link href="/home-tutor-dwarka">Home Tutor in Dwarka</Link></li>
           </ul>
         </div>
 
         {/* Links col 2 */}
         <div className="foot-grid-els">
           <ul>
-            <li className="li-color-3"><Link href="/faq">FAQ</Link></li>
-            <li className="li-color-2"><Link href="/home-tuition-class-9-10">Class 9 &amp; 10 Tuition</Link></li>
-            <li className="li-color-4"><Link href="/online-tuition">Online Tuition</Link></li>
-            <li className="li-color-5"><Link href="/terms">Terms &amp; Conditions</Link></li>
-            <li className="li-color-6"><Link href="/contact">Book Free Demo</Link></li>
-            <li className="li-color-7"><Link href="/become-tutor">Become a Tutor</Link></li>
+            <li className="li-color-2"><Link href="/faq">FAQ</Link></li>
+            <li className="li-color-1"><Link href="/home-tuition-class-9-10">Class 9 &amp; 10 Tuition</Link></li>
+            <li className="li-color-2"><Link href="/online-tuition">Online Tuition</Link></li>
+            <li className="li-color-1"><Link href="/terms">Terms &amp; Conditions</Link></li>
+            <li className="li-color-2"><Link href="/contact">Book Free Demo</Link></li>
+            <li className="li-color-1"><Link href="/become-tutor">Become a Tutor</Link></li>
           </ul>
         </div>
 
@@ -55,7 +55,7 @@ export default function Footer() {
                 <span>Gayatrihometutor@gmail.com</span>
               </a>
             </li>
-            <li className="li-color-3">
+            <li className="li-color-1">
               <span className="link-icon">
                 <img src="/assets/images/location-blue.png" className="img-icon" alt="location" />
                 <span>Ranibagh, Delhi-110034</span>

@@ -2,25 +2,21 @@ import BookDemoForm from "../forms/BookDemoForm";
 
 const CONTACT_INFO = [
   {
-    color: "blue",
     icon: "/assets/images/callwhite.png",
     title: "Call Us",
     content: <a href="tel:+918505952700">+91 85059 52700</a>,
   },
   {
-    color: "pink",
     icon: "/assets/images/email.png",
     title: "Email Us",
     content: <a href="mailto:gayatrihometutor@gmail.com">gayatrihometutor@gmail.com</a>,
   },
   {
-    color: "purple",
     icon: "/assets/images/location.png",
     title: "Location",
     content: <p>Pitampura, Delhi NCR, India</p>,
   },
   {
-    color: "orange",
     icon: "/assets/images/timewhite.png",
     title: "Office Hours",
     content: (
@@ -49,10 +45,10 @@ export default function ContactSections() {
         <h2 className="contact-h2">Contact Information</h2>
         <div className="contact-els">
           <div className="contact-boxes">
-            {CONTACT_INFO.map(({ color, icon, title, content }) => (
+            {CONTACT_INFO.map(({ icon, title, content }) => (
               <div className="contact-grid-els" key={title}>
                 <div className="contact-item">
-                  <div className={`contact-icon ${color}`}>
+                  <div className="contact-icon blue">
                     <img src={icon} alt={title} />
                   </div>
                   <div className="contact-text">

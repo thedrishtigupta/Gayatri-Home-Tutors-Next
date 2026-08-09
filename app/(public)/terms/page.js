@@ -13,7 +13,6 @@ export default function TermsPage() {
   return (
     <>
       <PagesHero
-        color="purple"
         title="Terms and Conditions"
         subtitle="Applicable With Effect From 20 Jan, 2022"
       />

@@ -1,29 +1,3 @@
-// // app/api/analytics/track/route.js — called by middleware to record page views
-
-// import { NextResponse } from "next/server";
-// import { execute } from "@/lib/db";
-
-// export async function POST(req) {
-//   // Only accept internal calls from our middleware
-//   if (req.headers.get("x-internal") !== "1") {
-//     return NextResponse.json({ error: "Forbidden" }, { status: 403 });
-//   }
-
-//   try {
-//     const { path } = await req.json();
-//     const today = new Date().toLocaleDateString("en-CA", { timeZone: "Asia/Kolkata" });
-
-//     await execute(
-//       `INSERT INTO page_views (path, visits, date) VALUES (?, 1, ?)
-//        ON DUPLICATE KEY UPDATE visits = visits + 1`,
-//       [path || "/", today]
-//     );
-//     return NextResponse.json({ ok: true });
-//   } catch {
-//     return NextResponse.json({ ok: false });
-//   }
-// }
-
 
 // app/api/analytics/track/route.js — called by middleware to record page views
 

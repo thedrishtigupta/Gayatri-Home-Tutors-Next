@@ -7,11 +7,11 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const NAV_LINKS = [
-  { href: "/",             label: "Home",         id: "cnt-nav-btn1" },
-  { href: "/about",        label: "About",        id: "cnt-nav-btn2" },
-  { href: "/services",     label: "Services",     id: "cnt-nav-btn3" },
-  { href: "/become-tutor", label: "Become Tutor", id: "cnt-nav-btn4" },
-  { href: "/contact",      label: "Contact",      id: "cnt-nav-btn5" },
+  { href: "/",             label: "Home",        },
+  { href: "/about",        label: "About",       },
+  { href: "/services",     label: "Services",    },
+  { href: "/become-tutor", label: "Become Tutor",},
+  { href: "/contact",      label: "Contact",     },
 ];
 
 export default function Header() {
@@ -37,11 +37,11 @@ export default function Header() {
 
           {/* Desktop centre nav */}
           <div className="center-nav">
-            {NAV_LINKS.map(({ href, label, id }) => (
+            {NAV_LINKS.map(({ href, label }) => (
               <Link
                 key={href}
                 href={href}
-                id={id}
+                className="cnt-nav-btn"
                 style={{ fontWeight: pathname === href ? "700" : undefined }}
               >
                 {label}

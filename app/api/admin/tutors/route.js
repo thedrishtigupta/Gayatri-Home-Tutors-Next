@@ -1,16 +1,4 @@
 // app/api/admin/tutors/route.js — tutor listing + filtering
-//
-// Filtering rules (fixes the old behaviour):
-//  • No filter selected → every tutor is returned.
-//  • Subject / area / class matching is case-insensitive and forgiving:
-//    the stored columns are free-text comma lists with inconsistent spacing
-//    ("Maths, Physics" vs "maths,physics"), so we normalise both sides.
-//  • Search covers first name, last name, subjects, areas, phone and email.
-//  • Featured accepts 1/0/true/false/yes/no and filters both ways.
-//  • Experience is clamped to a sane integer and never crashes on junk input.
-//  • Unknown enum values (status/gender) are ignored instead of 500-ing.
-//  • The response is always valid JSON, even on failure (requireAdmin wraps
-//    the handler in try/catch and returns a JSON error body).
 
 import { NextResponse } from "next/server";
 import { query } from "@/lib/db";

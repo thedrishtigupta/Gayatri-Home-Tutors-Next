@@ -14,14 +14,13 @@ export default function BecomeTutorPage() {
   return (
     <>
       <PagesHero
-        color="orange"
         title="Become A Tutor"
         subtitle="Simple Application Process. Zero hassle."
       />
 
       <section className="pages-cta" id="tutor-cta">
         <div className="left-cta" id="tutor-left-cta">
-          <h2 className="pink-text" id="register-h3">Registration Form</h2>
+          <h2 className="blue-text" id="register-h3">Registration Form</h2>
           <div id="tutor-form-container">
             <BecomeTutorForm />
           </div>
@@ -30,7 +29,7 @@ export default function BecomeTutorPage() {
         <div className="right-cta" id="tutor-right-cta">
           <div className="notice-card" id="services-right-cta">
             <div className="right-upper-cta-text">
-              <h3>⚠ Before You Register</h3>
+              <h3><span className="yellow-text">⚠</span> Before You Register</h3>
               <p>Please review our <strong>Terms &amp; Conditions</strong> carefully to ensure a smooth onboarding process.</p>
             </div>
             <div className="right-mid-cta-btn">
@@ -38,7 +37,7 @@ export default function BecomeTutorPage() {
             </div>
             <div className="right-lower-cta-text">
               <p>For any queries, call us at</p>
-              <a href="tel:+918505952700" id="right-cta-contact-number" className="red-text">+91 85059 52700</a>
+              <a href="tel:+918505952700" id="right-cta-contact-number" className="blue-text">+91 85059 52700</a>
             </div>
           </div>
         </div>

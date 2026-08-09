@@ -1,9 +1,9 @@
 
-export const SectionGrid = ({ title, subtitle, titleColor, gridClass, items, renderItem }) => {
+export const SectionGrid = ({ title, subtitle, gridClass, items, renderItem }) => {
     return (
         <div className="our-values">
         <div className="upper-values">
-            <h2 className={titleColor}>{title}</h2>
+            <h2 className="blue-text">{title}</h2>
             <p>{subtitle}</p>
         </div>
 

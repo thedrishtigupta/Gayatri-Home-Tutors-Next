@@ -29,7 +29,6 @@ export default function FaqPage() {
       />
 
       <PagesHero
-        color="green"
         title="Frequently Asked Questions"
         subtitle="Everything parents and tutors ask us most often"
       />

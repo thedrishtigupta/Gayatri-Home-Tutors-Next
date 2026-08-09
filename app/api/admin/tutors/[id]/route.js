@@ -1,38 +1,3 @@
-// // app/api/admin/tutors/[id]/route.js
-
-// import { NextResponse } from "next/server";
-// import { query, execute } from "@/lib/db";
-// import { requireAdmin } from "@/lib/adminAuth";
-
-// export const GET = requireAdmin(async (_req, { params }) => {
-//   const [tutor] = await query("SELECT * FROM tutors WHERE id = ?", [parseInt(params.id)]);
-//   if (!tutor) return NextResponse.json({ error: "Not found" }, { status: 404 });
-//   return NextResponse.json(tutor);
-// });
-
-// // PATCH — update status, verified, featured, commission_plan
-// export const PATCH = requireAdmin(async (req, { params }) => {
-//   const id = parseInt(params.id);
-//   const body = await req.json();
-//   const allowed = ["status", "verified", "featured", "commission_plan", "profile_image"];
-//   const sets = [];
-//   const vals = [];
-
-//   for (const key of allowed) {
-//     if (key in body) { sets.push(`${key} = ?`); vals.push(body[key]); }
-//   }
-//   if (!sets.length) return NextResponse.json({ error: "Nothing to update" }, { status: 400 });
-
-//   vals.push(id);
-//   await execute(`UPDATE tutors SET ${sets.join(", ")}, updated_at=NOW() WHERE id = ?`, vals);
-//   const [updated] = await query("SELECT * FROM tutors WHERE id = ?", [id]);
-//   return NextResponse.json({ ok: true, data: updated });
-// });
-
-// export const DELETE = requireAdmin(async (_req, { params }) => {
-//   await execute("DELETE FROM tutors WHERE id = ?", [parseInt(params.id)]);
-//   return NextResponse.json({ ok: true });
-// });
 
 // app/api/admin/tutors/[id]/route.js
 

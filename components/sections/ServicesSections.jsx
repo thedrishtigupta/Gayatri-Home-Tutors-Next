@@ -5,11 +5,11 @@ import {SectionGrid} from "../layout/SectionGrid";
 import PageSection from "./PageSection";
 
 const SUBJECTS = [
-  { color: "pink",   title: "Primary (1–5)",    subjects: ["English", "Hindi", "Mathematics", "EVS", "Computer"] },
-  { color: "orange", title: "Middle (6–8)",      subjects: ["English", "Hindi", "Mathematics", "Science", "Social Studies", "Sanskrit"] },
-  { color: "purple", title: "Secondary (9–10)",  subjects: ["English", "Hindi", "Mathematics", "Science", "Social Studies", "Computer"] },
-  { color: "green",  title: "Senior (11–12)",    subjects: ["Physics", "Chemistry", "Biology", "English", "Accounts", "Mathematics", "Business Studies", "Economics", "Computer Science"] },
-  { color: "blue",   title: "Advanced",          subjects: ["JEE prep", "NEET prep", "CUET prep", "CA Foundation prep", "Govt. Exams prep"] },
+  { title: "Primary (1–5)",    subjects: ["English", "Hindi", "Mathematics", "EVS", "Computer"] },
+  { title: "Middle (6–8)",      subjects: ["English", "Hindi", "Mathematics", "Science", "Social Studies", "Sanskrit"] },
+  { title: "Secondary (9–10)",  subjects: ["English", "Hindi", "Mathematics", "Science", "Social Studies", "Computer"] },
+  { title: "Senior (11–12)",    subjects: ["Physics", "Chemistry", "Biology", "English", "Accounts", "Mathematics", "Business Studies", "Economics", "Computer Science"] },
+  { title: "Advanced",          subjects: ["JEE prep", "NEET prep", "CUET prep", "CA Foundation prep", "Govt. Exams prep"] },
 ];
 
 const AREAS = [
@@ -23,10 +23,10 @@ const AREAS = [
 ];
 
 const HOW_IT_WORKS = [
-  { icon: "/assets/images/call-blue.png",    color: "blue-text",  step: "1. Contact", desc: "Share your requirements." },
-  { icon: "/assets/images/search-blue.png",   color: "blue-text",   step: "2. Match",   desc: "Find your desired tutor." },
-  { icon: "/assets/images/star-blue.png",   color: "blue-text", step: "3. Review",  desc: "Check credentials & rates." },
-  { icon: "/assets/images/hat-blue.png",color: "blue-text", step: "4. Learn",   desc: "Start your demo class." },
+  { icon: "/assets/images/call-blue.png", step: "1. Contact", desc: "Share your requirements." },
+  { icon: "/assets/images/search-blue.png",step: "2. Match",   desc: "Find your desired tutor." },
+  { icon: "/assets/images/star-blue.png", step: "3. Review",  desc: "Check credentials & rates." },
+  { icon: "/assets/images/hat-blue.png",step: "4. Learn",   desc: "Start your demo class." },
 ];
 
 export default function ServicesSections() {
@@ -34,10 +34,10 @@ export default function ServicesSections() {
     <>
       {/* Subjects Grid */}
       <div className="subjects-section">
-        <h2>Subjects We Cover</h2>
+        <h2 className="blue-text">Subjects We Cover</h2>
         <div className="subjects-grid">
-          {SUBJECTS.map(({ color, title, subjects }) => (
-            <div className={`subjects-grid-els ${color}`} key={title}>
+          {SUBJECTS.map(({ title, subjects }) => (
+            <div className="subjects-grid-els blue" key={title}>
               <div className="subjects-grid-upper-el"><h3>{title}</h3></div>
               <div className="subjects-grid-lower-el">
                 <ul>
@@ -78,7 +78,7 @@ export default function ServicesSections() {
       {/* Can't find your area */}
       <div className="about-mission">
         <div className="mission-content">
-          <h2 className="find-area-h2 orange-text">Can't Find Your Area?</h2>
+          <h2 className="find-area-h2 yellow-text">Can't Find Your Area?</h2>
           <p className="find-area-p">
             We're constantly expanding our services. If your area is not listed above, don't worry!
             Contact us and we'll do our best to arrange a tutor for you.
@@ -104,10 +104,10 @@ export default function ServicesSections() {
         titleColor="blue-text"
         gridClass="lower-values-grid how-it-works-grid"
         items={HOW_IT_WORKS}
-        renderItem={({ icon, color, step, desc }) => (
+        renderItem={({ icon, step, desc }) => (
             <div className="grid-els how-it-works-grid-els" key={step}>
               <div className="grid-icon"><img src={icon} alt={step} /></div>
-              <h3 className={color}>{step}</h3>
+              <h3 className="blue-text">{step}</h3>
               <p>{desc}</p>
             </div>
           )}

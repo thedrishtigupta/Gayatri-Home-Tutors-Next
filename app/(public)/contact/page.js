@@ -13,7 +13,6 @@ export default function ContactPage() {
   return (
     <>
       <PagesHero
-        color="blue"
         title="Get in Touch"
         subtitle="Book a free demo or reach out with any questions"
       />
