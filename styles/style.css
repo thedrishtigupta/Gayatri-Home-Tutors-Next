@@ -2,7 +2,7 @@
 
   --brand-primary: #0b2e6b;
   --brand-primary-dark: #04183a;
-  --brand-primary-light: #e8f2e5;
+  --brand-primary-light: #c3d4f2;
 
   --brand-accent: #d4a017;
   --brand-accent-dark: #b78507;
@@ -1667,13 +1667,18 @@ img { max-width: 100%; height: auto; }
   padding: 0;
   margin: 0 0 1.5rem;
   font-size: .875rem;
-  color: var(--brand-primary-light);
+  color: var(--ink);
 }
 .seo-breadcrumbs a { color: var(--brand-primary); text-decoration: none; }
 .seo-breadcrumbs a:hover { text-decoration: underline; }
 .seo-breadcrumbs .crumb-sep { margin-left: .4rem; opacity: .5; }
 
 .seo-hero { margin-bottom: 2.5rem; }
+.seo-hero-image{
+  display:flex;
+  justify-content:center;
+}
+
 .seo-landing h1 {
   font-size: clamp(1.8rem, 4vw, 2.6rem);
   line-height: 1.2;
@@ -1683,7 +1688,7 @@ img { max-width: 100%; height: auto; }
 .seo-lede {
   font-size: 1.0625rem;
   line-height: 1.8;
-  color: var(--brand-primary-light);
+  color: var(--ink);
   max-width: 68ch;
 }
 .seo-cta-row { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.5rem; }
@@ -1701,7 +1706,7 @@ img { max-width: 100%; height: auto; }
 .seo-btn:focus-visible { outline: 3px solid var(--brand-accent); outline-offset: 2px; }
 .seo-btn-primary { background: var(--brand-primary); color: #fff; }
 .seo-btn-primary:hover { transform: translateY(-1px); box-shadow: 0 8px 20px var(--brand-primary-dark); }
-.seo-btn-ghost { background: var(--brand-accent); color: var(--ink-muted) }
+.seo-btn-ghost { background: var(--brand-accent); color: var(--ink) }
 .seo-btn-ghost:hover { transform: translateY(-1px); }
 
 .seo-block { margin: 0 0 2.5rem; }
@@ -1711,7 +1716,7 @@ img { max-width: 100%; height: auto; }
   color: var(--ink);
 }
 .seo-block h3 { font-size: 1.05rem; margin: 1.4rem 0 .6rem; }
-.seo-block p { line-height: 1.8; color: var(--brand-primary-light); max-width: 72ch; }
+.seo-block p { line-height: 1.8; color: var(--ink); max-width: 72ch; }
 
 .seo-chips { display: flex; flex-wrap: wrap; gap: .5rem; list-style: none; padding: 0; margin: 0; }
 .seo-chips li {
@@ -1723,7 +1728,7 @@ img { max-width: 100%; height: auto; }
   font-size: .875rem;
 }
 .seo-list, .seo-steps { padding-left: 1.15rem; margin: 0; }
-.seo-list li, .seo-steps li { line-height: 1.8; margin-bottom: .5rem; color: var(--brand-primary-light); }
+.seo-list li, .seo-steps li { line-height: 1.8; margin-bottom: .5rem; color: var(--ink); }
 
 .seo-grid {
   display: grid;

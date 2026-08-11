@@ -27,7 +27,7 @@ export default function LandingSection({ page, kind }) {
           ]}
         />
 
-        <header className="seo-hero">
+        <div className="seo-hero">
           <h1>{page.h1}</h1>
           <p className="seo-lede">{page.intro}</p>
           <div className="seo-cta-row">
@@ -38,7 +38,13 @@ export default function LandingSection({ page, kind }) {
               Call {SITE.phoneDisplay}
             </a>
           </div>
-        </header>
+          <div className="seo-hero-image">
+            <div className="hero-image-tab">
+              <img className="hero-images" src="/assets/images/sherlock-edited-scaled.jpeg" alt="" />
+            </div>
+          </div>
+          
+        </div>
 
         {isArea ? (
           <>
