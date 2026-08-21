@@ -1342,35 +1342,835 @@ footer{
   height: fit-content;
 }
 
-#tutor-form-container{
+
+/* =========================================================
+   TUTOR FORM
+   ========================================================= */
+
+#tutor-form-container {
+  width: 1400px;
   background-color: var(--surface-2);
   padding: 32px;
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  filter: drop-shadow(8px 8px 0px var(--brand-primary));
+  filter: drop-shadow(8px 8px 0 var(--brand-primary));
+  box-sizing: border-box;
 }
 
-.tutor-form{
+.tutor-form {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
+.tutor-form-body {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* Sections */
+
+.tutor-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.tutor-section-header {
+  margin: 0;
+  padding: 0;
+}
+
+/* IMPORTANT:
+   These are h3s, but we don't want the site's
+   global h3 styling to make them huge.
+*/
+#tutor-form-container .tutor-section-heading {
+  margin: 0;
+  padding: 0;
+  font-size: 24px;
+  line-height: 1.25;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-primary, #172033);
+}
+
+/* Fields */
+
+.tutor-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.tutor-form label,
+.tutor-label {
+  display: block;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.35;
+  font-weight: 600;
+}
+
+.tutor-required {
+  color: #dc2626;
+}
+
+/* Inputs */
+
 .tutor-form input,
 .tutor-form select,
-.tutor-form textarea{
+.tutor-form textarea {
   width: 100%;
+  box-sizing: border-box;
   padding: 12px 14px;
   border-radius: 8px;
   border: 1px solid #ccc;
   font-size: 14px;
   background-color: var(--surface);
+  color: var(--text-primary, #172033);
+  outline: none;
 }
 
-.tutor-form label{
+.tutor-form input:focus,
+.tutor-form select:focus,
+.tutor-form textarea:focus {
+  border-color: var(--brand-primary);
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.06);
+}
+
+.tutor-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Grids */
+
+.tutor-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.tutor-grid-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.tutor-grid-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.tutor-grid-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+/* Teaching Groups */
+
+.teaching-group-card {
+  padding: 18px;
+  /* border: 2px solid var(--brand-primary); */
+  border-radius: 10px;
+  background: white;
+  margin-bottom:8px;
+}
+
+.teaching-group-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.teaching-group-badge {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.teaching-group-pill-tag {
+  margin-left: 8px;
+  padding: 3px 7px;
+  border-radius: 999px;
+  font-size: 12px;
   font-weight: 600;
+}
+
+.teaching-group-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.teaching-group-remove-btn{
+  padding:12px;
+  font-weight:600;
+  background-color: var(--brand-primary-light);
+}
+
+/* Multiselect */
+
+.multiselect-container {
+  position: relative;
+  width: 100%;
+}
+
+.multiselect-trigger {
+  width: 100%;
+  min-height: 46px;
+  padding: 10px 12px;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: var(--surface);
+
+  cursor: pointer;
+  text-align: left;
+  font-size: 14px;
+}
+
+.multiselect-trigger.open {
+  border-color: var(--brand-primary);
+}
+
+.multiselect-selected-area {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+  flex: 1;
+}
+
+.multiselect-placeholder {
+  color: #718096;
+}
+
+.multiselect-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+
+  padding: 3px 7px;
+  border-radius: 5px;
+
+  background: rgba(0, 0, 0, 0.04);
+  border: 1px solid #ddd;
+
+  font-size: 12px;
+}
+
+.multiselect-tag-remove {
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+.multiselect-tag-count {
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.multiselect-arrow-text {
+  flex-shrink: 0;
+  font-size: 12px;
+  transition: transform 0.15s ease;
+}
+
+.multiselect-arrow-text.rotated {
+  transform: rotate(180deg);
+}
+
+.multiselect-dropdown {
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 0;
+  right: 0;
+
+  z-index: 100;
+
+  background: var(--surface);
+  border: 1px solid #ccc;
+  border-radius: 8px;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+
+  overflow: hidden;
+}
+
+.multiselect-search-box {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+.multiselect-search-input {
+  width: 100%;
+  padding: 8px 10px !important;
+  min-height: auto !important;
+}
+
+.multiselect-actions-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+.multiselect-action-btn {
+  border: none;
+  background: none;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--brand-primary);
+}
+
+.multiselect-list {
+  max-height: 220px;
+  overflow-y: auto;
+}
+
+.multiselect-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 9px 10px;
+
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.multiselect-item:hover,
+.multiselect-item.selected {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.multiselect-item input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+}
+
+/* Custom subjects */
+
+.custom-subjects-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  margin-top: 10px;
+  padding-top: 10px;
+
+  border-top: 1px dashed #ccc;
+}
+
+.custom-subject-input-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.add-btn-secondary {
+  width: fit-content;
+
+  padding: 8px 12px;
+
+  border: 1px dashed #bbb;
+  border-radius: 7px;
+
+  background: transparent;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+/* Locations */
+
+.selected-locations-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  padding: 10px;
+
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.location-badges-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.location-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+
+  padding: 5px 8px;
+
+  border: 1px solid #ccc;
+  border-radius: 999px;
+
+  background: transparent;
+
+  font-size: 12px;
+  cursor: pointer;
+}
+
+/* Terms */
+
+.tutor-terms-card {
+  padding: 16px;
+
+  border: 1px solid #ccc;
+  border-radius: 9px;
+
+  background: transparent;
+}
+
+.tutor-terms-checkbox-wrap {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+
+  cursor: pointer;
+}
+
+.tutor-terms-input {
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.tutor-terms-text {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.tutor-terms-link {
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.tutor-compulsory-badge {
+  display: inline-block;
   margin-bottom: 6px;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* Submit */
+
+.tutor-submit-btn {
+  width: 100%;
+
+  padding: 12px 16px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: var(--brand-primary);
+  color: white;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.tutor-submit-btn:hover:not(:disabled) {
+  opacity: 0.92;
+}
+
+.tutor-submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Tooltip */
+.tutor-tooltip-container{
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* Alerts */
+
+.tutor-alert {
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+/* =========================================================
+   TUTOR FORM — TERMS & TOOLTIP FIXES
+   ========================================================= */
+
+/* ---------- Section heading + info button ---------- */
+
+#tutor-form-container .tutor-section-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#tutor-form-container .tutor-section-heading {
+  display: inline-flex;
+  align-items: center;
+  margin: 0;
+  font-size: 24px;
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+/* Keep the i perfectly aligned with the heading */
+#tutor-form-container .tutor-tooltip-trigger {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 20px;
+  height: 20px;
+
+  flex: 0 0 20px;
+
+  padding: 4px;
+  margin-left: 10px;
+
+  border: 1px solid #aeb6c2;
+  border-radius: 50%;
+
+  background: var(--surface);
+  color: var(--text-primary, #172033);
+
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* ---------- Light tooltip ---------- */
+
+#tutor-form-container .tutor-tooltip-popover {
+  position: absolute;
+
+  top: calc(100% + 10px);
+  left: 50%;
+
+  z-index: 1000;
+
+  width: 400px;
+  max-width: min(400px, calc(100vw - 40px));
+
+  box-sizing: border-box;
+
+  padding: 13px 15px;
+
+  background: #ffffff;
+  color: #263247;
+
+  border: 1px solid #d8dee7;
+  border-radius: 9px;
+
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.14);
+
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.55;
+
+  text-align: left;
+
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: normal;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transform: translateX(-50%) translateY(-4px);
+
+  transition:
+    opacity 0.15s ease,
+    visibility 0.15s ease,
+    transform 0.15s ease;
+}
+
+/* Tooltip heading */
+#tutor-form-container .tutor-tooltip-popover > div {
+  margin: 0 0 5px;
+  color: var(--brand-primary);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+/* Tooltip paragraph */
+#tutor-form-container .tutor-tooltip-popover p {
+  margin: 0;
+
+  color: #526174 !important;
+
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.55;
+
+  white-space: normal !important;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+/* Show tooltip */
+#tutor-form-container .tutor-tooltip-trigger:hover .tutor-tooltip-popover,
+#tutor-form-container .tutor-tooltip-trigger:focus-visible .tutor-tooltip-popover,
+#tutor-form-container .tutor-tooltip-trigger.active .tutor-tooltip-popover {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Little arrow */
+#tutor-form-container .tutor-tooltip-popover::before {
+  content: "";
+
+  position: absolute;
+
+  top: -6px;
+  left: 50%;
+
+  width: 10px;
+  height: 10px;
+
+  background: #ffffff;
+
+  border-left: 1px solid #d8dee7;
+  border-top: 1px solid #d8dee7;
+
+  transform: translateX(-50%) rotate(45deg);
+}
+
+
+/* =========================================================
+   TERMS & CONDITIONS
+   ========================================================= */
+
+/* This MUST override ".tutor-form label { display:block; }" */
+#tutor-form-container .tutor-terms-checkbox-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  width: 100%;
+
+  gap: 10px;
+
+  margin: 0;
+  padding: 0;
+
+  cursor: pointer;
+}
+
+/* Override ".tutor-form input { width:100%; }" */
+#tutor-form-container .tutor-terms-checkbox-wrap .tutor-terms-input {
   display: block;
+
+  width: 18px !important;
+  min-width: 18px;
+  max-width: 18px;
+
+  height: 18px;
+
+  margin: 0;
+
+  flex: 0 0 18px;
+
+  accent-color: var(--brand-primary);
+
+  cursor: pointer;
+}
+
+/* Agreement text stays on the same line */
+#tutor-form-container .tutor-terms-text {
+  display: block;
+
+  margin: 0;
+
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 600;
+
+  color: var(--text-primary, #172033);
+
+  text-align: left;
+}
+
+/* Terms link */
+#tutor-form-container .tutor-terms-link {
+  color: var(--brand-primary);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Compulsory Agreement heading */
+#tutor-form-container .tutor-compulsory-badge {
+  display: inline-flex;
+  align-items: center;
+
+  margin: 0;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  color: var(--text-primary, #172033);
+}
+
+
+/* =========================================================
+   TERMS HEADER
+   ========================================================= */
+
+#tutor-form-container .tutor-terms-card > div:first-child {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  margin-bottom: 12px;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  #tutor-form-container .tutor-tooltip-popover {
+    left: 0;
+    width: 300px;
+    max-width: calc(100vw - 40px);
+
+    transform: translateY(-4px);
+  }
+
+  #tutor-form-container .tutor-tooltip-trigger:hover .tutor-tooltip-popover,
+  #tutor-form-container .tutor-tooltip-trigger:focus-visible .tutor-tooltip-popover,
+  #tutor-form-container .tutor-tooltip-trigger.active .tutor-tooltip-popover {
+    transform: translateY(0);
+  }
+
+  #tutor-form-container .tutor-terms-checkbox-wrap {
+    align-items: flex-start;
+  }
+}
+
+/* =========================================================
+   ADDRESS SYNC CHECKBOX
+   ========================================================= */
+
+#tutor-form-container .tutor-address-sync-card {
+    display: flex !important;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 10px 12px;
+    margin: 0;
+
+    border: 1px solid #d8d8d8;
+    border-radius: 8px;
+
+    background: transparent;
+    cursor: pointer;
+}
+
+/* Override the generic .tutor-form label { display:block } */
+#tutor-form-container .tutor-address-sync-card label,
+#tutor-form-container .tutor-address-sync-card .tutor-sync-label {
+    display: flex !important;
+    align-items: center;
+
+    width: auto;
+    margin: 0;
+}
+
+/* Override .tutor-form input { width:100% } */
+#tutor-form-container .tutor-address-sync-card input[type="checkbox"] {
+    width: 18px !important;
+    min-width: 18px;
+    max-width: 18px;
+
+    height: 18px;
+
+    margin: 0;
+
+    flex: 0 0 18px;
+
+    accent-color: var(--brand-primary);
+
+    cursor: pointer;
+}
+
+/* The text itself */
+#tutor-form-container .tutor-address-sync-card .tutor-sync-label {
+    font-size: 14px;
+    line-height: 1.4;
+    font-weight: 600;
+    color: var(--text-primary, #172033);
+}
+
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+  #tutor-form-container {
+    padding: 24px;
+  }
+
+  .tutor-grid-2,
+  .tutor-grid-3,
+  .tutor-grid-4,
+  .teaching-group-split {
+    grid-template-columns: 1fr;
+  }
+
+  #tutor-form-container .tutor-section-heading {
+    font-size: 21px;
+  }
+
+}
+
+@media (max-width: 500px) {
+
+  #tutor-form-container {
+    padding: 18px;
+    border-radius: 12px;
+  }
+
+  .tutor-form-body {
+    gap: 24px;
+  }
+
 }
 
 /* ===================== Pages hero styles===================== */

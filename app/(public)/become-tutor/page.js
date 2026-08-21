@@ -26,7 +26,7 @@ export default function BecomeTutorPage() {
           </div>
         </div>
 
-        <div className="right-cta" id="tutor-right-cta">
+        {/* <div className="right-cta" id="tutor-right-cta">
           <div className="notice-card" id="services-right-cta">
             <div className="right-upper-cta-text">
               <h3><span className="yellow-text">⚠</span> Before You Register</h3>
@@ -40,7 +40,7 @@ export default function BecomeTutorPage() {
               <a href="tel:+918505952700" id="right-cta-contact-number" className="blue-text">+91 85059 52700</a>
             </div>
           </div>
-        </div>
+        </div> */}
       </section>
     </>
   );
