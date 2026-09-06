@@ -22,7 +22,7 @@ export default function LandingSection({ page, kind }) {
         <Breadcrumbs
           trail={[
             { name: "Home", href: "/" },
-            { name: isArea ? "Areas We Serve" : "Home Tuition", href: "/services" },
+            { name: isArea ? "Areas We Serve" : "Home Tuition", href: "/tutors" },
             { name: page.h1, href: `/${page.slug}` },
           ]}
         />

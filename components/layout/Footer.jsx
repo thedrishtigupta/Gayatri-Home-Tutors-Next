@@ -10,7 +10,7 @@ export default function Footer() {
           <div className="left-nav">
             <Link href="/">
               <div className="GHT-logo"><img src="/assets/images/GHTLogo.svg" alt="GHT" /></div>
-              <h1 id="footer-heading">Gayatri Home Tutor</h1>
+              <span id="footer-heading">Gayatri Home Tutor</span>
             </Link>
           </div>
           <p id="footer-p">Trusted home tuition bureau since 2010. Connecting students with expert tutors across Delhi NCR.</p>
@@ -20,7 +20,7 @@ export default function Footer() {
         <div className="foot-grid-els">
           <ul>
             <li className="li-color-1"><Link href="/about">About Us</Link></li>
-            <li className="li-color-2"><Link href="/services">Subjects</Link></li>
+            <li className="li-color-2"><Link href="/tutors">Find Tutors</Link></li>
             <li className="li-color-1"><Link href="/home-tutor-delhi">Home Tutor in Delhi</Link></li>
             <li className="li-color-2"><Link href="/home-tutor-rohini">Home Tutor in Rohini</Link></li>
             <li className="li-color-1"><Link href="/home-tutor-dwarka">Home Tutor in Dwarka</Link></li>

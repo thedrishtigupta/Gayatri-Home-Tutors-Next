@@ -1,9 +1,9 @@
-// app/tutor/dashboard/page.js — the tutor's overview.
+// app/portal/dashboard/page.js — the tutor's overview.
 "use client";
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import TutorHeader from "@/components/tutor/TutorHeader";
+import TutorHeader from "@/components/portal/TutorHeader";
 import { FIELD_BY_NAME } from "@/lib/tutorProfileFields";
 
 /* Fields that make a profile useful for matching. Completeness is measured
@@ -85,7 +85,7 @@ export default function TutorDashboardPage() {
           <div className="tp-alert tp-alert-error" role="alert">
             {error || "Your profile could not be loaded."}
           </div>
-          <Link href="/tutor/login" className="tp-btn tp-btn-secondary">Back to sign in</Link>
+          <Link href="/portal/login" className="tp-btn tp-btn-secondary">Back to sign in</Link>
         </main>
       </>
     );
@@ -177,7 +177,7 @@ export default function TutorDashboardPage() {
                 Edit in admin panel
               </Link>
             ) : (
-              <Link href="/tutor/profile" className="tp-btn tp-btn-primary">Edit my profile</Link>
+              <Link href="/portal/profile" className="tp-btn tp-btn-primary">Edit my profile</Link>
             )}
           </div>
         </section>
@@ -202,7 +202,7 @@ export default function TutorDashboardPage() {
                 ))}
               </div>
               <p style={{ marginTop: 12, fontSize: 13 }}>
-                <Link href="/tutor/profile" style={{ color: "var(--t-primary)", fontWeight: 600 }}>
+                <Link href="/portal/profile" style={{ color: "var(--t-primary)", fontWeight: 600 }}>
                   Add the missing details →
                 </Link>
               </p>

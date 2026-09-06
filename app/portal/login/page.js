@@ -1,4 +1,4 @@
-// app/tutor/login/page.js
+// app/portal/login/page.js
 "use client";
 
 import Link from "next/link";
@@ -39,7 +39,7 @@ function LoginForm() {
 
       // Only follow `from` when it is a path inside the tutor panel — an
       // attacker-supplied absolute URL must never become a redirect target.
-      const target = from && /^\/tutor\//.test(from) ? from : "/tutor/dashboard";
+      const target = from && /^\/portal\//.test(from) ? from : "/portal/dashboard";
       router.push(target);
       router.refresh();
     } catch {
@@ -96,7 +96,7 @@ function LoginForm() {
         </form>
 
         <div className="tp-auth-foot">
-          First time here? <Link href="/tutor/signup">Set up your account</Link>
+          First time here? <Link href="/portal/signup">Set up your account</Link>
           <br />
           <span style={{ fontSize: 12 }}>
             Trouble signing in? Contact the office on WhatsApp.

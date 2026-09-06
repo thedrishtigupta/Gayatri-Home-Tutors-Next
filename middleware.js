@@ -97,11 +97,13 @@ export async function middleware(request, event) {
     }
   }
 
-  // ── 3. Protect /tutor/* routes ────────────────────────────────
+  // ── 3. Protect /portal/* routes ───────────────────────────────
   // A separate cookie and a required audience claim, so an admin token cannot
-  // open the tutor panel and a tutor token cannot open the admin panel.
-  const TUTOR_PUBLIC = ["/tutor/login", "/tutor/signup", "/tutor/verify", "/tutor/forgot-password", "/tutor/reset-password"];
-  if (pathname.startsWith("/tutor") && !TUTOR_PUBLIC.includes(pathname)) {
+  // open the tutor portal and a tutor token cannot open the admin panel.
+  const PORTAL_PUBLIC = ["/portal/login", "/portal/signup", "/portal/verify", "/portal/forgot-password", "/portal/reset-password"];
+  // startsWith("/portal") — NOT "/tutor", which would also swallow the public
+  // /tutors/* discovery pages and bounce visitors to a login screen.
+  if (pathname.startsWith("/portal") && !PORTAL_PUBLIC.includes(pathname)) {
     const token = request.cookies.get("ght_tutor_token")?.value;
     let valid = false;
     if (token) {
@@ -111,7 +113,7 @@ export async function middleware(request, event) {
       } catch {}
     }
     if (!valid) {
-      const loginUrl = new URL("/tutor/login", request.url);
+      const loginUrl = new URL("/portal/login", request.url);
       loginUrl.searchParams.set("from", pathname);
       return NextResponse.redirect(loginUrl);
     }

@@ -125,7 +125,7 @@ export async function POST(req) {
 
     const template = verifyEmailTemplate({
       name: tutor.first_name,
-      url: siteUrl(`/tutor/verify?token=${raw}`),
+      url: siteUrl(`/portal/verify?token=${raw}`),
       expiresHours: TOKEN_HOURS,
     });
 

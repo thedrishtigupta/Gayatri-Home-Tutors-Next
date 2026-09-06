@@ -2595,3 +2595,429 @@ img { max-width: 100%; height: auto; }
   .seo-wrap { padding: 1.25rem 1rem 2.5rem; }
   .seo-cta-row .seo-btn { flex: 1 1 100%; }
 }
+
+/* =================================================================
+   Tutor discovery (/tutors)
+   Builds on the existing .tutor-card / .tutor-grid styles.
+   ================================================================= */
+
+.td-page { max-width: 1240px; margin: 0 auto; padding: 40px 20px 72px; }
+
+.td-layout { display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 32px; align-items: start; }
+.td-sidebar { position: sticky; top: 96px; }
+.td-results { min-width: 0; }
+
+.td-results-head {
+  /* Guard: the global `header { position: fixed }` rule captures any bare
+     <header> element. This block is a <div>, but the reset keeps it safe if
+     the markup ever changes back. */
+  position: relative;
+  margin-bottom: 22px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e2e8f0;
+  scroll-margin-top: 100px;
+}
+.td-results-head h2 {
+  font-family: var(--font-heading), sans-serif;
+  font-size: 28px;
+  color: #0b2e6b;
+  line-height: 1.25;
+  margin: 0;
+}
+.td-results-head p { margin-top: 6px; font-size: 14px; color: #64748b; }
+
+/* ── Filters ─────────────────────────────────────────────────── */
+.td-filters { background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 18px; }
+
+.td-filter-toggle {
+  display: none; width: 100%; justify-content: space-between; align-items: center;
+  padding: 11px 14px; border: 1px solid #e2e8f0; border-radius: 8px;
+  background: #f8fafc; font: inherit; font-weight: 600; cursor: pointer;
+}
+
+.td-filter-body { display: grid; gap: 14px; }
+
+.td-field { display: flex; flex-direction: column; gap: 6px; }
+.td-field > span { font-size: 12px; font-weight: 700; color: #64748b; }
+.td-field select {
+  width: 100%; min-height: 42px; padding: 9px 12px;
+  border: 1px solid #e2e8f0; border-radius: 8px; background: #fff;
+  font: inherit; font-size: 14px; color: #0f172a; outline: none;
+}
+.td-field select:focus { border-color: #0b2e6b; box-shadow: 0 0 0 3px rgba(11, 46, 107, .12); }
+
+.td-filter-check { display: flex; align-items: center; gap: 9px; font-size: 14px; cursor: pointer; }
+.td-filter-check input { width: 17px; height: 17px; accent-color: #0b2e6b; cursor: pointer; }
+
+.td-clear {
+  padding: 0; border: 0; background: none; color: #0b2e6b;
+  font: inherit; font-size: 13px; font-weight: 700; text-align: left; cursor: pointer;
+}
+.td-clear:hover { text-decoration: underline; }
+
+.td-active-chips { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 16px; padding-top: 14px; border-top: 1px solid #e2e8f0; }
+.td-chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 5px 11px; border-radius: 999px;
+  background: #c3d4f2; color: #04183a; border: 1px solid rgba(11, 46, 107, .2);
+  font: inherit; font-size: 12px; font-weight: 700; cursor: pointer;
+}
+.td-chip:hover { background: #0b2e6b; color: #fff; }
+
+/* ── Cards ───────────────────────────────────────────────────── */
+/* Two columns: photo fills the left half top to bottom, every detail sits to
+   its right. Nothing stacks underneath the photo. */
+.td-grid { grid-template-columns: repeat(auto-fill, minmax(420px, 1fr)); gap: 20px; }
+
+.td-card {
+  display: grid;
+  grid-template-columns: 42% minmax(0, 1fr);
+  align-items: stretch;
+  gap: 0;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: box-shadow .18s, transform .18s;
+}
+.td-card:hover { box-shadow: 0 10px 28px rgba(15, 23, 42, .09); transform: translateY(-2px); }
+
+.td-card-photo {
+  position: relative;
+  background: #c3d4f2;
+  min-height: 100%;
+}
+.td-card-photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.td-initials {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: #04183a;
+  font-family: var(--font-heading), sans-serif;
+  font-size: clamp(34px, 5vw, 52px);
+}
+
+.td-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px 22px;
+  min-width: 0;
+}
+
+.td-card-name {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  font-size: 19px;
+  font-weight: 700;
+  color: #0b2e6b;
+  line-height: 1.3;
+}
+
+.td-verified {
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: #f0fdf4;
+  color: #15803d;
+  font-size: 10px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+/* Every fact reads the same way — label then value, no boxed-out field. */
+.td-card-facts { display: grid; gap: 6px; margin: 0; }
+.td-card-facts > div { display: block; font-size: 14px; line-height: 1.5; }
+.td-card-facts dt {
+  display: inline;
+  font-weight: 700;
+  color: #0f172a;
+}
+.td-card-facts dt::after { content: ":"; }
+.td-card-facts dd {
+  display: inline;
+  margin: 0 0 0 5px;
+  color: #475569;
+}
+
+.td-card-foot { margin-top: auto; padding-top: 6px; }
+
+.td-demo-btn {
+  display: inline-block; padding: 10px 18px; border-radius: 8px;
+  background: #0b2e6b; color: #fff; text-decoration: none;
+  font-size: 13px; font-weight: 700; white-space: nowrap;
+  transition: background .16s;
+}
+.td-demo-btn:hover { background: #04183a; color: #fff; }
+
+.td-secondary-btn {
+  display: inline-block; padding: 10px 18px; border-radius: 8px;
+  background: #fff; color: #0b2e6b; border: 1px solid #e2e8f0;
+  text-decoration: none; font-size: 13px; font-weight: 700;
+}
+.td-secondary-btn:hover { background: #f1f5f9; }
+
+/* ── Empty state, pagination ─────────────────────────────────── */
+.td-empty { padding: 48px 24px; text-align: center; background: #f8fafc; border: 1px dashed #cbd5e1; border-radius: 14px; }
+.td-empty h2 { font-size: 19px; color: #0b2e6b; margin-bottom: 8px; }
+.td-empty p { max-width: 46ch; margin: 0 auto 18px; font-size: 14px; color: #64748b; line-height: 1.6; }
+.td-empty-actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+
+.td-pagination { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-top: 30px; }
+.td-page-count { font-size: 13px; font-weight: 600; color: #64748b; }
+
+/* ── Browse blocks (internal linking) ────────────────────────── */
+.td-browse {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 26px;
+  margin-top: 48px; padding-top: 30px; border-top: 1px solid #e2e8f0;
+}
+.td-browse-block h2 { font-size: 15px; color: #0b2e6b; margin-bottom: 12px; }
+.td-browse-block ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 3px; }
+.td-browse-block a {
+  display: flex; justify-content: space-between; gap: 10px;
+  padding: 6px 9px; border-radius: 6px;
+  color: #475569; text-decoration: none; font-size: 13px;
+}
+.td-browse-block a:hover { background: #f1f5f9; color: #0b2e6b; }
+.td-browse-block a.is-current { background: #c3d4f2; color: #04183a; font-weight: 700; }
+.td-browse-block a span { color: #94a3b8; font-size: 12px; }
+
+/* ── Closing CTA ─────────────────────────────────────────────── */
+.td-cta { margin-top: 44px; padding: 30px; text-align: center; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 14px; }
+.td-cta h2 { font-size: 20px; color: #0b2e6b; margin-bottom: 8px; }
+.td-cta p { max-width: 54ch; margin: 0 auto 18px; font-size: 14px; color: #64748b; line-height: 1.6; }
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .td-layout { grid-template-columns: 1fr; gap: 20px; }
+  .td-sidebar { position: static; }
+  .td-filter-toggle { display: flex; }
+  .td-filter-body { display: none; margin-top: 14px; }
+  .td-filter-body.is-open { display: grid; }
+  .td-results-head h1 { font-size: 23px; }
+}
+
+@media (max-width: 900px) {
+  .td-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 560px) {
+  .td-page { padding: 26px 16px 56px; }
+  .td-pagination { flex-direction: column; gap: 10px; }
+  .td-card { grid-template-columns: 38% minmax(0, 1fr); }
+  .td-card-body { padding: 16px; gap: 10px; }
+  .td-card-name { font-size: 17px; }
+  .td-card-facts > div { font-size: 13px; }
+}
+
+/* Below this the photo would leave no usable width for the text. */
+@media (max-width: 400px) {
+  .td-card { grid-template-columns: 1fr; }
+  .td-card-photo { aspect-ratio: 16 / 10; min-height: 0; }
+}
+
+
+/* ── Branding text that used to be <h1> ──────────────────────────
+   Demoted to <span> so each page has exactly one <h1>; these rules keep the
+   previous appearance, since h1 sizing no longer applies. */
+.GHT-text .GHT-name {
+  display: block;
+  font-family: var(--font-heading), sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--brand-primary);
+}
+#footer-heading { display: block; }
+
+/* ── Subject multiselect ─────────────────────────────────────── */
+.td-field-note { margin: 0; font-size: 11px; color: #94a3b8; line-height: 1.45; }
+
+.td-core-pick {
+  width: 100%;
+  padding: 9px 12px;
+  border: 1px solid #0b2e6b;
+  border-radius: 8px;
+  background: #fff;
+  color: #0b2e6b;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .15s, color .15s;
+}
+.td-core-pick:hover { background: #c3d4f2; }
+.td-core-pick.is-on { background: #0b2e6b; color: #fff; }
+
+.td-subject-list {
+  display: grid;
+  gap: 2px;
+  max-height: 260px;
+  overflow-y: auto;
+  padding: 4px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.td-subject-opt {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 7px 9px;
+  border: 0;
+  border-radius: 6px;
+  background: none;
+  color: #475569;
+  font: inherit;
+  font-size: 13px;
+  text-align: left;
+  cursor: pointer;
+}
+.td-subject-opt:hover { background: #f1f5f9; }
+.td-subject-opt.is-on { background: #c3d4f2; color: #04183a; font-weight: 700; }
+
+.td-tick {
+  display: grid;
+  place-items: center;
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 5px;
+  background: #fff;
+  color: #fff;
+  font-size: 10px;
+}
+.td-subject-opt.is-on .td-tick { background: #0b2e6b; border-color: #0b2e6b; }
+
+.td-subject-opt em { margin-left: auto; font-style: normal; font-size: 11px; color: #94a3b8; }
+.td-subject-opt.is-on em { color: #0b2e6b; }
+
+/* Section headings were <h1> before; they are <h2> now so each page has a
+   single <h1>. This preserves how they looked. */
+.section-heading h2 {
+  font-family: var(--font-heading), sans-serif;
+  font-size: clamp(2.1rem, 1.4rem + 2.9vw, 3.6rem);
+  line-height: 1.15;
+}
+
+/* "All subjects" leads the subject list and is separated from the individual
+   subjects beneath it. */
+.td-subject-all {
+  font-weight: 700;
+  color: #0b2e6b;
+  border-bottom: 1px solid #e2e8f0;
+  border-radius: 6px 6px 0 0;
+  margin-bottom: 3px;
+  padding-bottom: 9px;
+}
+.td-subject-all.is-on { background: #0b2e6b; color: #fff; }
+.td-subject-all.is-on .td-tick { background: #fff; border-color: #fff; color: #0b2e6b; }
+.td-subject-all.is-on em { color: #c3d4f2; }
+
+/* The filter summary sits under the count, on its own line. */
+.td-filter-summary {
+  display: block;
+  margin-top: 3px;
+  font-weight: 600;
+  color: #0b2e6b;
+}
+
+/* Name search box in the filter panel. */
+.td-search-input {
+  width: 100%;
+  min-height: 42px;
+  padding: 9px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: #fff;
+  font: inherit;
+  font-size: 14px;
+  color: #0f172a;
+  outline: none;
+}
+.td-search-input::placeholder { color: #94a3b8; }
+.td-search-input:focus { border-color: #0b2e6b; box-shadow: 0 0 0 3px rgba(11, 46, 107, .12); }
+
+/* =================================================================
+   404 page
+   White text on the brand blue — the default inherited the body's dark
+   blue and was barely legible.
+   ================================================================= */
+.nf-hero {
+  margin-top: 80px;              /* clears the fixed site header */
+  padding: 96px 20px 104px;
+  background: var(--brand-primary);
+  color: #ffffff;
+}
+
+.nf-inner { max-width: 780px; margin: 0 auto; text-align: center; }
+
+.nf-code {
+  font-family: var(--font-heading), sans-serif;
+  font-size: clamp(3.6rem, 2rem + 7vw, 6.5rem);
+  line-height: 1;
+  color: #ffffff;
+  opacity: .32;
+  margin: 0 0 6px;
+}
+
+.nf-hero h1 {
+  color: #ffffff;
+  font-family: var(--font-heading), sans-serif;
+  font-size: clamp(1.9rem, 1.2rem + 2.6vw, 3rem);
+  line-height: 1.2;
+  margin: 0 0 14px;
+}
+
+.nf-lead {
+  max-width: 52ch;
+  margin: 0 auto 36px;
+  color: #dbe6fa;
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+.nf-links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(210px, 1fr));
+  gap: 14px;
+  text-align: left;
+}
+
+.nf-link {
+  display: block;
+  padding: 18px 20px;
+  border: 1px solid rgba(255, 255, 255, .28);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, .07);
+  color: #ffffff;
+  text-decoration: none;
+  transition: background .16s, border-color .16s, transform .16s;
+}
+.nf-link:hover {
+  background: rgba(255, 255, 255, .16);
+  border-color: rgba(255, 255, 255, .55);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+.nf-link strong { display: block; font-size: 16px; margin-bottom: 3px; color: #ffffff; }
+.nf-link span { font-size: 13px; color: #c3d4f2; }
+
+@media (max-width: 560px) {
+  .nf-hero { padding: 60px 16px 68px; }
+  .nf-links { grid-template-columns: 1fr; }
+}

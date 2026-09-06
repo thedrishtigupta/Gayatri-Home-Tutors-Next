@@ -1,4 +1,4 @@
-// app/tutor/signup/page.js — a registered tutor claims their login.
+// app/portal/signup/page.js — a registered tutor claims their login.
 "use client";
 
 import Link from "next/link";
@@ -57,7 +57,7 @@ export default function TutorSignupPage() {
           <div className="tp-alert tp-alert-info">{done.message}</div>
 
           <div className="tp-auth-foot">
-            <Link href="/tutor/login">Back to sign in</Link>
+            <Link href="/portal/login">Back to sign in</Link>
           </div>
         </div>
       </div>
@@ -128,7 +128,7 @@ export default function TutorSignupPage() {
         </form>
 
         <div className="tp-auth-foot">
-          Already set up? <Link href="/tutor/login">Sign in</Link>
+          Already set up? <Link href="/portal/login">Sign in</Link>
         </div>
       </div>
     </div>

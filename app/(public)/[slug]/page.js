@@ -59,7 +59,7 @@ export default function LandingPage({ params }) {
           }),
           breadcrumbSchema([
             { name: "Home", href: "/" },
-            { name: kind === "area" ? "Areas We Serve" : "Home Tuition", href: "/services" },
+            { name: kind === "area" ? "Areas We Serve" : "Home Tuition", href: "/tutors" },
             { name: page.h1, href: `/${page.slug}` },
           ]),
           faqSchema(page.faqs),

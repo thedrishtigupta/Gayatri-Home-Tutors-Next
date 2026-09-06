@@ -415,7 +415,7 @@ export default function TutorProfilePage() {
       setViewingAs(false);
       return;
     }
-    window.location.href = data?.redirectTo || "/tutor/dashboard";
+    window.location.href = data?.redirectTo || "/portal/dashboard";
   }
 
   /** Used by save validation to bring the offending section into view. */

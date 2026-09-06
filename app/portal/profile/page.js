@@ -1,4 +1,4 @@
-// app/tutor/profile/page.js — the tutor edits their own profile.
+// app/portal/profile/page.js — the tutor edits their own profile.
 //
 // Nothing here writes to the database directly. Submitting sends the changed
 // fields to the approval queue; the live profile only moves once an admin says
@@ -8,7 +8,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useMemo, useState } from "react";
-import TutorHeader from "@/components/tutor/TutorHeader";
+import TutorHeader from "@/components/portal/TutorHeader";
 import { FIELDS, FIELD_BY_NAME, GROUP_LABELS, hasChanged } from "@/lib/tutorProfileFields";
 
 const CURRENT_YEAR = new Date().getFullYear();
@@ -180,7 +180,7 @@ export default function TutorProfilePage() {
         <TutorHeader />
         <main className="tp-page">
           <div className="tp-alert tp-alert-error" role="alert">{error || "Profile unavailable."}</div>
-          <Link href="/tutor/dashboard" className="tp-btn tp-btn-secondary">Back to overview</Link>
+          <Link href="/portal/dashboard" className="tp-btn tp-btn-secondary">Back to overview</Link>
         </main>
       </>
     );

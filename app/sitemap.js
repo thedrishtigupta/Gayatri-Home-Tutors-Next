@@ -7,7 +7,7 @@ export default function sitemap() {
 
   const core = [
     { path: "/", changeFrequency: "weekly", priority: 1.0 },
-    { path: "/services", changeFrequency: "monthly", priority: 0.9 },
+    { path: "/tutors", changeFrequency: "daily", priority: 0.9 },
     { path: "/contact", changeFrequency: "monthly", priority: 0.9 },
     { path: "/about", changeFrequency: "monthly", priority: 0.8 },
     { path: "/become-tutor", changeFrequency: "monthly", priority: 0.8 },

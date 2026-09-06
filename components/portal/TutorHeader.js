@@ -1,4 +1,4 @@
-// components/tutor/TutorHeader.js
+// components/portal/TutorHeader.js
 "use client";
 
 import Link from "next/link";
@@ -6,8 +6,8 @@ import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 
 const NAV = [
-  { href: "/tutor/dashboard", label: "Overview" },
-  { href: "/tutor/profile", label: "My profile" },
+  { href: "/portal/dashboard", label: "Overview" },
+  { href: "/portal/profile", label: "My profile" },
 ];
 
 export default function TutorHeader({ name, impersonation }) {
@@ -23,7 +23,7 @@ export default function TutorHeader({ name, impersonation }) {
     } catch {
       /* leaving regardless */
     }
-    router.push("/tutor/login");
+    router.push("/portal/login");
     router.refresh();
   }
 
@@ -56,7 +56,7 @@ export default function TutorHeader({ name, impersonation }) {
 
       <header className="tp-header">
       <div className="tp-header-inner">
-        <Link href="/tutor/dashboard" className="tp-brand">
+        <Link href="/portal/dashboard" className="tp-brand">
           <span aria-hidden="true" style={{ fontSize: 22 }}>🏫</span>
           <div>
             <strong>Gayatri Home Tutors</strong>

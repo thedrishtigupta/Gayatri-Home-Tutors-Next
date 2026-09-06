@@ -55,7 +55,7 @@ export const POST = requireAdmin(async (req, _ctx, admin) => {
   return NextResponse.json({
     ok: true,
     tutor: { id: tutor.id, name: [tutor.first_name, tutor.last_name].filter(Boolean).join(" ").trim() },
-    redirectTo: "/tutor/dashboard",
+    redirectTo: "/portal/dashboard",
   });
 });
 

@@ -6,7 +6,8 @@ export default function PageSection({ id, title, subtitle, children }) {
     <section className="sections">
         <div className="section-container">
             <div className="section-heading" id={id}>
-            <h1>{title}</h1>
+            {/* A section heading, not the page title — pages own their <h1>. */}
+            <h2>{title}</h2>
             </div>
             <p className="sections-p">{subtitle}</p>
         </div>

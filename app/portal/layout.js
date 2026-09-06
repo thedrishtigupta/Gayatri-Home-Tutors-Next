@@ -1,4 +1,4 @@
-// app/tutor/layout.js — bare shell for the tutor panel (no public header/footer)
+// app/portal/layout.js — bare shell for the tutor panel (no public header/footer)
 import "@/styles/tutor-panel.css";
 
 export const metadata = {

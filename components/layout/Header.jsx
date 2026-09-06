@@ -9,7 +9,7 @@ import { usePathname } from "next/navigation";
 const NAV_LINKS = [
   { href: "/",             label: "Home",        },
   { href: "/about",        label: "About",       },
-  { href: "/services",     label: "Services",    },
+  { href: "/tutors",       label: "Find Tutors", },
   { href: "/become-tutor", label: "Become Tutor",},
   { href: "/contact",      label: "Contact",     },
 ];
@@ -29,7 +29,8 @@ export default function Header() {
                 <Image src="/assets/images/GHTLogo.svg" alt="GHT Logo" width={60} height={60} priority />
               </div>
               <div className="GHT-text">
-                <h1>Gayatri Home Tutors</h1>
+                {/* Branding, not a heading — each page owns its own <h1>. */}
+                <span className="GHT-name">Gayatri Home Tutors</span>
                 <p>Delhi NCR&apos;s Trusted Tuition Bureau</p>
               </div>
             </Link>

@@ -77,7 +77,7 @@ export const PATCH = requireAdmin(async (req, _ctx, admin) => {
       if (account.email) {
         await sendMail({
           to: account.email,
-          ...accountApprovedTemplate({ name: account.first_name, url: siteUrl("/tutor/login") }),
+          ...accountApprovedTemplate({ name: account.first_name, url: siteUrl("/portal/login") }),
         });
       }
       break;

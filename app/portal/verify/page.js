@@ -1,4 +1,4 @@
-// app/tutor/verify/page.js — landing page for the emailed confirmation link.
+// app/portal/verify/page.js — landing page for the emailed confirmation link.
 "use client";
 
 import Link from "next/link";
@@ -67,12 +67,12 @@ function VerifyBody() {
         {state.status !== "working" && (
           <div className="tp-auth-foot">
             {state.status === "ok" ? (
-              <Link href="/tutor/login">Sign in now</Link>
+              <Link href="/portal/login">Sign in now</Link>
             ) : (
               <>
-                <Link href="/tutor/signup">Try setting up again</Link>
+                <Link href="/portal/signup">Try setting up again</Link>
                 {" · "}
-                <Link href="/tutor/login">Sign in</Link>
+                <Link href="/portal/login">Sign in</Link>
               </>
             )}
           </div>

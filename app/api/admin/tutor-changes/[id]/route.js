@@ -219,7 +219,7 @@ export const PATCH = requireAdmin(async (req, { params }, admin) => {
         to: tutor.email,
         ...changesReviewedTemplate({
           name: tutor.first_name,
-          url: siteUrl("/tutor/profile"),
+          url: siteUrl("/portal/profile"),
           approved: result.approved,
           rejected: result.rejected,
         }),
