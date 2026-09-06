@@ -1,0 +1,4412 @@
+{
+ "unmatchedAreas": [
+  [
+   "english",
+   4
+  ],
+  [
+   "near by areas",
+   4
+  ],
+  [
+   "north",
+   3
+  ],
+  [
+   "near by me",
+   3
+  ],
+  [
+   "north west",
+   3
+  ],
+  [
+   "commerce",
+   2
+  ],
+  [
+   "around",
+   2
+  ],
+  [
+   "near by area",
+   2
+  ],
+  [
+   "hindi",
+   2
+  ],
+  [
+   "nearby my location",
+   2
+  ],
+  [
+   "near by of this places",
+   2
+  ],
+  [
+   "camp",
+   2
+  ],
+  [
+   "surrounding",
+   2
+  ],
+  [
+   "nearby places",
+   2
+  ],
+  [
+   "maths",
+   2
+  ],
+  [
+   "ranhola",
+   1
+  ],
+  [
+   "keshopur",
+   1
+  ],
+  [
+   "mukharjinagar",
+   1
+  ],
+  [
+   "bhai parmanand colony",
+   1
+  ],
+  [
+   "radio colony",
+   1
+  ],
+  [
+   "madel town 1st",
+   1
+  ],
+  [
+   "sukurpur",
+   1
+  ],
+  [
+   "devli",
+   1
+  ],
+  [
+   "banarasi das estate",
+   1
+  ],
+  [
+   "near saini niwas gour college",
+   1
+  ],
+  [
+   "or online",
+   1
+  ],
+  [
+   "gk 2",
+   1
+  ],
+  [
+   "gk 1",
+   1
+  ],
+  [
+   "tajpur",
+   1
+  ],
+  [
+   "rajpur",
+   1
+  ],
+  [
+   "vinobapuri",
+   1
+  ],
+  [
+   "ashram",
+   1
+  ],
+  [
+   "dilli haat.",
+   1
+  ],
+  [
+   "shahadra",
+   1
+  ],
+  [
+   "mausam vihar",
+   1
+  ],
+  [
+   "radhe shyam",
+   1
+  ],
+  [
+   "dilshad colny",
+   1
+  ],
+  [
+   "panchsheel vihar",
+   1
+  ],
+  [
+   "south ex part 1",
+   1
+  ],
+  [
+   "bank vihar",
+   1
+  ],
+  [
+   "chadarlok",
+   1
+  ],
+  [
+   "bageshwar",
+   1
+  ],
+  [
+   "karolbag",
+   1
+  ],
+  [
+   "near by raha park or shreenagar",
+   1
+  ],
+  [
+   "maharani bagh",
+   1
+  ],
+  [
+   "balurghat",
+   1
+  ],
+  [
+   "jwalahari",
+   1
+  ],
+  [
+   "krishan kunj",
+   1
+  ],
+  [
+   "near metro route",
+   1
+  ],
+  [
+   "haldwani",
+   1
+  ],
+  [
+   "jeewan jyoti apartment",
+   1
+  ],
+  [
+   "sidhartha apartment",
+   1
+  ],
+  [
+   "rampura",
+   1
+  ],
+  [
+   "arekere gate",
+   1
+  ],
+  [
+   "billlehakhali",
+   1
+  ],
+  [
+   "jp nagar",
+   1
+  ],
+  [
+   "hulimavu",
+   1
+  ],
+  [
+   "akshay nagar",
+   1
+  ],
+  [
+   "srinagar gali",
+   1
+  ],
+  [
+   "siddharth vihar",
+   1
+  ],
+  [
+   "pratap vihar",
+   1
+  ],
+  [
+   "kadkaduma",
+   1
+  ],
+  [
+   "kailash hill",
+   1
+  ],
+  [
+   "areas that are near my location",
+   1
+  ],
+  [
+   "4- 5 metro station from patelnagar",
+   1
+  ],
+  [
+   "jhulelal etc",
+   1
+  ],
+  [
+   "within 3km to my address",
+   1
+  ],
+  [
+   "samaipur",
+   1
+  ],
+  [
+   "swaroop nagar",
+   1
+  ],
+  [
+   "with in 4 km",
+   1
+  ],
+  [
+   "khadda colony",
+   1
+  ],
+  [
+   "anywhere within 15kms from my location",
+   1
+  ],
+  [
+   "near mianwali nagar",
+   1
+  ],
+  [
+   "about 5 to 6 km nearby ranibagh",
+   1
+  ],
+  [
+   "surrounding areas",
+   1
+  ],
+  [
+   "et cetera",
+   1
+  ],
+  [
+   "within 1 or 2 km",
+   1
+  ],
+  [
+   "rajiv nagar boring road",
+   1
+  ],
+  [
+   "near by shalimar",
+   1
+  ],
+  [
+   "all pockets",
+   1
+  ],
+  [
+   "within 4 km from ranibagh",
+   1
+  ],
+  [
+   "uyna",
+   1
+  ],
+  [
+   "barakhamba road",
+   1
+  ],
+  [
+   "nearby locations",
+   1
+  ],
+  [
+   "sitapur",
+   1
+  ],
+  [
+   "chandar nagar gzb",
+   1
+  ],
+  [
+   "mansarovar park",
+   1
+  ],
+  [
+   "hardevpuri",
+   1
+  ],
+  [
+   "balbir nagar",
+   1
+  ],
+  [
+   "nearby a2",
+   1
+  ],
+  [
+   "south ex",
+   1
+  ],
+  [
+   "indrapuram vasundhra",
+   1
+  ],
+  [
+   "gtb metro station",
+   1
+  ],
+  [
+   "political science",
+   1
+  ],
+  [
+   "history",
+   1
+  ],
+  [
+   "psychology",
+   1
+  ],
+  [
+   "economics",
+   1
+  ],
+  [
+   "geography",
+   1
+  ],
+  [
+   "social sciences",
+   1
+  ],
+  [
+   "nursery",
+   1
+  ],
+  [
+   "1st",
+   1
+  ],
+  [
+   "near chandani chowk",
+   1
+  ],
+  [
+   "madhuvihar",
+   1
+  ],
+  [
+   "anywhere online mode via zoom",
+   1
+  ],
+  [
+   "nearest to me",
+   1
+  ],
+  [
+   "the student should come to my residence.",
+   1
+  ],
+  [
+   "m2k or any nearby location",
+   1
+  ],
+  [
+   "mansa ram park",
+   1
+  ],
+  [
+   "sainik nagar",
+   1
+  ],
+  [
+   "other nearby locations",
+   1
+  ],
+  [
+   "mp qu",
+   1
+  ],
+  [
+   "ap etc",
+   1
+  ],
+  [
+   "netaji subhas place",
+   1
+  ],
+  [
+   "anywhere within 10km radius.",
+   1
+  ],
+  [
+   "tagore park",
+   1
+  ],
+  [
+   "autram lane",
+   1
+  ],
+  [
+   "jeevan park",
+   1
+  ],
+  [
+   "paramount",
+   1
+  ],
+  [
+   "omicron",
+   1
+  ],
+  [
+   "p.bagh",
+   1
+  ],
+  [
+   "in all area where is metro",
+   1
+  ],
+  [
+   "near du north campus",
+   1
+  ],
+  [
+   "5km radiou",
+   1
+  ],
+  [
+   "i can take online classes",
+   1
+  ],
+  [
+   "anywhere within 10kms from andheri east",
+   1
+  ],
+  [
+   "math",
+   1
+  ],
+  [
+   "spoken classes",
+   1
+  ],
+  [
+   "competitive exams",
+   1
+  ],
+  [
+   "maharan pratap",
+   1
+  ],
+  [
+   "lotus enclave",
+   1
+  ],
+  [
+   "kanjhawal",
+   1
+  ],
+  [
+   "secter 45",
+   1
+  ],
+  [
+   "pashim vihar gh 12",
+   1
+  ],
+  [
+   "mianwali",
+   1
+  ],
+  [
+   "peera ghari",
+   1
+  ],
+  [
+   "sunder vihar",
+   1
+  ],
+  [
+   "rama vihar",
+   1
+  ],
+  [
+   "north avenue",
+   1
+  ],
+  [
+   "near rashtrapati bhawan",
+   1
+  ],
+  [
+   "statistics",
+   1
+  ],
+  [
+   "macroeconomics",
+   1
+  ],
+  [
+   "others",
+   1
+  ],
+  [
+   "around my location upto 8-10 km",
+   1
+  ],
+  [
+   "farukh nagar",
+   1
+  ],
+  [
+   "under 10 km",
+   1
+  ],
+  [
+   "gtbngara",
+   1
+  ],
+  [
+   "mukhar teenager",
+   1
+  ],
+  [
+   "ro ok nagaraj",
+   1
+  ],
+  [
+   "centre",
+   1
+  ],
+  [
+   "area near by me",
+   1
+  ],
+  [
+   "near vishram chowk",
+   1
+  ],
+  [
+   "near by 5km of mukharjee nagar",
+   1
+  ],
+  [
+   "mandawali",
+   1
+  ],
+  [
+   "katwaria sarai",
+   1
+  ],
+  [
+   "sukhbir nagar",
+   1
+  ],
+  [
+   "govind nagar kanpur",
+   1
+  ],
+  [
+   "vikas marg ip extension lajpatnagar nearby",
+   1
+  ],
+  [
+   "other areas also",
+   1
+  ],
+  [
+   "near 10 km of my permenant address",
+   1
+  ],
+  [
+   "chuna mandi",
+   1
+  ],
+  [
+   "radius of 20 km",
+   1
+  ],
+  [
+   "near my location",
+   1
+  ],
+  [
+   "old gupta",
+   1
+  ],
+  [
+   "new gupta",
+   1
+  ],
+  [
+   "15 km range",
+   1
+  ],
+  [
+   "its nearby areas",
+   1
+  ],
+  [
+   "sukhdev vihar",
+   1
+  ],
+  [
+   "holi family",
+   1
+  ],
+  [
+   "abul fazal enclave",
+   1
+  ],
+  [
+   "new friends colony",
+   1
+  ],
+  [
+   "batla house",
+   1
+  ],
+  [
+   "johri farm",
+   1
+  ],
+  [
+   "shaheen bagh",
+   1
+  ],
+  [
+   "rajeev nagar",
+   1
+  ],
+  [
+   "many more",
+   1
+  ],
+  [
+   "school students",
+   1
+  ],
+  [
+   "cc colony",
+   1
+  ],
+  [
+   "rana pratap bagh",
+   1
+  ],
+  [
+   "rajpura",
+   1
+  ],
+  [
+   "near house",
+   1
+  ],
+  [
+   "sudarshan park",
+   1
+  ],
+  [
+   "majnu ka tilla",
+   1
+  ],
+  [
+   "shahbad daulatpur",
+   1
+  ],
+  [
+   "any area where i can reach within 1 hours from my residence",
+   1
+  ],
+  [
+   "crossing republik gaziyabad",
+   1
+  ],
+  [
+   "siadulazab",
+   1
+  ],
+  [
+   "nearest",
+   1
+  ],
+  [
+   "shadhara",
+   1
+  ],
+  [
+   "budvihar",
+   1
+  ],
+  [
+   "varanasi",
+   1
+  ],
+  [
+   "saiyyad gao",
+   1
+  ],
+  [
+   "jasola",
+   1
+  ],
+  [
+   "rahmatnagar",
+   1
+  ],
+  [
+   "yousufguda",
+   1
+  ],
+  [
+   "kalyan nagar",
+   1
+  ],
+  [
+   "kewal park",
+   1
+  ],
+  [
+   "majlis park",
+   1
+  ],
+  [
+   "shiv nagar to bharati college",
+   1
+  ],
+  [
+   "to 7",
+   1
+  ],
+  [
+   "my location 1km approx",
+   1
+  ],
+  [
+   "near to ranibagh",
+   1
+  ],
+  [
+   "areas nearby to lakshmi nagar",
+   1
+  ],
+  [
+   "chawri bazar",
+   1
+  ],
+  [
+   "chandani chowk",
+   1
+  ],
+  [
+   "nangal raya",
+   1
+  ],
+  [
+   "maya enclave",
+   1
+  ],
+  [
+   "mangla puri",
+   1
+  ],
+  [
+   "vishu garden",
+   1
+  ],
+  [
+   "under the 6 to 7 km from my home",
+   1
+  ],
+  [
+   "lawrence road",
+   1
+  ],
+  [
+   "kishangarh",
+   1
+  ],
+  [
+   "masoodpur",
+   1
+  ],
+  [
+   "nodia (61",
+   1
+  ],
+  [
+   "70 50",
+   1
+  ],
+  [
+   "15) east dehli ( ip extension",
+   1
+  ],
+  [
+   "nodia (sectors 61",
+   1
+  ],
+  [
+   "15)",
+   1
+  ],
+  [
+   "karkarduma ip extension",
+   1
+  ],
+  [
+   "shalimaar",
+   1
+  ],
+  [
+   "saharsa bihar",
+   1
+  ],
+  [
+   "mukundpur part -2",
+   1
+  ],
+  [
+   "any place",
+   1
+  ],
+  [
+   "nearby possible",
+   1
+  ],
+  [
+   "within 7 kms",
+   1
+  ],
+  [
+   "near gtb metro station",
+   1
+  ],
+  [
+   "fhvhb",
+   1
+  ],
+  [
+   "anywhere if classes are online",
+   1
+  ],
+  [
+   "science chemistry",
+   1
+  ],
+  [
+   "under 5 kilometres from my area",
+   1
+  ],
+  [
+   "radius 10 km",
+   1
+  ],
+  [
+   "vishwadilaya",
+   1
+  ],
+  [
+   "near city park",
+   1
+  ],
+  [
+   "gopal mandir",
+   1
+  ],
+  [
+   "near 110034",
+   1
+  ],
+  [
+   "one or two km away from my house",
+   1
+  ],
+  [
+   "anywhere near by metro",
+   1
+  ],
+  [
+   "in 7km radius",
+   1
+  ],
+  [
+   "autrum lane",
+   1
+  ],
+  [
+   "mukharji nagar",
+   1
+  ],
+  [
+   "preetam pura",
+   1
+  ],
+  [
+   "bhera enclave",
+   1
+  ],
+  [
+   "near pockets of",
+   1
+  ],
+  [
+   "within 8 km from my address",
+   1
+  ],
+  [
+   "near birubari",
+   1
+  ],
+  [
+   "guwahati",
+   1
+  ],
+  [
+   "any area nearby residence",
+   1
+  ],
+  [
+   "more near places",
+   1
+  ],
+  [
+   "tigri",
+   1
+  ],
+  [
+   "tuglakabad",
+   1
+  ],
+  [
+   "jivan park",
+   1
+  ],
+  [
+   "5 kms",
+   1
+  ],
+  [
+   "deep vihar",
+   1
+  ],
+  [
+   "33)",
+   1
+  ],
+  [
+   "ph - 2",
+   1
+  ],
+  [
+   "location near to this place max 3 km radius",
+   1
+  ],
+  [
+   "nearest area.",
+   1
+  ],
+  [
+   "online preferrable",
+   1
+  ],
+  [
+   "visvidhalya",
+   1
+  ],
+  [
+   "as par convenience",
+   1
+  ],
+  [
+   "vishakapatnam any where",
+   1
+  ],
+  [
+   "north-west",
+   1
+  ],
+  [
+   "other nearby",
+   1
+  ],
+  [
+   "okhalaphase 1 kalakaji",
+   1
+  ],
+  [
+   "anywhere online",
+   1
+  ],
+  [
+   "race course",
+   1
+  ],
+  [
+   "baadli",
+   1
+  ],
+  [
+   "5 km around psschim vihar",
+   1
+  ],
+  [
+   "in the radius of 7-8km",
+   1
+  ],
+  [
+   "online classes",
+   1
+  ],
+  [
+   "with in 3kms",
+   1
+  ],
+  [
+   "srinagar gali no. 1",
+   1
+  ],
+  [
+   "shalimar village",
+   1
+  ],
+  [
+   "badli",
+   1
+  ],
+  [
+   "sahipur",
+   1
+  ],
+  [
+   "satya niketan",
+   1
+  ],
+  [
+   "raja pur",
+   1
+  ],
+  [
+   "science english french hindi mathematics social sciences",
+   1
+  ],
+  [
+   "science",
+   1
+  ],
+  [
+   "french",
+   1
+  ],
+  [
+   "social science",
+   1
+  ],
+  [
+   "arts",
+   1
+  ],
+  [
+   "10 kilometer",
+   1
+  ],
+  [
+   "mandoli",
+   1
+  ],
+  [
+   "bank colony",
+   1
+  ],
+  [
+   "vivekanand puri",
+   1
+  ],
+  [
+   "krishan ganj",
+   1
+  ],
+  [
+   "jor bagh etc",
+   1
+  ],
+  [
+   "kailash enclave",
+   1
+  ],
+  [
+   "south extension part-1",
+   1
+  ],
+  [
+   "bapnagar near",
+   1
+  ],
+  [
+   "with in a radius of 7 km",
+   1
+  ],
+  [
+   "with in a radius of 4km",
+   1
+  ],
+  [
+   "as preference",
+   1
+  ],
+  [
+   "possible",
+   1
+  ],
+  [
+   "vishram chowk",
+   1
+  ],
+  [
+   "kapashera",
+   1
+  ],
+  [
+   "gupta colony.hudson line",
+   1
+  ],
+  [
+   "around 5 km or above",
+   1
+  ],
+  [
+   "ranapratab bagh",
+   1
+  ],
+  [
+   "azad market",
+   1
+  ],
+  [
+   "gupta colony ghantaghar",
+   1
+  ],
+  [
+   "nearer to these",
+   1
+  ],
+  [
+   "aligarh",
+   1
+  ],
+  [
+   "mange ram park",
+   1
+  ],
+  [
+   "pritampura krala",
+   1
+  ],
+  [
+   "anywhere around 3 kilometres range of my location",
+   1
+  ]
+ ],
+ "customSubjects": [
+  [
+   "sociology",
+   10
+  ],
+  [
+   "economic",
+   5
+  ],
+  [
+   "reasoning",
+   5
+  ],
+  [
+   "punjabi",
+   5
+  ],
+  [
+   "b.st",
+   3
+  ],
+  [
+   "xii",
+   3
+  ],
+  [
+   "arts",
+   3
+  ],
+  [
+   "#039",
+   2
+  ],
+  [
+   "all subjects upto 10th",
+   2
+  ],
+  [
+   "java",
+   2
+  ],
+  [
+   "ved path in dav",
+   2
+  ],
+  [
+   "taxation",
+   2
+  ],
+  [
+   "law",
+   2
+  ],
+  [
+   "legal studies",
+   2
+  ],
+  [
+   "any subject",
+   2
+  ],
+  [
+   "all subjects upto 8th",
+   2
+  ],
+  [
+   "financial management",
+   2
+  ],
+  [
+   "all subjects upto 7th",
+   2
+  ],
+  [
+   "quantitative aptitude",
+   2
+  ],
+  [
+   "pcm",
+   2
+  ],
+  [
+   "all subjects upto 10",
+   2
+  ],
+  [
+   "any subject 1st to 5th",
+   2
+  ],
+  [
+   "general knowledge",
+   2
+  ],
+  [
+   "grammar",
+   2
+  ],
+  [
+   "e.v.s",
+   2
+  ],
+  [
+   "g.k",
+   2
+  ],
+  [
+   "s.s.t",
+   2
+  ],
+  [
+   "s subjects",
+   1
+  ],
+  [
+   "neet)",
+   1
+  ],
+  [
+   "pcm only for 11",
+   1
+  ],
+  [
+   "along with html",
+   1
+  ],
+  [
+   "css",
+   1
+  ],
+  [
+   "javascript",
+   1
+  ],
+  [
+   "react j.s",
+   1
+  ],
+  [
+   "node j.s",
+   1
+  ],
+  [
+   "mongodb",
+   1
+  ],
+  [
+   "mysql",
+   1
+  ],
+  [
+   "pandas",
+   1
+  ],
+  [
+   "till 5 all subjects",
+   1
+  ],
+  [
+   "dance",
+   1
+  ],
+  [
+   "zumba",
+   1
+  ],
+  [
+   "except language subjects",
+   1
+  ],
+  [
+   "all for grades 1-5",
+   1
+  ],
+  [
+   "programming languages",
+   1
+  ],
+  [
+   "nil",
+   1
+  ],
+  [
+   "all 5 main subjects",
+   1
+  ],
+  [
+   "environmental studies",
+   1
+  ],
+  [
+   "bengali",
+   1
+  ],
+  [
+   "acc",
+   1
+  ],
+  [
+   "b studies",
+   1
+  ],
+  [
+   "costing",
+   1
+  ],
+  [
+   "financial mgt",
+   1
+  ],
+  [
+   "advance financial mgt",
+   1
+  ],
+  [
+   "pcmb",
+   1
+  ],
+  [
+   "hindu",
+   1
+  ],
+  [
+   "artificial intelligence",
+   1
+  ],
+  [
+   "mathes",
+   1
+  ],
+  [
+   "b.st. for 11",
+   1
+  ],
+  [
+   "all 1 to 10th",
+   1
+  ],
+  [
+   "all subjects- 3 to 8",
+   1
+  ],
+  [
+   "nursery-6 (all subjects)",
+   1
+  ],
+  [
+   "environment",
+   1
+  ],
+  [
+   "socialscience",
+   1
+  ],
+  [
+   "all subjects class 6th to 10th",
+   1
+  ],
+  [
+   "all subjects upto 8th then selectively",
+   1
+  ],
+  [
+   "junior class all subjects 9",
+   1
+  ],
+  [
+   "all subject(preprimary) - 8th",
+   1
+  ],
+  [
+   "b.studies",
+   1
+  ],
+  [
+   "already mentioned above",
+   1
+  ],
+  [
+   "msths",
+   1
+  ],
+  [
+   "all except the additional language",
+   1
+  ],
+  [
+   "all subjects for 5-7th",
+   1
+  ],
+  [
+   "all subjects for 8-10",
+   1
+  ],
+  [
+   "nursery to 5 all class subject",
+   1
+  ],
+  [
+   "all subjects for 1st to 6th",
+   1
+  ],
+  [
+   "humanities subjects (all subjects)",
+   1
+  ],
+  [
+   "all subjects for 1 to 10",
+   1
+  ],
+  [
+   "b.st.",
+   1
+  ],
+  [
+   "sankskrit",
+   1
+  ],
+  [
+   "telugu",
+   1
+  ],
+  [
+   "all subjects upto 8th standard",
+   1
+  ],
+  [
+   "yes",
+   1
+  ],
+  [
+   "all subjects upto 10 th",
+   1
+  ],
+  [
+   "neet",
+   1
+  ],
+  [
+   "all subject for 1-9",
+   1
+  ],
+  [
+   "all subjects from 1 to 8",
+   1
+  ],
+  [
+   "vi to viii all",
+   1
+  ],
+  [
+   "xi n xii-humanities",
+   1
+  ],
+  [
+   "java etc.",
+   1
+  ],
+  [
+   "all subjects of 5 to 8",
+   1
+  ],
+  [
+   "ip of 12th",
+   1
+  ],
+  [
+   "scince",
+   1
+  ],
+  [
+   "san5",
+   1
+  ],
+  [
+   "politics",
+   1
+  ],
+  [
+   "enviroment",
+   1
+  ],
+  [
+   "economy",
+   1
+  ],
+  [
+   "etc.",
+   1
+  ],
+  [
+   "ac out",
+   1
+  ],
+  [
+   "bsr",
+   1
+  ],
+  [
+   "all subjects except foreign language",
+   1
+  ],
+  [
+   "xith",
+   1
+  ],
+  [
+   "xiith",
+   1
+  ],
+  [
+   "tax",
+   1
+  ],
+  [
+   "management)",
+   1
+  ],
+  [
+   "pre-nursery to 5",
+   1
+  ],
+  [
+   "all subjects up to 8th",
+   1
+  ],
+  [
+   "all subjects till 4th",
+   1
+  ],
+  [
+   "phys",
+   1
+  ],
+  [
+   "finance",
+   1
+  ],
+  [
+   "cbse board",
+   1
+  ],
+  [
+   "all subjects except third language",
+   1
+  ],
+  [
+   "diploma subject",
+   1
+  ],
+  [
+   "all subjects upto class 8th",
+   1
+  ],
+  [
+   "all subjects upto class 10",
+   1
+  ],
+  [
+   "personality development n all subjects till 6th class",
+   1
+  ],
+  [
+   "gvhh",
+   1
+  ],
+  [
+   "can teach all subjects",
+   1
+  ],
+  [
+   "businesses studies",
+   1
+  ],
+  [
+   "law tax audit",
+   1
+  ],
+  [
+   "every subject",
+   1
+  ],
+  [
+   "every subject to teach",
+   1
+  ],
+  [
+   "abacus",
+   1
+  ],
+  [
+   "sociology (11-12)",
+   1
+  ],
+  [
+   "humanities",
+   1
+  ],
+  [
+   "(beginner level)",
+   1
+  ],
+  [
+   "all subjects upto 8class",
+   1
+  ],
+  [
+   "all subjects except foreign languages",
+   1
+  ],
+  [
+   "his",
+   1
+  ],
+  [
+   "geographypolity",
+   1
+  ],
+  [
+   "til fifth the syllabus",
+   1
+  ],
+  [
+   "sciece",
+   1
+  ],
+  [
+   "etc .",
+   1
+  ],
+  [
+   "all subjects except regional languages",
+   1
+  ],
+  [
+   "all subjects to primary",
+   1
+  ],
+  [
+   "polscience",
+   1
+  ],
+  [
+   "humanity subjects",
+   1
+  ],
+  [
+   "numerical ability",
+   1
+  ],
+  [
+   "guitar",
+   1
+  ],
+  [
+   "vocal",
+   1
+  ],
+  [
+   "xii)",
+   1
+  ],
+  [
+   "all subjects till 5th",
+   1
+  ],
+  [
+   "sat",
+   1
+  ],
+  [
+   "classes-1 to 8(all subjects)",
+   1
+  ],
+  [
+   "classes 11",
+   1
+  ],
+  [
+   "all subjects till 6th",
+   1
+  ],
+  [
+   "arts subject to class 10",
+   1
+  ],
+  [
+   "computers",
+   1
+  ],
+  [
+   "website development",
+   1
+  ],
+  [
+   "computers etc",
+   1
+  ],
+  [
+   "bussiness studies",
+   1
+  ],
+  [
+   "all subjects nursery to 8th",
+   1
+  ],
+  [
+   "gmat",
+   1
+  ],
+  [
+   "all subjects for 4th to 8th",
+   1
+  ],
+  [
+   "music",
+   1
+  ],
+  [
+   "all subject ( 1st to 8th )",
+   1
+  ],
+  [
+   "englush",
+   1
+  ],
+  [
+   "all subjects till 8th",
+   1
+  ],
+  [
+   "theory subjects for 9th",
+   1
+  ],
+  [
+   "theory subjects for 11th",
+   1
+  ],
+  [
+   "phychology",
+   1
+  ],
+  [
+   "sociology etc.",
+   1
+  ],
+  [
+   "all subjects in primary",
+   1
+  ],
+  [
+   "till class 5",
+   1
+  ],
+  [
+   "all subjects ( 1 to 4)",
+   1
+  ],
+  [
+   "humanities subjects",
+   1
+  ]
+ ],
+ "unmatchedQualifications": [
+  [
+   "Graduation",
+   100
+  ],
+  [
+   "Graduate",
+   71
+  ],
+  [
+   "Graduated",
+   20
+  ],
+  [
+   "Masters",
+   12
+  ],
+  [
+   "Pursuing graduation",
+   8
+  ],
+  [
+   "Undergraduate",
+   8
+  ],
+  [
+   "Post graduate",
+   8
+  ],
+  [
+   "Pursuing undergraduation",
+   6
+  ],
+  [
+   "12",
+   5
+  ],
+  [
+   "Masters in English",
+   4
+  ],
+  [
+   "12 pass",
+   4
+  ],
+  [
+   "Pursuing Graduation",
+   3
+  ],
+  [
+   "Post graduation",
+   3
+  ],
+  [
+   "GRADUATION",
+   3
+  ],
+  [
+   "graduation",
+   3
+  ],
+  [
+   "Graduated from Delhi University",
+   3
+  ],
+  [
+   "Persuing graduation",
+   3
+  ],
+  [
+   "Post Graduation",
+   3
+  ],
+  [
+   "English honours",
+   2
+  ],
+  [
+   "Bachelors degree",
+   2
+  ],
+  [
+   "Post Graduate",
+   2
+  ],
+  [
+   "12 passed",
+   2
+  ],
+  [
+   "First year in college",
+   2
+  ],
+  [
+   "Bachelors",
+   2
+  ],
+  [
+   "Master degree",
+   2
+  ],
+  [
+   "Graduation from DU",
+   2
+  ],
+  [
+   "Under Graduate",
+   2
+  ],
+  [
+   "Graduating",
+   2
+  ],
+  [
+   "Graduate from delhi university in physics hons.",
+   2
+  ],
+  [
+   "Persunig graduation",
+   2
+  ],
+  [
+   "Class 12",
+   2
+  ],
+  [
+   "M. Comm",
+   2
+  ],
+  [
+   "Final year of graduation",
+   2
+  ],
+  [
+   "Graduation completed",
+   2
+  ],
+  [
+   "12 With Humanities from Kendriya Vidyalaya",
+   2
+  ],
+  [
+   "Bachelor of technology",
+   2
+  ],
+  [
+   "11pass",
+   2
+  ],
+  [
+   "UG",
+   2
+  ],
+  [
+   "Post Graduate in Sociology",
+   1
+  ],
+  [
+   "MS (AY. OPHTHALMOLOGY) PG SCHOLAR",
+   1
+  ],
+  [
+   "pg",
+   1
+  ],
+  [
+   "graguation",
+   1
+  ],
+  [
+   "Bachelors degree in English",
+   1
+  ],
+  [
+   "Qualified NEET exam",
+   1
+  ],
+  [
+   "Graduation passed",
+   1
+  ],
+  [
+   "post graduation in commerce",
+   1
+  ],
+  [
+   "I have done graduation in french and digital marketing",
+   1
+  ],
+  [
+   "Bcl.com pqss",
+   1
+  ],
+  [
+   "Masters in Pharmaceutical Chemistry",
+   1
+  ],
+  [
+   "Chemistry honours",
+   1
+  ],
+  [
+   "Graduation (Psychology Honours)",
+   1
+  ],
+  [
+   "In college",
+   1
+  ],
+  [
+   "Master&#039;s degree in Mathematics",
+   1
+  ],
+  [
+   "Chartered Accountancy ( inter )",
+   1
+  ],
+  [
+   "DME, Pusa polytechnic",
+   1
+  ],
+  [
+   "Bachelor of science",
+   1
+  ],
+  [
+   "Class -12 pass",
+   1
+  ],
+  [
+   "M.Phill in mathematics",
+   1
+  ],
+  [
+   "Graduation & Post graduation in German language",
+   1
+  ],
+  [
+   "Bachelor of Computer Application",
+   1
+  ],
+  [
+   "B.El.Ed(persuing 3rd yr)",
+   1
+  ],
+  [
+   "Mechanical engineer",
+   1
+  ],
+  [
+   "Bachlour of commerce honours",
+   1
+  ],
+  [
+   "Certified product manager",
+   1
+  ],
+  [
+   "BAMS (DU)",
+   1
+  ],
+  [
+   "Gruadtion in history honours",
+   1
+  ],
+  [
+   "Bachelor of optometry from aiims delhi",
+   1
+  ],
+  [
+   "B-pharmacy",
+   1
+  ],
+  [
+   "College 1st year",
+   1
+  ],
+  [
+   "French B1 level delf exam cleared",
+   1
+  ],
+  [
+   "Currently enrolled in 2nd year undergraduate student",
+   1
+  ],
+  [
+   "Bachelor’s Degree",
+   1
+  ],
+  [
+   "Neet preparation",
+   1
+  ],
+  [
+   "Graduate withPRT",
+   1
+  ],
+  [
+   "Under graduation",
+   1
+  ],
+  [
+   "Bachelor of Arts (Honours) in English",
+   1
+  ],
+  [
+   "Post graduation in history",
+   1
+  ],
+  [
+   "MSE math",
+   1
+  ],
+  [
+   "Bachelor in arts from Delhi University",
+   1
+  ],
+  [
+   "Masters in Political science",
+   1
+  ],
+  [
+   "Pursuing BBALLB",
+   1
+  ],
+  [
+   "Pg in political science , ug ( physics, mathematics, electronics)",
+   1
+  ],
+  [
+   "Preparations for neet",
+   1
+  ],
+  [
+   "B pharm",
+   1
+  ],
+  [
+   "Undergraduation",
+   1
+  ],
+  [
+   "Economics Honours",
+   1
+  ],
+  [
+   "Graduated ( English Honours)",
+   1
+  ],
+  [
+   "Master&#039;s Degree",
+   1
+  ],
+  [
+   "Masters in psychology",
+   1
+  ],
+  [
+   "Doing masters in political science from du",
+   1
+  ],
+  [
+   "Graduation 3rd year",
+   1
+  ],
+  [
+   "1st year psychology",
+   1
+  ],
+  [
+   "Garduate",
+   1
+  ],
+  [
+   "Doing Master&#039;s of Commerce",
+   1
+  ],
+  [
+   "BHMS 3 YEAR STUDENT",
+   1
+  ],
+  [
+   "M.C.A.",
+   1
+  ],
+  [
+   "12thpass preparing for neet exam from last 3 years",
+   1
+  ],
+  [
+   "Masters in Political Science",
+   1
+  ],
+  [
+   "Currently pursuing graduation",
+   1
+  ],
+  [
+   "Graduated and doing pg",
+   1
+  ],
+  [
+   "Masters in political science",
+   1
+  ],
+  [
+   "12 passout",
+   1
+  ],
+  [
+   "Pursuing bachelor’s (2nd year)",
+   1
+  ],
+  [
+   "Bachelor&#039;s in business management",
+   1
+  ],
+  [
+   "Pursuing graduation 3rd year",
+   1
+  ],
+  [
+   "Graduated form pol.sci hons hansraj college",
+   1
+  ],
+  [
+   "PG",
+   1
+  ],
+  [
+   "Post graduate in finance",
+   1
+  ],
+  [
+   "B.pharm",
+   1
+  ],
+  [
+   "BACHELOR IN ENGINEERING",
+   1
+  ],
+  [
+   "post graduate",
+   1
+  ],
+  [
+   "pursuing graduation 2nd year",
+   1
+  ],
+  [
+   "Bachelor of Homeopathic medicine and surgery",
+   1
+  ],
+  [
+   "Bse",
+   1
+  ],
+  [
+   "Graduation in economic honours",
+   1
+  ],
+  [
+   "Pursuing graduation from DU",
+   1
+  ],
+  [
+   "11th",
+   1
+  ],
+  [
+   "COST ACCOUNTANT",
+   1
+  ],
+  [
+   "BACHELOR IN ARTS",
+   1
+  ],
+  [
+   "Post Graduation in Master of Commerce",
+   1
+  ],
+  [
+   "D.el.rd",
+   1
+  ],
+  [
+   "PGDM",
+   1
+  ],
+  [
+   "Engineering Graduate",
+   1
+  ],
+  [
+   "Bachelor of arts",
+   1
+  ],
+  [
+   "Degree",
+   1
+  ],
+  [
+   "School",
+   1
+  ],
+  [
+   "Greduate",
+   1
+  ],
+  [
+   "master in political science",
+   1
+  ],
+  [
+   "10+2",
+   1
+  ],
+  [
+   "Bachelor in journalism and mass communication",
+   1
+  ],
+  [
+   "M",
+   1
+  ],
+  [
+   "Persuing Graduation",
+   1
+  ],
+  [
+   "Master in Mathematics IIT",
+   1
+  ],
+  [
+   "Bechelor of science",
+   1
+  ],
+  [
+   "Graduate In PCM",
+   1
+  ],
+  [
+   "Graduate in maths hons",
+   1
+  ],
+  [
+   "Bachelor of Science (Physics Hons)",
+   1
+  ],
+  [
+   "Medical College (Bachelor of Physiotherapy)",
+   1
+  ],
+  [
+   "Master in Arts",
+   1
+  ],
+  [
+   "Bachelors in Science",
+   1
+  ],
+  [
+   "BAMS",
+   1
+  ],
+  [
+   "Graduate from physics hons",
+   1
+  ],
+  [
+   "Graduation complete",
+   1
+  ],
+  [
+   "PGDBA HR",
+   1
+  ],
+  [
+   "Bachelor&#039;s From Delhi University",
+   1
+  ],
+  [
+   "Graduation in English hons. (2022)",
+   1
+  ],
+  [
+   "Pursuing 2nd year",
+   1
+  ],
+  [
+   "english hons",
+   1
+  ],
+  [
+   "Pursuing Masters",
+   1
+  ],
+  [
+   "second year of graduation",
+   1
+  ],
+  [
+   "bachelor of engineering",
+   1
+  ],
+  [
+   "Graduation and jbt",
+   1
+  ],
+  [
+   "2nd year graduation",
+   1
+  ],
+  [
+   "Done 10 cbse -84% Done 12 cbse - 90% Doing graduation from DU",
+   1
+  ],
+  [
+   "Masters of commerce",
+   1
+  ],
+  [
+   "Masters in mass communication",
+   1
+  ],
+  [
+   "Final year of Psychology Hons.",
+   1
+  ],
+  [
+   "Bachelor of Commerce",
+   1
+  ],
+  [
+   "PURSUING BACHELORS 1 ST YEAR FROM RAMANUJAN COLLEGE ,KALKAJI IN B VOC.SOFTWARE DEVELOPMENT",
+   1
+  ],
+  [
+   "Completed post graduation",
+   1
+  ],
+  [
+   "5.6",
+   1
+  ],
+  [
+   "BAsecond year passed",
+   1
+  ],
+  [
+   "CMA",
+   1
+  ],
+  [
+   "Pursuing BALLB",
+   1
+  ],
+  [
+   "Masters in Economics",
+   1
+  ],
+  [
+   "Graduation in history hons from DU",
+   1
+  ],
+  [
+   "English Honours",
+   1
+  ],
+  [
+   "Completed schooling",
+   1
+  ],
+  [
+   "Master of arts in Political science",
+   1
+  ],
+  [
+   "In 12 class",
+   1
+  ],
+  [
+   "Graduation in maths (persuing)",
+   1
+  ],
+  [
+   "Graduate from Delhi University",
+   1
+  ],
+  [
+   "13",
+   1
+  ],
+  [
+   "undergraduating",
+   1
+  ],
+  [
+   "PursingB.tech",
+   1
+  ],
+  [
+   "Pursuing bachelor in education (final year)",
+   1
+  ],
+  [
+   "Persuading graduation",
+   1
+  ],
+  [
+   "d.ed",
+   1
+  ],
+  [
+   "Junior basic training",
+   1
+  ],
+  [
+   "gradutation",
+   1
+  ],
+  [
+   "Icwa",
+   1
+  ],
+  [
+   "Graduation 3 year",
+   1
+  ],
+  [
+   "Vkhjhjjk",
+   1
+  ],
+  [
+   "Pursuing last year of graduation from Hindu college , Delhi university",
+   1
+  ],
+  [
+   "Pursuing hons",
+   1
+  ],
+  [
+   "12 persuing",
+   1
+  ],
+  [
+   "Graduation and JBT",
+   1
+  ],
+  [
+   "undergraduate",
+   1
+  ],
+  [
+   "Graduation from university of delhi",
+   1
+  ],
+  [
+   "B",
+   1
+  ],
+  [
+   "Bachelors of commerce",
+   1
+  ],
+  [
+   "Master of Science",
+   1
+  ],
+  [
+   "Bpharma",
+   1
+  ],
+  [
+   "Graduate / cat aspirant",
+   1
+  ],
+  [
+   "pursuing graduation",
+   1
+  ],
+  [
+   "Graduate and post graduate appear",
+   1
+  ],
+  [
+   "Masters of Science",
+   1
+  ],
+  [
+   "Pursuing bachelors",
+   1
+  ],
+  [
+   "Master in Computer Applications",
+   1
+  ],
+  [
+   "pursuing graduation (final year)",
+   1
+  ]
+ ],
+ "noClassRows": [
+  {
+   "index": 131,
+   "raw": "Nil"
+  },
+  {
+   "index": 145,
+   "raw": "1to10th"
+  },
+  {
+   "index": 172,
+   "raw": "1to8th"
+  },
+  {
+   "index": 183,
+   "raw": "1to8th class"
+  },
+  {
+   "index": 191,
+   "raw": "East Delhi shahdara"
+  },
+  {
+   "index": 276,
+   "raw": "Yes"
+  },
+  {
+   "index": 278,
+   "raw": "All subjects"
+  },
+  {
+   "index": 296,
+   "raw": "5to10"
+  },
+  {
+   "index": 298,
+   "raw": "5to10"
+  },
+  {
+   "index": 355,
+   "raw": "1to8"
+  },
+  {
+   "index": 384,
+   "raw": "Counseling, psychology"
+  },
+  {
+   "index": 401,
+   "raw": "Junior classes"
+  },
+  {
+   "index": 404,
+   "raw": "Commerce"
+  },
+  {
+   "index": 415,
+   "raw": "High School"
+  },
+  {
+   "index": 445,
+   "raw": "Senior secondary"
+  },
+  {
+   "index": 577,
+   "raw": "From A1 to C2"
+  },
+  {
+   "index": 601,
+   "raw": "A1 and A2 level in french"
+  },
+  {
+   "index": 636,
+   "raw": "Yes"
+  },
+  {
+   "index": 647,
+   "raw": "1to5"
+  },
+  {
+   "index": 744,
+   "raw": "-"
+  },
+  {
+   "index": 810,
+   "raw": "1to6"
+  },
+  {
+   "index": 845,
+   "raw": "Sector 22 rohini and begumpur"
+  },
+  {
+   "index": 848,
+   "raw": "Any grade"
+  },
+  {
+   "index": 853,
+   "raw": "1to5 class"
+  },
+  {
+   "index": 877,
+   "raw": "UPTO CLASSIX"
+  },
+  {
+   "index": 909,
+   "raw": "Any class"
+  },
+  {
+   "index": 927,
+   "raw": "Maths and English"
+  },
+  {
+   "index": 981,
+   "raw": "1to5"
+  },
+  {
+   "index": 988,
+   "raw": "Computers"
+  },
+  {
+   "index": 1069,
+   "raw": "Prep"
+  },
+  {
+   "index": 1089,
+   "raw": "6to12"
+  },
+  {
+   "index": 1183,
+   "raw": "6t010"
+  },
+  {
+   "index": 1221,
+   "raw": "Til fifthh"
+  },
+  {
+   "index": 1271,
+   "raw": "Any class"
+  },
+  {
+   "index": 1287,
+   "raw": "Any age any class"
+  },
+  {
+   "index": 1302,
+   "raw": "Beginners and intermediate"
+  },
+  {
+   "index": 1346,
+   "raw": "Any class"
+  },
+  {
+   "index": 1446,
+   "raw": "home tution"
+  },
+  {
+   "index": 1447,
+   "raw": "Home tuition, Online tuition"
+  },
+  {
+   "index": 1487,
+   "raw": "Up to Graduation"
+  }
+ ],
+ "noAreaRows": [
+  {
+   "index": 3,
+   "raw": "Sec 22,21,and 24"
+  },
+  {
+   "index": 4,
+   "raw": "Any area"
+  },
+  {
+   "index": 13,
+   "raw": "at my place"
+  },
+  {
+   "index": 22,
+   "raw": "Any"
+  },
+  {
+   "index": 36,
+   "raw": "Yes"
+  },
+  {
+   "index": 45,
+   "raw": "Near saini niwas gour college"
+  },
+  {
+   "index": 50,
+   "raw": "All"
+  },
+  {
+   "index": 58,
+   "raw": "Commerce"
+  },
+  {
+   "index": 59,
+   "raw": "Commerce"
+  },
+  {
+   "index": 68,
+   "raw": "At my own home"
+  },
+  {
+   "index": 80,
+   "raw": "Nearby"
+  },
+  {
+   "index": 94,
+   "raw": "Sec1-sec7"
+  },
+  {
+   "index": 122,
+   "raw": "Sector 24, 23"
+  },
+  {
+   "index": 131,
+   "raw": "Nil"
+  },
+  {
+   "index": 137,
+   "raw": "Bageshwar"
+  },
+  {
+   "index": 152,
+   "raw": "Near by raha park or shreenagar"
+  },
+  {
+   "index": 158,
+   "raw": "Balurghat"
+  },
+  {
+   "index": 166,
+   "raw": "English"
+  },
+  {
+   "index": 174,
+   "raw": "Sector-8, sector -9, sector -5, sector -6 and sector -7"
+  },
+  {
+   "index": 186,
+   "raw": "Haldwani"
+  },
+  {
+   "index": 192,
+   "raw": "Near by me"
+  },
+  {
+   "index": 195,
+   "raw": "Arekere gate, billlehakhali , JP Nagar, hulimavu, Akshay Nagar"
+  },
+  {
+   "index": 199,
+   "raw": "Any area"
+  },
+  {
+   "index": 200,
+   "raw": "Any area"
+  },
+  {
+   "index": 205,
+   "raw": "Near Sec24"
+  },
+  {
+   "index": 218,
+   "raw": "Siddharth Vihar and Pratap Vihar"
+  },
+  {
+   "index": 230,
+   "raw": "Sector - 7,8,3"
+  },
+  {
+   "index": 236,
+   "raw": "4- 5 metro station from patelnagar"
+  },
+  {
+   "index": 243,
+   "raw": "Within 3Km to my address"
+  },
+  {
+   "index": 254,
+   "raw": "With in 4 km"
+  },
+  {
+   "index": 262,
+   "raw": "Near me"
+  },
+  {
+   "index": 271,
+   "raw": "Anywhere within 15kms from my location"
+  },
+  {
+   "index": 282,
+   "raw": "About 5 to 6 km nearby Ranibagh"
+  },
+  {
+   "index": 283,
+   "raw": "Yes"
+  },
+  {
+   "index": 303,
+   "raw": "Yes"
+  },
+  {
+   "index": 314,
+   "raw": "Anywhere"
+  },
+  {
+   "index": 317,
+   "raw": "Within 1 or 2 km"
+  },
+  {
+   "index": 326,
+   "raw": "Yes"
+  },
+  {
+   "index": 348,
+   "raw": "Sec 24 ,25"
+  },
+  {
+   "index": 354,
+   "raw": "Rajiv nagar boring road"
+  },
+  {
+   "index": 358,
+   "raw": "Near by Shalimar"
+  },
+  {
+   "index": 399,
+   "raw": "Within 4 km from Ranibagh"
+  },
+  {
+   "index": 415,
+   "raw": "All"
+  },
+  {
+   "index": 416,
+   "raw": "uyna"
+  },
+  {
+   "index": 420,
+   "raw": "Near by me"
+  },
+  {
+   "index": 422,
+   "raw": "Yes"
+  },
+  {
+   "index": 427,
+   "raw": "Sitapur"
+  },
+  {
+   "index": 446,
+   "raw": "Nearby sector 8 a2"
+  },
+  {
+   "index": 456,
+   "raw": "Political Science, History, Psychology, Economics, Geography, Hindi , Social Sciences and English"
+  },
+  {
+   "index": 461,
+   "raw": "Nursery,Kg,1st,"
+  },
+  {
+   "index": 465,
+   "raw": "Sector 11,15, 16,17"
+  },
+  {
+   "index": 490,
+   "raw": "Near chandani chowk"
+  },
+  {
+   "index": 507,
+   "raw": "Madhuvihar"
+  },
+  {
+   "index": 513,
+   "raw": "Anywhere online mode via zoom"
+  },
+  {
+   "index": 520,
+   "raw": "Nearest to me"
+  },
+  {
+   "index": 521,
+   "raw": "The student should come to my residence."
+  },
+  {
+   "index": 549,
+   "raw": "Sector 23 24 25"
+  },
+  {
+   "index": 550,
+   "raw": "Sec 24"
+  },
+  {
+   "index": 558,
+   "raw": "Anywhere within 10Km radius."
+  },
+  {
+   "index": 571,
+   "raw": "ONLINE"
+  },
+  {
+   "index": 598,
+   "raw": "Near me"
+  },
+  {
+   "index": 599,
+   "raw": "Near me"
+  },
+  {
+   "index": 601,
+   "raw": "Near Du north campus"
+  },
+  {
+   "index": 604,
+   "raw": "5km radiou"
+  },
+  {
+   "index": 606,
+   "raw": "I can take online classes"
+  },
+  {
+   "index": 607,
+   "raw": "Anywhere within 10kms from andheri east"
+  },
+  {
+   "index": 613,
+   "raw": "MATH"
+  },
+  {
+   "index": 617,
+   "raw": "Spoken classes, Competitive exams"
+  },
+  {
+   "index": 636,
+   "raw": "Yes"
+  },
+  {
+   "index": 644,
+   "raw": "Secter 45,46,47"
+  },
+  {
+   "index": 647,
+   "raw": "Yes"
+  },
+  {
+   "index": 665,
+   "raw": "Sector 23,24,25"
+  },
+  {
+   "index": 673,
+   "raw": "Statistics and macroeconomics"
+  },
+  {
+   "index": 682,
+   "raw": "3,4,5,6,7,8,9"
+  },
+  {
+   "index": 691,
+   "raw": "Near by"
+  },
+  {
+   "index": 700,
+   "raw": "Under 10 km"
+  },
+  {
+   "index": 708,
+   "raw": "Area near by me"
+  },
+  {
+   "index": 724,
+   "raw": "Nearby my location"
+  },
+  {
+   "index": 725,
+   "raw": "Nearby my location"
+  },
+  {
+   "index": 744,
+   "raw": "-"
+  },
+  {
+   "index": 766,
+   "raw": "Near me"
+  },
+  {
+   "index": 779,
+   "raw": "Govind nagar kanpur"
+  },
+  {
+   "index": 784,
+   "raw": "Vikas marg ip extension lajpatnagar nearby"
+  },
+  {
+   "index": 794,
+   "raw": "Sector 22"
+  },
+  {
+   "index": 800,
+   "raw": "near 10 km of my permenant address"
+  },
+  {
+   "index": 817,
+   "raw": "Radius of 20 km"
+  },
+  {
+   "index": 818,
+   "raw": "Near my location"
+  },
+  {
+   "index": 823,
+   "raw": "15 km range"
+  },
+  {
+   "index": 836,
+   "raw": "School students"
+  },
+  {
+   "index": 845,
+   "raw": "Sector 22"
+  },
+  {
+   "index": 848,
+   "raw": "Na"
+  },
+  {
+   "index": 849,
+   "raw": "Near house"
+  },
+  {
+   "index": 855,
+   "raw": "Shahbad Daulatpur"
+  },
+  {
+   "index": 861,
+   "raw": "Any area where I can reach within 1 hours from my residence"
+  },
+  {
+   "index": 862,
+   "raw": "Sec24"
+  },
+  {
+   "index": 863,
+   "raw": "Sec24"
+  },
+  {
+   "index": 865,
+   "raw": "Sec24"
+  },
+  {
+   "index": 866,
+   "raw": "Crossing republik Gaziyabad"
+  },
+  {
+   "index": 885,
+   "raw": "Shadhara"
+  },
+  {
+   "index": 896,
+   "raw": "Varanasi"
+  },
+  {
+   "index": 929,
+   "raw": "Sec 16 ,11,17,18"
+  },
+  {
+   "index": 940,
+   "raw": "Sec3 to 7"
+  },
+  {
+   "index": 941,
+   "raw": "Sector 24"
+  },
+  {
+   "index": 942,
+   "raw": "Sector 24"
+  },
+  {
+   "index": 943,
+   "raw": "Sector 24"
+  },
+  {
+   "index": 945,
+   "raw": "My location 1km approx"
+  },
+  {
+   "index": 946,
+   "raw": "Near to Ranibagh"
+  },
+  {
+   "index": 951,
+   "raw": "North west"
+  },
+  {
+   "index": 960,
+   "raw": "Areas nearby to Lakshmi Nagar"
+  },
+  {
+   "index": 995,
+   "raw": "Near by me"
+  },
+  {
+   "index": 1002,
+   "raw": "Under the 6 to 7 km from my home"
+  },
+  {
+   "index": 1003,
+   "raw": "Nearby"
+  },
+  {
+   "index": 1009,
+   "raw": "Nearby"
+  },
+  {
+   "index": 1034,
+   "raw": "Mukundpur Part -2"
+  },
+  {
+   "index": 1039,
+   "raw": "Nearby possible"
+  },
+  {
+   "index": 1048,
+   "raw": "Within 7 kms"
+  },
+  {
+   "index": 1052,
+   "raw": "Near GTB metro station"
+  },
+  {
+   "index": 1060,
+   "raw": "Sec 1,2,3,4,5,6,7,8"
+  },
+  {
+   "index": 1062,
+   "raw": "Fhvhb"
+  },
+  {
+   "index": 1067,
+   "raw": "any"
+  },
+  {
+   "index": 1071,
+   "raw": "Sec 4,7,5,9"
+  },
+  {
+   "index": 1072,
+   "raw": "Anywhere if classes are online"
+  },
+  {
+   "index": 1076,
+   "raw": "Science chemistry"
+  },
+  {
+   "index": 1082,
+   "raw": "Under 5 kilometres from my area"
+  },
+  {
+   "index": 1084,
+   "raw": "Online"
+  },
+  {
+   "index": 1120,
+   "raw": "near 110034"
+  },
+  {
+   "index": 1121,
+   "raw": "One or two km away from my house"
+  },
+  {
+   "index": 1127,
+   "raw": "Anywhere near by metro"
+  },
+  {
+   "index": 1134,
+   "raw": "In 7km radius"
+  },
+  {
+   "index": 1145,
+   "raw": "Mukharji nagar"
+  },
+  {
+   "index": 1146,
+   "raw": "Sector 7 , 5, 9, 8,3"
+  },
+  {
+   "index": 1156,
+   "raw": "Sector 21,23,24 ,1 ,2,3,4,5 and near by sector-21"
+  },
+  {
+   "index": 1158,
+   "raw": "Near pockets of sec-24"
+  },
+  {
+   "index": 1159,
+   "raw": "Within 8 km from my address"
+  },
+  {
+   "index": 1163,
+   "raw": "Near birubari, guwahati"
+  },
+  {
+   "index": 1164,
+   "raw": "Any area nearby residence"
+  },
+  {
+   "index": 1176,
+   "raw": "Yes"
+  },
+  {
+   "index": 1187,
+   "raw": "Any"
+  },
+  {
+   "index": 1193,
+   "raw": "ANy where"
+  },
+  {
+   "index": 1201,
+   "raw": "JIVAN PARK"
+  },
+  {
+   "index": 1202,
+   "raw": "5 kms"
+  },
+  {
+   "index": 1220,
+   "raw": "Sec 24"
+  },
+  {
+   "index": 1224,
+   "raw": "Online preferrable"
+  },
+  {
+   "index": 1233,
+   "raw": "Sector-5, 6, 7,11, 13, 15, 16, 17."
+  },
+  {
+   "index": 1248,
+   "raw": "Vishakapatnam any where"
+  },
+  {
+   "index": 1256,
+   "raw": "No"
+  },
+  {
+   "index": 1270,
+   "raw": "Online"
+  },
+  {
+   "index": 1271,
+   "raw": "Any"
+  },
+  {
+   "index": 1272,
+   "raw": "Online"
+  },
+  {
+   "index": 1289,
+   "raw": "Race course"
+  },
+  {
+   "index": 1297,
+   "raw": "No"
+  },
+  {
+   "index": 1298,
+   "raw": "No"
+  },
+  {
+   "index": 1299,
+   "raw": "Sector 5,6,11,24"
+  },
+  {
+   "index": 1302,
+   "raw": "Online"
+  },
+  {
+   "index": 1306,
+   "raw": "5 km around Psschim Vihar"
+  },
+  {
+   "index": 1307,
+   "raw": "In the radius of 7-8km"
+  },
+  {
+   "index": 1308,
+   "raw": "Online Classes"
+  },
+  {
+   "index": 1332,
+   "raw": "Any area"
+  },
+  {
+   "index": 1336,
+   "raw": "Sec-15,16"
+  },
+  {
+   "index": 1356,
+   "raw": "Science English French Hindi Mathematics Social sciences"
+  },
+  {
+   "index": 1359,
+   "raw": "Science, maths, french, hindi, english, social science"
+  },
+  {
+   "index": 1365,
+   "raw": "Near sector 16"
+  },
+  {
+   "index": 1366,
+   "raw": "Nearby sector3"
+  },
+  {
+   "index": 1368,
+   "raw": "Arts"
+  },
+  {
+   "index": 1376,
+   "raw": "10 kilometer"
+  },
+  {
+   "index": 1382,
+   "raw": "Sector - 13 and Sector - 9"
+  },
+  {
+   "index": 1396,
+   "raw": "Sector 8,9,10,11,13,14,15,16,17,18"
+  },
+  {
+   "index": 1404,
+   "raw": ""
+  },
+  {
+   "index": 1407,
+   "raw": "Bapnagar near"
+  },
+  {
+   "index": 1420,
+   "raw": "With in a radius of 7 km"
+  },
+  {
+   "index": 1421,
+   "raw": "With in a radius of 4km"
+  },
+  {
+   "index": 1427,
+   "raw": "Near me"
+  },
+  {
+   "index": 1429,
+   "raw": "As preference and possible"
+  },
+  {
+   "index": 1430,
+   "raw": "Maths, English"
+  },
+  {
+   "index": 1461,
+   "raw": "Around 5 km or above"
+  },
+  {
+   "index": 1470,
+   "raw": "Sector 3,5,6,7,8,9"
+  },
+  {
+   "index": 1479,
+   "raw": "sector 24"
+  },
+  {
+   "index": 1481,
+   "raw": "Aligarh"
+  },
+  {
+   "index": 1486,
+   "raw": "Pritampura krala"
+  },
+  {
+   "index": 1491,
+   "raw": "Online"
+  },
+  {
+   "index": 1495,
+   "raw": "Anywhere around 3 kilometres range of my location"
+  }
+ ],
+ "duplicateWhatsapp": [
+  [
+   "8586871389",
+   [
+    39,
+    40
+   ]
+  ],
+  [
+   "8700207169",
+   [
+    43,
+    179,
+    752
+   ]
+  ],
+  [
+   "8076552137",
+   [
+    52,
+    967
+   ]
+  ],
+  [
+   "7982940380",
+   [
+    58,
+    59
+   ]
+  ],
+  [
+   "9811515035",
+   [
+    79,
+    91
+   ]
+  ],
+  [
+   "8585972114",
+   [
+    86,
+    674
+   ]
+  ],
+  [
+   "8130707258",
+   [
+    87,
+    88
+   ]
+  ],
+  [
+   "9873280778",
+   [
+    103,
+    178
+   ]
+  ],
+  [
+   "8826587103",
+   [
+    109,
+    308
+   ]
+  ],
+  [
+   "8826573243",
+   [
+    110,
+    469
+   ]
+  ],
+  [
+   "8178856387",
+   [
+    111,
+    198
+   ]
+  ],
+  [
+   "8447679212",
+   [
+    116,
+    389,
+    393
+   ]
+  ],
+  [
+   "9560473644",
+   [
+    118,
+    728
+   ]
+  ],
+  [
+   "8595710702",
+   [
+    129,
+    130
+   ]
+  ],
+  [
+   "9870268368",
+   [
+    154,
+    505
+   ]
+  ],
+  [
+   "8700588254",
+   [
+    173,
+    414
+   ]
+  ],
+  [
+   "8383913679",
+   [
+    188,
+    205
+   ]
+  ],
+  [
+   "8882780930",
+   [
+    193,
+    237
+   ]
+  ],
+  [
+   "6376952049",
+   [
+    200,
+    202
+   ]
+  ],
+  [
+   "7011300713",
+   [
+    206,
+    208,
+    209
+   ]
+  ],
+  [
+   "9716355718",
+   [
+    210,
+    496
+   ]
+  ],
+  [
+   "9210635483",
+   [
+    223,
+    224
+   ]
+  ],
+  [
+   "8920607363",
+   [
+    227,
+    228
+   ]
+  ],
+  [
+   "8377855192",
+   [
+    244,
+    245
+   ]
+  ],
+  [
+   "8595964710",
+   [
+    246,
+    520
+   ]
+  ],
+  [
+   "8851127381",
+   [
+    256,
+    257,
+    290,
+    304
+   ]
+  ],
+  [
+   "8766306619",
+   [
+    259,
+    260
+   ]
+  ],
+  [
+   "9306814225",
+   [
+    264,
+    265
+   ]
+  ],
+  [
+   "9117425894",
+   [
+    273,
+    659,
+    664
+   ]
+  ],
+  [
+   "9891716552",
+   [
+    296,
+    298
+   ]
+  ],
+  [
+   "9153599807",
+   [
+    309,
+    316,
+    325
+   ]
+  ],
+  [
+   "9319618301",
+   [
+    332,
+    334
+   ]
+  ],
+  [
+   "9211034356",
+   [
+    338,
+    340,
+    341,
+    342,
+    343
+   ]
+  ],
+  [
+   "8700619310",
+   [
+    348,
+    352
+   ]
+  ],
+  [
+   "8810487489",
+   [
+    385,
+    394
+   ]
+  ],
+  [
+   "9811529991",
+   [
+    390,
+    391
+   ]
+  ],
+  [
+   "9971470809",
+   [
+    402,
+    403
+   ]
+  ],
+  [
+   "8595817683",
+   [
+    407,
+    419,
+    432
+   ]
+  ],
+  [
+   "9305061491",
+   [
+    411,
+    460
+   ]
+  ],
+  [
+   "7800641167",
+   [
+    428,
+    429
+   ]
+  ],
+  [
+   "9868087112",
+   [
+    430,
+    431,
+    433
+   ]
+  ],
+  [
+   "9452877943",
+   [
+    447,
+    493,
+    958,
+    1042
+   ]
+  ],
+  [
+   "9999473512",
+   [
+    459,
+    461
+   ]
+  ],
+  [
+   "9811820735",
+   [
+    463,
+    464
+   ]
+  ],
+  [
+   "9818223469",
+   [
+    489,
+    1107
+   ]
+  ],
+  [
+   "8130937367",
+   [
+    532,
+    879
+   ]
+  ],
+  [
+   "9717839925",
+   [
+    544,
+    697
+   ]
+  ],
+  [
+   "7309506188",
+   [
+    548,
+    698
+   ]
+  ],
+  [
+   "6394804421",
+   [
+    563,
+    738
+   ]
+  ],
+  [
+   "6393201139",
+   [
+    570,
+    713
+   ]
+  ],
+  [
+   "8789114262",
+   [
+    571,
+    1015
+   ]
+  ],
+  [
+   "9871912008",
+   [
+    583,
+    739,
+    784
+   ]
+  ],
+  [
+   "9319460601",
+   [
+    585,
+    712
+   ]
+  ],
+  [
+   "8968700170",
+   [
+    586,
+    1260
+   ]
+  ],
+  [
+   "8851857768",
+   [
+    598,
+    599
+   ]
+  ],
+  [
+   "9773529469",
+   [
+    611,
+    612
+   ]
+  ],
+  [
+   "7985424621",
+   [
+    618,
+    619
+   ]
+  ],
+  [
+   "9873442500",
+   [
+    651,
+    661
+   ]
+  ],
+  [
+   "8750239081",
+   [
+    653,
+    729
+   ]
+  ],
+  [
+   "8178100911",
+   [
+    654,
+    655
+   ]
+  ],
+  [
+   "9671739040",
+   [
+    657,
+    658
+   ]
+  ],
+  [
+   "9711469791",
+   [
+    684,
+    702
+   ]
+  ],
+  [
+   "8002052703",
+   [
+    694,
+    753
+   ]
+  ],
+  [
+   "9009122334",
+   [
+    724,
+    725
+   ]
+  ],
+  [
+   "8750719639",
+   [
+    751,
+    770
+   ]
+  ],
+  [
+   "9973447290",
+   [
+    771,
+    1407
+   ]
+  ],
+  [
+   "9891612787",
+   [
+    777,
+    778
+   ]
+  ],
+  [
+   "9540468901",
+   [
+    791,
+    793
+   ]
+  ],
+  [
+   "7838548576",
+   [
+    794,
+    845
+   ]
+  ],
+  [
+   "8287859128",
+   [
+    799,
+    803
+   ]
+  ],
+  [
+   "8920198953",
+   [
+    821,
+    937
+   ]
+  ],
+  [
+   "8882150016",
+   [
+    829,
+    888
+   ]
+  ],
+  [
+   "7296054489",
+   [
+    837,
+    838
+   ]
+  ],
+  [
+   "9654322958",
+   [
+    862,
+    863,
+    865
+   ]
+  ],
+  [
+   "9369791086",
+   [
+    875,
+    876
+   ]
+  ],
+  [
+   "8447621534",
+   [
+    886,
+    1364
+   ]
+  ],
+  [
+   "8076449299",
+   [
+    897,
+    904
+   ]
+  ],
+  [
+   "9911700607",
+   [
+    924,
+    925
+   ]
+  ],
+  [
+   "9919003312",
+   [
+    930,
+    931
+   ]
+  ],
+  [
+   "8210518813",
+   [
+    936,
+    1035
+   ]
+  ],
+  [
+   "7042207577",
+   [
+    941,
+    942,
+    943
+   ]
+  ],
+  [
+   "9811638536",
+   [
+    950,
+    951
+   ]
+  ],
+  [
+   "9315091163",
+   [
+    952,
+    953,
+    954
+   ]
+  ],
+  [
+   "9582845009",
+   [
+    976,
+    980
+   ]
+  ],
+  [
+   "9315040496",
+   [
+    978,
+    986
+   ]
+  ],
+  [
+   "9310002797",
+   [
+    991,
+    992
+   ]
+  ],
+  [
+   "9996376170",
+   [
+    997,
+    1005
+   ]
+  ],
+  [
+   "9350364643",
+   [
+    1016,
+    1017
+   ]
+  ],
+  [
+   "9718894652",
+   [
+    1025,
+    1026
+   ]
+  ],
+  [
+   "9818775205",
+   [
+    1027,
+    1041
+   ]
+  ],
+  [
+   "9891089376",
+   [
+    1028,
+    1061
+   ]
+  ],
+  [
+   "9811730490",
+   [
+    1045,
+    1290
+   ]
+  ],
+  [
+   "9717613835",
+   [
+    1060,
+    1063
+   ]
+  ],
+  [
+   "9310267266",
+   [
+    1074,
+    1083
+   ]
+  ],
+  [
+   "9773673414",
+   [
+    1077,
+    1119
+   ]
+  ],
+  [
+   "7827481640",
+   [
+    1096,
+    1137
+   ]
+  ],
+  [
+   "8920378658",
+   [
+    1105,
+    1120
+   ]
+  ],
+  [
+   "9873116865",
+   [
+    1117,
+    1327
+   ]
+  ],
+  [
+   "9661694397",
+   [
+    1136,
+    1138
+   ]
+  ],
+  [
+   "9899843407",
+   [
+    1149,
+    1180
+   ]
+  ],
+  [
+   "8587010368",
+   [
+    1169,
+    1184
+   ]
+  ],
+  [
+   "7493831654",
+   [
+    1170,
+    1188
+   ]
+  ],
+  [
+   "9598158885",
+   [
+    1175,
+    1178
+   ]
+  ],
+  [
+   "9311391315",
+   [
+    1209,
+    1453
+   ]
+  ],
+  [
+   "7985554724",
+   [
+    1215,
+    1281
+   ]
+  ],
+  [
+   "8100183104",
+   [
+    1218,
+    1429
+   ]
+  ],
+  [
+   "9818962113",
+   [
+    1223,
+    1225
+   ]
+  ],
+  [
+   "9675114310",
+   [
+    1234,
+    1284
+   ]
+  ],
+  [
+   "9759839386",
+   [
+    1279,
+    1292
+   ]
+  ],
+  [
+   "7988526814",
+   [
+    1297,
+    1298
+   ]
+  ],
+  [
+   "8979991237",
+   [
+    1335,
+    1339
+   ]
+  ],
+  [
+   "7042208555",
+   [
+    1356,
+    1359
+   ]
+  ],
+  [
+   "9899046223",
+   [
+    1391,
+    1438
+   ]
+  ],
+  [
+   "8700464271",
+   [
+    1408,
+    1410
+   ]
+  ],
+  [
+   "9315440600",
+   [
+    1411,
+    1452
+   ]
+  ],
+  [
+   "9718855710",
+   [
+    1456,
+    1459
+   ]
+  ]
+ ]
+}

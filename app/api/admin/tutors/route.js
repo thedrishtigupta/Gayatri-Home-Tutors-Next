@@ -1,17 +1,14 @@
-// app/api/admin/tutors/route.js — tutor listing + filtering
+// app/api/admin/tutors/route.js — v3 tutor listing + filtering
 
 import { NextResponse } from "next/server";
 import { query } from "@/lib/db";
 import { requireAdmin } from "@/lib/adminAuth";
-import { expandFacetAliases, facetKey } from "@/lib/facetNormalizer";
 
-const STATUSES = ["pending", "active", "inactive", "blacklisted"];
+const STATUSES = ["active", "inactive", "blacklisted"];
 const GENDERS = ["Male", "Female", "Other"];
+const MAX_LIMIT = 100;
+const DEFAULT_LIMIT = 25;
 
-const MAX_LIMIT = 200;
-const DEFAULT_LIMIT = 50;
-
-/** Trim a query param and treat empty strings as "not provided". */
 function param(searchParams, key) {
   const raw = searchParams.get(key);
   if (raw === null) return null;
@@ -19,193 +16,206 @@ function param(searchParams, key) {
   return value === "" ? null : value;
 }
 
-/** Escape LIKE wildcards so a user typing "%" doesn't match everything. */
-function like(value) {
-  return `%${String(value).replace(/[\\%_]/g, (c) => `\\${c}`)}%`;
-}
-
-/**
- * SQL expression that turns a stored free-text comma list into a canonical,
- * punctuation-free, comma-delimited haystack:
- *   "Maths, Physics / Chem-istry" → ",maths,physics,chemistry,"
- */
-function listHaystack(column) {
-  return `CONCAT(',', REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(LOWER(COALESCE(${column}, '')), ' ', ''), '.', ''), '-', ''), '/', ','), ';', ','), ',')`;
-}
-
-function escapeLike(value) {
-  return String(value).replace(/[\\%_]/g, (c) => `\\${c}`);
-}
-
-/** Alias key → needle used against listHaystack(). */
-function needle(aliasKey) {
-  return `%,${escapeLike(aliasKey.replace(/\s+/g, ""))},%`;
-}
-
-/**
- * Alias-aware filter for a comma-list column.
- * Selecting "Mathematics" matches stored "Math", "maths", "MATHEMATICS", ...
- * A loose substring match is kept as a fallback so partially typed or
- * sector-style values ("Rohini" → "Rohini Sector 8") still resolve.
- */
-function facetFilter(column, value, type, { loose = false } = {}) {
-  const aliases = expandFacetAliases(value, type);
-  const clauses = [];
-  const params = [];
-  const haystack = listHaystack(column);
-
-  for (const alias of aliases) {
-    clauses.push(`${haystack} LIKE ?`);
-    params.push(needle(alias));
-  }
-
-  if (loose) {
-    for (const alias of aliases) {
-      clauses.push(`${haystack} LIKE ?`);
-      params.push(`%${escapeLike(alias.replace(/\s+/g, ""))}%`);
-    }
-  }
-
-  if (!clauses.length) return null;
-  return { sql: `(${clauses.join(" OR ")})`, params };
+function parseId(value) {
+  if (value === null) return null;
+  const id = Number.parseInt(value, 10);
+  return Number.isInteger(id) && id > 0 ? id : null;
 }
 
 function parseBool(value) {
   if (value === null) return null;
-  const v = String(value).toLowerCase();
-  if (["1", "true", "yes", "on"].includes(v)) return true;
-  if (["0", "false", "no", "off"].includes(v)) return false;
+  const normalized = String(value).toLowerCase();
+  if (["1", "true", "yes"].includes(normalized)) return 1;
+  if (["0", "false", "no"].includes(normalized)) return 0;
   return null;
 }
 
-function parseIntSafe(value, { min = 0, max = 99 } = {}) {
-  const n = Number.parseInt(String(value), 10);
+function like(value) {
+  return `%${String(value).replace(/[\\%_]/g, (c) => `\\${c}`)}%`;
+}
+
+function parseIntSafe(value, min, max) {
+  const n = Number.parseInt(String(value ?? ""), 10);
   if (!Number.isFinite(n)) return null;
   return Math.min(Math.max(n, min), max);
 }
 
-// GET /api/admin/tutors?subject=maths&area=rohini&status=active&gender=Female
-//                      &minExp=2&class=9th&featured=1&search=ravi&page=1&limit=50
+/*
+ * Sort orders, keyed by the `sort` query param. Only these expressions can ever
+ * reach the SQL — the param is looked up, never interpolated.
+ *
+ * Experience is derived from teaching_start_year and runs backwards: the most
+ * experienced tutor has the EARLIEST start year, so "experience desc" is
+ * "teaching_start_year asc". Tutors with no start year sort last either way,
+ * so an unfilled profile never tops the list.
+ */
+const SORTS = {
+  relevance: () => `
+    CASE t.status WHEN 'active' THEN 0 WHEN 'inactive' THEN 1 ELSE 2 END,
+    t.profile_completed DESC,
+    t.verified DESC,
+    t.last_name ASC,
+    t.first_name ASC`,
+
+  experience: (dir) => `
+    t.teaching_start_year IS NULL,
+    t.teaching_start_year ${dir === "asc" ? "DESC" : "ASC"}`,
+
+  name: (dir) => `
+    t.last_name ${dir.toUpperCase()},
+    t.first_name ${dir.toUpperCase()}`,
+
+  created: (dir) => `t.created_at ${dir.toUpperCase()}`,
+  updated: (dir) => `t.updated_at ${dir.toUpperCase()}`,
+};
+
+const SORT_KEYS = Object.keys(SORTS);
+
 export const GET = requireAdmin(async (req) => {
   const p = new URL(req.url).searchParams;
 
-  const subject = param(p, "subject");
-  const area = param(p, "area");
+  const search = param(p, "search");
+  const subjectId = parseId(param(p, "subjectId"));
+  const classId = parseId(param(p, "classId"));
+  const areaId = parseId(param(p, "areaId"));
   const status = param(p, "status");
   const gender = param(p, "gender");
-  const minExp = param(p, "minExp");
-  const maxExp = param(p, "maxExp");
-  const cls = param(p, "class");
-  const search = param(p, "search");
-  const featured = parseBool(param(p, "featured"));
   const verified = parseBool(param(p, "verified"));
+  const profileCompleted = parseBool(param(p, "profileCompleted"));
 
-  const limit = parseIntSafe(param(p, "limit"), { min: 1, max: MAX_LIMIT }) ?? DEFAULT_LIMIT;
-  const page = parseIntSafe(param(p, "page"), { min: 1, max: 100000 }) ?? 1;
+  const limit = parseIntSafe(param(p, "limit"), 1, MAX_LIMIT) ?? DEFAULT_LIMIT;
+  const page = parseIntSafe(param(p, "page"), 1, 100000) ?? 1;
   const offset = (page - 1) * limit;
+
+  const sortKey = SORT_KEYS.includes(param(p, "sort")) ? param(p, "sort") : "relevance";
+  const sortDir = param(p, "dir") === "asc" ? "asc" : "desc";
+  // t.id last so paging is stable when the sort column ties.
+  const orderBy = `${SORTS[sortKey](sortDir)}, t.id DESC`;
 
   const where = ["1=1"];
   const params = [];
 
-  const applyFacet = (column, value, type, opts) => {
-    const f = facetFilter(column, value, type, opts);
-    if (!f) return;
-    where.push(f.sql);
-    params.push(...f.params);
-  };
-
-  // Alias-aware: the selected canonical value expands to every stored variant.
-  if (subject) applyFacet("subjects", subject, "subject", { loose: true });
-  if (area) applyFacet("areas", area, "area", { loose: true });
-  if (cls) applyFacet("classes_taught", cls, "class");
-
-  // Unknown enum values are ignored rather than producing an empty/500 result.
-  if (status && STATUSES.includes(status.toLowerCase())) {
-    where.push("status = ?");
-    params.push(status.toLowerCase());
+  if (search) {
+    const term = like(search);
+    where.push(`(
+      CONCAT_WS(' ', t.first_name, t.last_name) LIKE ?
+      OR t.email LIKE ?
+      OR t.whatsapp LIKE ?
+      OR t.alternate_phone LIKE ?
+      OR EXISTS (
+        SELECT 1
+        FROM tutor_teaching_profiles stp
+        INNER JOIN subjects ss ON ss.id = stp.subject_id
+        WHERE stp.tutor_id = t.id AND ss.name LIKE ?
+      )
+      OR EXISTS (
+        SELECT 1
+        FROM tutor_locations sla
+        INNER JOIN locations sl ON sl.id = sla.location_id
+        WHERE sla.tutor_id = t.id AND sl.name LIKE ?
+      )
+    )`);
+    params.push(term, term, term, term, term, term);
   }
 
-  if (gender) {
-    const match = GENDERS.find((g) => g.toLowerCase() === gender.toLowerCase());
-    if (match) {
-      where.push("gender = ?");
-      params.push(match);
-    }
+  if (subjectId !== null) {
+    where.push(`EXISTS (
+      SELECT 1 FROM tutor_teaching_profiles fsp
+      WHERE fsp.tutor_id = t.id AND fsp.subject_id = ?
+    )`);
+    params.push(subjectId);
   }
 
-  const min = minExp === null ? null : parseIntSafe(minExp);
-  if (min !== null) {
-    where.push("COALESCE(experience_years, 0) >= ?");
-    params.push(min);
+  if (classId !== null) {
+    where.push(`EXISTS (
+      SELECT 1 FROM tutor_teaching_profiles fcp
+      WHERE fcp.tutor_id = t.id AND fcp.class_id = ?
+    )`);
+    params.push(classId);
   }
 
-  const max = maxExp === null ? null : parseIntSafe(maxExp);
-  if (max !== null) {
-    where.push("COALESCE(experience_years, 0) <= ?");
-    params.push(max);
+  if (areaId !== null) {
+    where.push(`EXISTS (
+      SELECT 1 FROM tutor_locations fal
+      WHERE fal.tutor_id = t.id AND fal.location_id = ?
+    )`);
+    params.push(areaId);
   }
 
-  if (featured !== null) {
-    where.push("COALESCE(featured, 0) = ?");
-    params.push(featured ? 1 : 0);
+  if (status && STATUSES.includes(status)) {
+    where.push("t.status = ?");
+    params.push(status);
+  }
+
+  if (gender && GENDERS.includes(gender)) {
+    where.push("t.gender = ?");
+    params.push(gender);
   }
 
   if (verified !== null) {
-    where.push("COALESCE(verified, 0) = ?");
-    params.push(verified ? 1 : 0);
+    where.push("t.verified = ?");
+    params.push(verified);
   }
 
-  if (search) {
-    const term = like(search.toLowerCase());
-    where.push(`(
-      LOWER(COALESCE(first_name, '')) LIKE ?
-      OR LOWER(COALESCE(last_name, '')) LIKE ?
-      OR LOWER(CONCAT(COALESCE(first_name, ''), ' ', COALESCE(last_name, ''))) LIKE ?
-      OR LOWER(COALESCE(subjects, '')) LIKE ?
-      OR LOWER(COALESCE(areas, '')) LIKE ?
-      OR LOWER(COALESCE(email, '')) LIKE ?
-      OR COALESCE(whatsapp, '') LIKE ?
-      OR COALESCE(alt_number, '') LIKE ?
-    )`);
-    params.push(term, term, term, term, term, term, term, term);
-
-    // Alias-aware search: typing "maths" also finds "Mathematics", "XI" finds
-    // "Class 11", "CS" finds "Computer Science" — without touching stored data.
-    const aliasClauses = [];
-    const aliasParams = [];
-    for (const [column, type] of [
-      ["subjects", "subject"],
-      ["areas", "area"],
-      ["classes_taught", "class"],
-    ]) {
-      const f = facetFilter(column, search, type);
-      if (f) {
-        aliasClauses.push(f.sql);
-        aliasParams.push(...f.params);
-      }
-    }
-    if (aliasClauses.length) {
-      const last = where.pop();
-      where.push(`(${last} OR ${aliasClauses.join(" OR ")})`);
-      params.push(...aliasParams);
-    }
+  if (profileCompleted !== null) {
+    where.push("t.profile_completed = ?");
+    params.push(profileCompleted);
   }
 
   const whereSql = where.join(" AND ");
 
   const countRows = await query(
-    `SELECT COUNT(*) AS total FROM tutors WHERE ${whereSql}`,
+    `SELECT COUNT(*) AS total FROM tutors t WHERE ${whereSql}`,
     params
   );
   const total = Number(countRows?.[0]?.total || 0);
 
-  // LIMIT/OFFSET are inlined as validated integers: mysql2's prepared
-  // statement protocol rejects placeholders there under some server configs.
   const rows = await query(
-    `SELECT * FROM tutors
+    `
+      SELECT
+        t.id,
+        t.first_name,
+        t.last_name,
+        t.gender,
+        t.date_of_birth,
+        t.marital_status,
+        t.whatsapp,
+        t.alternate_phone,
+        t.email,
+        t.highest_qualification_id,
+        q.name AS qualification_name,
+        t.specialization_id,
+        sp.name AS specialization_name,
+        t.specialization_other,
+        t.teaching_start_year,
+        CASE
+          WHEN t.teaching_start_year IS NULL THEN NULL
+          ELSE GREATEST(0, YEAR(CURDATE()) - t.teaching_start_year)
+        END AS experience_years,
+        t.teaching_mode,
+        t.status,
+        t.verified,
+        t.profile_completed,
+        t.profile_image,
+        t.last_profile_reviewed_at,
+        t.created_at,
+        t.updated_at,
+        GROUP_CONCAT(DISTINCT s.name ORDER BY s.name SEPARATOR ', ') AS subjects,
+        GROUP_CONCAT(DISTINCT c.name ORDER BY c.sort_order, c.id SEPARATOR ', ') AS classes,
+        GROUP_CONCAT(DISTINCT l.name ORDER BY l.name SEPARATOR ', ') AS areas
+      FROM tutors t
+      LEFT JOIN qualifications q ON q.id = t.highest_qualification_id
+      LEFT JOIN specializations sp ON sp.id = t.specialization_id
+      LEFT JOIN tutor_teaching_profiles ttp ON ttp.tutor_id = t.id
+      LEFT JOIN subjects s ON s.id = ttp.subject_id
+      LEFT JOIN classes c ON c.id = ttp.class_id
+      LEFT JOIN tutor_locations tl ON tl.tutor_id = t.id
+      LEFT JOIN locations l ON l.id = tl.location_id
       WHERE ${whereSql}
-      ORDER BY featured DESC, success_rate DESC, total_classes_accepted DESC, id DESC
-      LIMIT ${limit} OFFSET ${offset}`,
+      GROUP BY t.id
+      ORDER BY ${orderBy}
+      LIMIT ${limit} OFFSET ${offset}
+    `,
     params
   );
 
@@ -215,5 +225,7 @@ export const GET = requireAdmin(async (req) => {
     limit,
     total,
     totalPages: Math.max(1, Math.ceil(total / limit)),
+    sort: sortKey,
+    dir: sortDir,
   });
 });

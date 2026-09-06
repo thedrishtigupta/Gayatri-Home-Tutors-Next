@@ -48,3 +48,13 @@ coverage/
 # Local database files
 *.sqlite
 *.sqlite3
+
+# Database backups — contain personal data (names, phones, addresses)
+backups/
+*.sql.gz
+
+# Raw tutor data exports — personal data (names, phones, emails, addresses)
+database/tutors.json
+database/migration/import-tutors.sql
+database/migration/duplicate-emails.txt
+database/migration/email-merge-plan.*

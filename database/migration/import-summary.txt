@@ -1,0 +1,28 @@
+================================================================
+LEGACY TUTOR IMPORT — SUMMARY
+================================================================
+
+source records            1498
+merged duplicates away    134
+tutors to insert          1364
+
+  status = active         1152  (84.5%)
+  status = inactive       212  (15.5%)
+
+related rows
+  tutor_teaching_profiles 31162
+  tutor_locations         2871
+  tutor_custom_subjects   196
+
+reasons a tutor is inactive (a row can have more than one)
+  no usable phone         15
+  no class parsed         38
+  no subject parsed       21
+  no area parsed          159
+
+reference links resolved
+  highest_qualification_id set  895  (65.6%)
+  specialization_id set         282  (20.7%)
+  (every tutor keeps the original text in tutors.qualification)
+
+SQL written to database/migration/import-tutors.sql (2.10 MB)

@@ -1,35 +1,75 @@
 // app/admin/tutors/page.js
 "use client";
 
+import Link from "next/link";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import AdminSidebar from "@/components/admin/AdminSidebar";
 import { adminJson } from "@/lib/adminFetch";
 import { useDebouncedValue } from "@/lib/useDebouncedValue";
-import { successRateStyle } from "@/lib/statusColors";
 
 const EMPTY_FILTERS = {
   search: "",
-  subject: "",
-  area: "",
+  subjectId: "",
+  classId: "",
+  areaId: "",
   status: "",
   gender: "",
-  minExp: "",
-  class: "",
-  featured: "",
-};
-
-const FILTER_LABELS = {
-  search: "Search",
-  subject: "Subject",
-  area: "Area",
-  status: "Status",
-  gender: "Gender",
-  minExp: "Min exp",
-  class: "Class",
-  featured: "Featured",
+  verified: "",
+  profileCompleted: "",
 };
 
 const PAGE_SIZE = 25;
+
+const SORT_LABELS = {
+  name: "name",
+  experience: "experience",
+  created: "date added",
+  updated: "last updated",
+};
+
+function displayList(value, max = 2) {
+  if (!value) return "—";
+  const items = String(value).split(", ").filter(Boolean);
+  if (items.length <= max) return items.join(", ");
+  return `${items.slice(0, max).join(", ")} +${items.length - max}`;
+}
+
+function StatusBadge({ status }) {
+  return <span className={`admin-status-badge status-${status}`}>{status}</span>;
+}
+
+function BooleanBadge({ value, label }) {
+  return (
+    <span className={`admin-boolean-badge ${value ? "is-yes" : "is-no"}`}>
+      <span aria-hidden="true">{value ? "✓" : "—"}</span> {label || (value ? "Yes" : "No")}
+    </span>
+  );
+}
+
+/**
+ * A column header that sorts. `aria-sort` tells screen readers the current
+ * state; the arrow is decorative and hidden from them.
+ */
+function SortableTh({ label, sortKey, sort, onSort, initialDir = "desc" }) {
+  const active = sort.key === sortKey;
+  const ariaSort = active ? (sort.dir === "asc" ? "ascending" : "descending") : "none";
+
+  return (
+    <th aria-sort={ariaSort} className={active ? "is-sorted" : undefined}>
+      <button
+        type="button"
+        className="admin-sort-btn"
+        onClick={() => onSort(sortKey, initialDir)}
+        title={`Sort by ${label.toLowerCase()}`}
+      >
+        {label}
+        <span className="admin-sort-arrow" aria-hidden="true">
+          {active ? (sort.dir === "asc" ? "▲" : "▼") : "⇅"}
+        </span>
+      </button>
+    </th>
+  );
+}
 
 function TableSkeleton() {
   return (
@@ -50,26 +90,37 @@ export default function TutorsPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [filters, setFilters] = useState(EMPTY_FILTERS);
-  const [facets, setFacets] = useState({ subjects: [], areas: [], classes: [] });
+  // "relevance" is the server's default ordering: active first, then complete
+  // and verified profiles. Any other key sorts on that column alone.
+  const [sort, setSort] = useState({ key: "relevance", dir: "desc" });
+  const [options, setOptions] = useState({
+    subjects: [],
+    classes: [],
+    locations: [],
+  });
   const [updating, setUpdating] = useState(null);
 
-  // Typing in the search / area / experience boxes shouldn't fire a request
-  // per keystroke.
-  const debouncedFilters = useDebouncedValue(filters, 350);
+  const debouncedSearch = useDebouncedValue(filters.search, 350);
 
-  // Subject / class / area options come from the database, not a hardcoded list.
   useEffect(() => {
     let cancelled = false;
+
     (async () => {
-      const { ok, data } = await adminJson("/api/admin/tutors/facets", {}, null);
-      if (!cancelled && ok && data) {
-        setFacets({
-          subjects: data.subjects || [],
-          areas: data.areas || [],
-          classes: data.classes || [],
-        });
+      const { ok, data, error: err } = await adminJson("/api/tutors/options", {}, null);
+      if (cancelled) return;
+
+      if (!ok) {
+        setError(err || "Could not load tutor options");
+        return;
       }
+
+      setOptions({
+        subjects: data?.subjects || [],
+        classes: data?.classes || [],
+        locations: data?.locations || [],
+      });
     })();
+
     return () => {
       cancelled = true;
     };
@@ -80,14 +131,19 @@ export default function TutorsPage() {
     setError("");
 
     const qs = new URLSearchParams();
-    Object.entries(debouncedFilters).forEach(([k, v]) => {
-      const value = typeof v === "string" ? v.trim() : v;
-      if (value !== "" && value !== null && value !== undefined) qs.set(k, value);
+    if (debouncedSearch.trim()) qs.set("search", debouncedSearch.trim());
+
+    Object.entries(filters).forEach(([key, value]) => {
+      if (key === "search" || value === "") return;
+      qs.set(key, value);
     });
+
     qs.set("page", String(page));
     qs.set("limit", String(PAGE_SIZE));
+    qs.set("sort", sort.key);
+    qs.set("dir", sort.dir);
 
-    const { ok, data, error: err } = await adminJson(`/api/admin/tutors?${qs}`, {}, null);
+    const { ok, data, error: err } = await adminJson(`/api/admin/tutors?${qs.toString()}`, {}, null);
 
     if (!ok) {
       setTutors([]);
@@ -95,58 +151,93 @@ export default function TutorsPage() {
       setTotalPages(1);
       setError(err || "Could not load tutors");
     } else {
-      // Accepts both the paginated shape and a bare array.
-      const list = Array.isArray(data) ? data : data?.data || [];
-      setTutors(list);
-      setTotal(Array.isArray(data) ? list.length : Number(data?.total || list.length));
-      setTotalPages(Array.isArray(data) ? 1 : Number(data?.totalPages || 1));
+      setTutors(Array.isArray(data?.data) ? data.data : []);
+      setTotal(Number(data?.total || 0));
+      setTotalPages(Number(data?.totalPages || 1));
     }
+
     setLoading(false);
-  }, [debouncedFilters, page]);
+  }, [debouncedSearch, filters, page, sort]);
 
   useEffect(() => {
     load();
   }, [load]);
 
-  // Any filter change resets to the first page.
   useEffect(() => {
     setPage(1);
-  }, [debouncedFilters]);
+  }, [debouncedSearch, filters.subjectId, filters.classId, filters.areaId, filters.status, filters.gender, filters.verified, filters.profileCompleted, sort]);
 
-  const activeFilters = useMemo(
-    () => Object.entries(filters).filter(([, v]) => v !== ""),
-    [filters]
-  );
+  /**
+   * Toggle direction when the same column is clicked again, otherwise switch to
+   * the new column. Each column starts on the direction that is actually useful
+   * — most experienced first, but names A→Z.
+   */
+  function toggleSort(key, initialDir = "desc") {
+    setSort((current) =>
+      current.key === key
+        ? { key, dir: current.dir === "asc" ? "desc" : "asc" }
+        : { key, dir: initialDir }
+    );
+  }
 
-  function setFilter(key, val) {
-    setFilters((f) => ({ ...f, [key]: val }));
+  const activeFilters = useMemo(() => {
+    const labels = {
+      search: "Search",
+      subjectId: "Subject",
+      classId: "Class",
+      areaId: "Area",
+      status: "Status",
+      gender: "Gender",
+      verified: "Verified",
+      profileCompleted: "Profile",
+    };
+
+    return Object.entries(filters)
+      .filter(([, value]) => value !== "")
+      .map(([key, value]) => ({ key, label: labels[key], value }));
+  }, [filters]);
+
+  function setFilter(key, value) {
+    setFilters((current) => ({ ...current, [key]: value }));
   }
 
   function clearFilters() {
-    setFilters(EMPTY_FILTERS);
+    setFilters({ ...EMPTY_FILTERS });
+  }
+
+  function optionName(list, id) {
+    return list.find((item) => String(item.id) === String(id))?.name || id;
+  }
+
+  function filterDisplay(filter) {
+    if (filter.key === "subjectId") return optionName(options.subjects, filter.value);
+    if (filter.key === "classId") return optionName(options.classes, filter.value);
+    if (filter.key === "areaId") return optionName(options.locations, filter.value);
+    if (filter.key === "verified") return filter.value === "1" ? "Verified" : "Not verified";
+    if (filter.key === "profileCompleted") return filter.value === "1" ? "Complete" : "Incomplete";
+    return filter.value;
   }
 
   async function updateTutor(id, patch) {
     setUpdating(id);
-    // Optimistic update keeps the table from flashing on every toggle.
+    setError("");
+
     setTutors((rows) => rows.map((t) => (t.id === id ? { ...t, ...patch } : t)));
-    const { ok, error: err } = await adminJson(`/api/admin/tutors/${id}`, {
+
+    const { ok, data, error: err } = await adminJson(`/api/admin/tutors/${id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(patch),
     });
-    setUpdating(null);
-    if (!ok) setError(err || "Update failed");
-    load();
-  }
 
-  async function deleteTutor(id, name) {
-    if (!confirm(`Delete tutor ${name}? This cannot be undone.`)) return;
-    setUpdating(id);
-    const { ok, error: err } = await adminJson(`/api/admin/tutors/${id}`, { method: "DELETE" });
+    if (!ok) {
+      setError(err || "Update failed");
+      await load();
+    } else if (data?.data?.tutor) {
+      setTutors((rows) => rows.map((t) => (t.id === id ? { ...t, ...data.data.tutor } : t)));
+    }
+
     setUpdating(null);
-    if (!ok) setError(err || "Delete failed");
-    load();
   }
 
   const rangeStart = total === 0 ? 0 : (page - 1) * PAGE_SIZE + 1;
@@ -155,20 +246,36 @@ export default function TutorsPage() {
   return (
     <div className="admin-layout">
       <AdminSidebar />
+
       <main className="admin-main">
         <div className="admin-page-header">
           <div>
+            <div className="admin-breadcrumb">Management / Tutors</div>
             <h1>Tutors</h1>
             <p>
               {loading
-                ? "Loading…"
-                : `${total} tutor${total !== 1 ? "s" : ""} found${
-                    total > 0 ? ` · showing ${rangeStart}–${rangeEnd}` : ""
-                  }`}
+                ? "Loading tutors…"
+                : `${total} tutor${total !== 1 ? "s" : ""} found${total ? ` · showing ${rangeStart}–${rangeEnd}` : ""}`}
+              {sort.key !== "relevance" && (
+                <>
+                  {" · "}
+                  <span className="admin-sort-note">
+                    sorted by {SORT_LABELS[sort.key]} ({sort.dir === "asc" ? "lowest" : "highest"} first)
+                  </span>{" "}
+                  <button
+                    type="button"
+                    className="admin-filter-clear"
+                    onClick={() => setSort({ key: "relevance", dir: "desc" })}
+                  >
+                    reset
+                  </button>
+                </>
+              )}
             </p>
           </div>
+
           <button className="admin-btn admin-btn-secondary" onClick={load} disabled={loading}>
-            ↻ Refresh
+            Refresh
           </button>
         </div>
 
@@ -178,141 +285,114 @@ export default function TutorsPage() {
           </div>
         )}
 
-        {/* ── Filter Panel ── */}
         <section className="admin-filter-panel" aria-label="Filter tutors">
-          <h3>Filter tutors</h3>
+          <div className="admin-filter-heading">
+            <div>
+              <h3>Find tutors</h3>
+              <p>Search and filter the tutor database.</p>
+            </div>
+            {activeFilters.length > 0 && (
+              <button type="button" className="admin-filter-clear" onClick={clearFilters}>
+                Clear all
+              </button>
+            )}
+          </div>
 
-          <div className="admin-filter-grid">
-            <label className="admin-form-group">
-              <span className="sr-only">Search tutors</span>
+          <div className="admin-filter-grid tutor-admin-filter-grid">
+            <label className="admin-form-group tutor-search-field">
+              <span>Search</span>
               <input
                 className="admin-input"
                 type="search"
-                placeholder="Search name, subject, area, phone, email…"
+                placeholder="Name, phone, email, subject or area"
                 value={filters.search}
                 onChange={(e) => setFilter("search", e.target.value)}
               />
             </label>
 
-            <select
-              className="admin-select"
-              aria-label="Subject"
-              value={filters.subject}
-              onChange={(e) => setFilter("subject", e.target.value)}
-            >
-              <option value="">All subjects</option>
-              {facets.subjects.map((s) => (
-                <option key={s} value={s}>
-                  {s}
-                </option>
-              ))}
-            </select>
+            <label className="admin-form-group">
+              <span>Subject</span>
+              <select className="admin-select" value={filters.subjectId} onChange={(e) => setFilter("subjectId", e.target.value)}>
+                <option value="">All subjects</option>
+                {options.subjects.map((subject) => (
+                  <option key={subject.id} value={subject.id}>{subject.name}</option>
+                ))}
+              </select>
+            </label>
 
-            <input
-              className="admin-input"
-              list="tutor-areas"
-              aria-label="Area"
-              placeholder="Area (e.g. Rohini, Pitampura)"
-              value={filters.area}
-              onChange={(e) => setFilter("area", e.target.value)}
-            />
-            <datalist id="tutor-areas">
-              {facets.areas.map((a) => (
-                <option key={a} value={a} />
-              ))}
-            </datalist>
+            <label className="admin-form-group">
+              <span>Class</span>
+              <select className="admin-select" value={filters.classId} onChange={(e) => setFilter("classId", e.target.value)}>
+                <option value="">All classes</option>
+                {options.classes.map((item) => (
+                  <option key={item.id} value={item.id}>{item.name}</option>
+                ))}
+              </select>
+            </label>
 
-            <select
-              className="admin-select"
-              aria-label="Status"
-              value={filters.status}
-              onChange={(e) => setFilter("status", e.target.value)}
-            >
-              <option value="">All statuses</option>
-              <option value="pending">Pending</option>
-              <option value="active">Active</option>
-              <option value="inactive">Inactive</option>
-              <option value="blacklisted">Blacklisted</option>
-            </select>
+            <label className="admin-form-group">
+              <span>Area</span>
+              <select className="admin-select" value={filters.areaId} onChange={(e) => setFilter("areaId", e.target.value)}>
+                <option value="">All areas</option>
+                {options.locations.map((item) => (
+                  <option key={item.id} value={item.id}>
+                    {item.name}{item.location_type ? ` · ${item.location_type}` : ""}
+                  </option>
+                ))}
+              </select>
+            </label>
 
-            <select
-              className="admin-select"
-              aria-label="Gender"
-              value={filters.gender}
-              onChange={(e) => setFilter("gender", e.target.value)}
-            >
-              <option value="">Any gender</option>
-              <option value="Male">Male</option>
-              <option value="Female">Female</option>
-              <option value="Other">Other</option>
-            </select>
+            <label className="admin-form-group">
+              <span>Status</span>
+              <select className="admin-select" value={filters.status} onChange={(e) => setFilter("status", e.target.value)}>
+                <option value="">All statuses</option>
+                <option value="active">Active</option>
+                <option value="inactive">Inactive</option>
+                <option value="blacklisted">Blacklisted</option>
+              </select>
+            </label>
 
-            <input
-              className="admin-input"
-              type="number"
-              aria-label="Minimum experience in years"
-              placeholder="Min experience (yrs)"
-              value={filters.minExp}
-              onChange={(e) => setFilter("minExp", e.target.value)}
-              min={0}
-              max={99}
-            />
+            <label className="admin-form-group">
+              <span>Gender</span>
+              <select className="admin-select" value={filters.gender} onChange={(e) => setFilter("gender", e.target.value)}>
+                <option value="">Any gender</option>
+                <option value="Female">Female</option>
+                <option value="Male">Male</option>
+                <option value="Other">Other</option>
+              </select>
+            </label>
 
-            <select
-              className="admin-select"
-              aria-label="Class"
-              value={filters.class}
-              onChange={(e) => setFilter("class", e.target.value)}
-            >
-              <option value="">Any class</option>
-              {facets.classes.map((c) => (
-                <option key={c} value={c}>
-                  {c}
-                </option>
-              ))}
-            </select>
+            <label className="admin-form-group">
+              <span>Verification</span>
+              <select className="admin-select" value={filters.verified} onChange={(e) => setFilter("verified", e.target.value)}>
+                <option value="">All tutors</option>
+                <option value="1">Verified</option>
+                <option value="0">Not verified</option>
+              </select>
+            </label>
 
-            <select
-              className="admin-select"
-              aria-label="Featured"
-              value={filters.featured}
-              onChange={(e) => setFilter("featured", e.target.value)}
-            >
-              <option value="">Featured &amp; non-featured</option>
-              <option value="1">Featured only</option>
-              <option value="0">Not featured</option>
-            </select>
+            <label className="admin-form-group">
+              <span>Profile</span>
+              <select className="admin-select" value={filters.profileCompleted} onChange={(e) => setFilter("profileCompleted", e.target.value)}>
+                <option value="">Any profile</option>
+                <option value="1">Complete</option>
+                <option value="0">Incomplete</option>
+              </select>
+            </label>
           </div>
 
           {activeFilters.length > 0 && (
-            <div className="admin-filter-chips">
-              {activeFilters.map(([key, value]) => (
-                <span className="admin-chip" key={key}>
-                  {FILTER_LABELS[key]}: {key === "featured" ? (value === "1" ? "Yes" : "No") : value}
-                  <button
-                    type="button"
-                    aria-label={`Remove ${FILTER_LABELS[key]} filter`}
-                    onClick={() => setFilter(key, "")}
-                  >
-                    ✕
+            <div className="admin-filter-chips" aria-label="Active filters">
+              {activeFilters.map((filter) => (
+                <span className="admin-chip" key={filter.key}>
+                  {filter.label}: {filterDisplay(filter)}
+                  <button type="button" aria-label={`Remove ${filter.label} filter`} onClick={() => setFilter(filter.key, "")}>
+                    ×
                   </button>
                 </span>
               ))}
             </div>
           )}
-
-          <div className="admin-filter-actions">
-            <button className="admin-btn admin-btn-primary" onClick={load} disabled={loading}>
-              Apply filters
-            </button>
-            <button
-              className="admin-btn admin-btn-secondary"
-              onClick={clearFilters}
-              disabled={activeFilters.length === 0}
-            >
-              Clear all
-            </button>
-          </div>
         </section>
 
         {loading ? (
@@ -320,172 +400,136 @@ export default function TutorsPage() {
         ) : tutors.length === 0 ? (
           <div className="admin-table-wrap">
             <div className="admin-empty">
-              <span className="admin-empty-icon" aria-hidden="true">
-                🔎
-              </span>
-              <h3>No tutors match these filters</h3>
-              <p>
-                {activeFilters.length
-                  ? "Try removing a filter or broadening your search."
-                  : "No tutors have been added yet."}
-              </p>
+              <span className="admin-empty-icon" aria-hidden="true">⌕</span>
+              <h3>No tutors found</h3>
+              <p>{activeFilters.length ? "Try removing a filter or broadening your search." : "No tutors have been added yet."}</p>
               {activeFilters.length > 0 && (
-                <button className="admin-btn admin-btn-primary" onClick={clearFilters}>
-                  Clear all filters
-                </button>
+                <button className="admin-btn admin-btn-primary" onClick={clearFilters}>Clear filters</button>
               )}
             </div>
           </div>
         ) : (
           <>
             <div className="admin-table-wrap">
-              <table className="admin-table">
+              <table className="admin-table tutors-admin-table">
                 <caption className="sr-only">Registered tutors</caption>
                 <thead>
                   <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Contact</th>
-                    <th scope="col">Subjects</th>
-                    <th scope="col">Areas</th>
-                    <th scope="col">Exp</th>
-                    <th scope="col">Plan</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Featured</th>
-                    <th scope="col">Verified</th>
-                    <th scope="col">Success %</th>
-                    <th scope="col">Actions</th>
+                    <SortableTh label="Tutor" sortKey="name" initialDir="asc" sort={sort} onSort={toggleSort} />
+                    <th>Contact</th>
+                    <th>Teaching</th>
+                    <th>Areas</th>
+                    <SortableTh label="Experience" sortKey="experience" sort={sort} onSort={toggleSort} />
+                    <th>Status</th>
+                    <th>Profile</th>
+                    <th>Verified</th>
+                    <SortableTh label="Added" sortKey="created" sort={sort} onSort={toggleSort} />
                   </tr>
                 </thead>
                 <tbody>
-                  {tutors.map((t) => (
-                    <tr key={t.id}>
-                      <td className="text-muted">{t.id}</td>
-                      <td>
-                        <strong>
-                          {t.first_name} {t.last_name}
-                        </strong>
-                        <div className="text-muted" style={{ fontSize: "12px" }}>
-                          {[t.gender, t.qualification].filter(Boolean).join(" · ")}
-                        </div>
-                      </td>
-                      <td>
-                        <a href={`tel:${t.whatsapp}`}>{t.whatsapp}</a>
-                        <div className="text-muted" style={{ fontSize: "12px" }}>
-                          {t.email}
-                        </div>
-                      </td>
-                      <td className="text-muted" style={{ fontSize: "12px", maxWidth: "160px" }}>
-                        {t.subjects?.split(",").slice(0, 4).join(", ") || "—"}
-                      </td>
-                      <td className="text-muted" style={{ fontSize: "12px", maxWidth: "140px" }}>
-                        {t.areas?.split(",").slice(0, 3).join(", ") || "—"}
-                      </td>
-                      <td>{t.experience_years || 0}y</td>
-                      <td>
-                        <span className={`plan-badge plan-${(t.commission_plan || "b").toLowerCase()}`}>
-                          Plan {t.commission_plan || "B"}
-                        </span>
-                      </td>
-                      <td>
-                        <select
-                          className="admin-select admin-select-sm"
-                          aria-label={`Status for ${t.first_name} ${t.last_name}`}
-                          value={t.status || "pending"}
-                          disabled={updating === t.id}
-                          onChange={(e) => updateTutor(t.id, { status: e.target.value })}
-                        >
-                          <option value="pending">Pending</option>
-                          <option value="active">Active</option>
-                          <option value="inactive">Inactive</option>
-                          <option value="blacklisted">Blacklisted</option>
-                        </select>
-                      </td>
-                      <td>
-                        <button
-                          className={`toggle-btn ${t.featured ? "on" : "off"}`}
-                          onClick={() => updateTutor(t.id, { featured: t.featured ? 0 : 1 })}
-                          disabled={updating === t.id}
-                          aria-pressed={Boolean(t.featured)}
-                          aria-label={
-                            t.featured
-                              ? `Remove ${t.first_name} from featured`
-                              : `Add ${t.first_name} to featured`
-                          }
-                        >
-                          {t.featured ? "⭐" : "☆"}
-                        </button>
-                      </td>
-                      <td>
-                        <button
-                          className={`toggle-btn ${t.verified ? "on" : "off"}`}
-                          onClick={() => updateTutor(t.id, { verified: t.verified ? 0 : 1 })}
-                          disabled={updating === t.id}
-                          aria-pressed={Boolean(t.verified)}
-                          aria-label={t.verified ? `Unverify ${t.first_name}` : `Verify ${t.first_name}`}
-                        >
-                          {t.verified ? "✅" : "⬜"}
-                        </button>
-                      </td>
-                      <td>
-                        <span className="success-pill" style={successRateStyle(t.success_rate)}>
-                          {t.total_classes_assigned > 0
-                            ? `${Number(t.success_rate).toFixed(0)}%`
-                            : "—"}
-                        </span>
-                        <div className="text-muted" style={{ fontSize: "11px" }}>
-                          {t.total_classes_accepted}/{t.total_classes_assigned}
-                        </div>
-                      </td>
-                      <td>
-                        <div className="action-group">
+                  {tutors.map((tutor) => {
+                    const fullName = [tutor.first_name, tutor.last_name].filter(Boolean).join(" ");
+                    return (
+                      <tr key={tutor.id}>
+                        <td>
+                          <div className="tutor-admin-name">
+                            <div className="tutor-admin-avatar">
+                              {tutor.profile_image ? (
+                                <img src={tutor.profile_image} alt="" />
+                              ) : (
+                                fullName.charAt(0).toUpperCase()
+                              )}
+                            </div>
+                            <div>
+                              <Link
+                                href={`/admin/tutors/${tutor.id}`}
+                                className="tutor-admin-profile-link"
+                              >
+                                {fullName}
+                              </Link>
+                              <span>ID #{tutor.id}{tutor.gender ? ` · ${tutor.gender}` : ""}</span>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div className="tutor-admin-contact">
+                            {tutor.whatsapp ? <a href={`tel:${tutor.whatsapp}`}>{tutor.whatsapp}</a> : <span>—</span>}
+                            {tutor.email && <span>{tutor.email}</span>}
+                          </div>
+                        </td>
+                        <td>
+                          <div className="tutor-admin-teaching">
+                            <strong>{displayList(tutor.subjects, 2)}</strong>
+                            <span>{displayList(tutor.classes, 3)}</span>
+                          </div>
+                        </td>
+                        <td className="tutor-admin-muted">{displayList(tutor.areas, 2)}</td>
+                        <td>
+                          <strong>{tutor.experience_years == null ? "—" : `${tutor.experience_years} yrs`}</strong>
+                          {tutor.teaching_start_year && <span className="tutor-admin-subline">Since {tutor.teaching_start_year}</span>}
+                        </td>
+                        <td>
                           <select
-                            className="admin-select admin-select-sm"
-                            aria-label={`Commission plan for ${t.first_name}`}
-                            value={t.commission_plan || "B"}
-                            onChange={(e) => updateTutor(t.id, { commission_plan: e.target.value })}
-                            disabled={updating === t.id}
+                            className="admin-select admin-select-sm tutor-status-select"
+                            value={tutor.status}
+                            disabled={updating === tutor.id}
+                            onChange={(e) => updateTutor(tutor.id, { status: e.target.value })}
+                            aria-label={`Status for ${fullName}`}
                           >
-                            <option value="A">Plan A</option>
-                            <option value="B">Plan B</option>
+                            <option value="active">Active</option>
+                            <option value="inactive">Inactive</option>
+                            <option value="blacklisted">Blacklisted</option>
                           </select>
+                        </td>
+                        <td>
                           <button
-                            className="admin-btn admin-btn-xs admin-btn-red"
-                            onClick={() => deleteTutor(t.id, `${t.first_name} ${t.last_name}`)}
-                            disabled={updating === t.id}
-                            aria-label={`Delete ${t.first_name} ${t.last_name}`}
+                            type="button"
+                            className="tutor-admin-toggle"
+                            disabled={updating === tutor.id}
+                            onClick={() => updateTutor(tutor.id, { profile_completed: tutor.profile_completed ? 0 : 1 })}
+                            aria-pressed={Boolean(tutor.profile_completed)}
+                            title="Toggle profile completion"
                           >
-                            🗑
+                            <BooleanBadge value={Boolean(tutor.profile_completed)} label={tutor.profile_completed ? "Complete" : "Incomplete"} />
                           </button>
-                        </div>
-                      </td>
-                    </tr>
-                  ))}
+                        </td>
+                        <td>
+                          <button
+                            type="button"
+                            className="tutor-admin-toggle"
+                            disabled={updating === tutor.id}
+                            onClick={() => updateTutor(tutor.id, { verified: tutor.verified ? 0 : 1 })}
+                            aria-pressed={Boolean(tutor.verified)}
+                            title="Toggle verification"
+                          >
+                            <BooleanBadge value={Boolean(tutor.verified)} label={tutor.verified ? "Verified" : "Verify"} />
+                          </button>
+                        </td>
+                        <td className="tutor-admin-muted tutor-admin-subline">
+                          {tutor.created_at
+                            ? new Date(tutor.created_at).toLocaleDateString("en-IN", {
+                                day: "numeric",
+                                month: "short",
+                                year: "numeric",
+                              })
+                            : "—"}
+                        </td>
+                      </tr>
+                    );
+                  })}
                 </tbody>
               </table>
             </div>
 
             <nav className="admin-pagination" aria-label="Tutor pages">
-              <span>
-                Showing {rangeStart}–{rangeEnd} of {total}
-              </span>
+              <span>Showing {rangeStart}–{rangeEnd} of {total}</span>
               <div className="admin-pagination-controls">
-                <button
-                  className="admin-btn admin-btn-secondary admin-btn-xs"
-                  onClick={() => setPage((p) => Math.max(1, p - 1))}
-                  disabled={page <= 1 || loading}
-                >
-                  ← Previous
+                <button className="admin-btn admin-btn-secondary admin-btn-xs" onClick={() => setPage((p) => Math.max(1, p - 1))} disabled={page <= 1 || loading}>
+                  Previous
                 </button>
-                <span className="admin-page-indicator">
-                  Page {page} of {totalPages}
-                </span>
-                <button
-                  className="admin-btn admin-btn-secondary admin-btn-xs"
-                  onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
-                  disabled={page >= totalPages || loading}
-                >
-                  Next →
+                <span className="admin-page-indicator">Page {page} of {totalPages}</span>
+                <button className="admin-btn admin-btn-secondary admin-btn-xs" onClick={() => setPage((p) => Math.min(totalPages, p + 1))} disabled={page >= totalPages || loading}>
+                  Next
                 </button>
               </div>
             </nav>

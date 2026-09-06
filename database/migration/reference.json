@@ -1,0 +1,2016 @@
+{
+ "classes": [
+  {
+   "name": "Nursery",
+   "short_name": "Nursery",
+   "slug": "nursery",
+   "sort_order": 1
+  },
+  {
+   "name": "Primary",
+   "short_name": "Primary",
+   "slug": "primary",
+   "sort_order": 2
+  },
+  {
+   "name": "LKG",
+   "short_name": "LKG",
+   "slug": "lkg",
+   "sort_order": 3
+  },
+  {
+   "name": "UKG",
+   "short_name": "UKG",
+   "slug": "ukg",
+   "sort_order": 4
+  },
+  {
+   "name": "Class 1",
+   "short_name": "Class 1",
+   "slug": "class-1",
+   "sort_order": 5
+  },
+  {
+   "name": "Class 2",
+   "short_name": "Class 2",
+   "slug": "class-2",
+   "sort_order": 6
+  },
+  {
+   "name": "Class 3",
+   "short_name": "Class 3",
+   "slug": "class-3",
+   "sort_order": 7
+  },
+  {
+   "name": "Class 4",
+   "short_name": "Class 4",
+   "slug": "class-4",
+   "sort_order": 8
+  },
+  {
+   "name": "Class 5",
+   "short_name": "Class 5",
+   "slug": "class-5",
+   "sort_order": 9
+  },
+  {
+   "name": "Class 6",
+   "short_name": "Class 6",
+   "slug": "class-6",
+   "sort_order": 10
+  },
+  {
+   "name": "Class 7",
+   "short_name": "Class 7",
+   "slug": "class-7",
+   "sort_order": 11
+  },
+  {
+   "name": "Class 8",
+   "short_name": "Class 8",
+   "slug": "class-8",
+   "sort_order": 12
+  },
+  {
+   "name": "Class 9",
+   "short_name": "Class 9",
+   "slug": "class-9",
+   "sort_order": 13
+  },
+  {
+   "name": "Class 10",
+   "short_name": "Class 10",
+   "slug": "class-10",
+   "sort_order": 14
+  },
+  {
+   "name": "Class 11",
+   "short_name": "Class 11",
+   "slug": "class-11",
+   "sort_order": 15
+  },
+  {
+   "name": "Class 12",
+   "short_name": "Class 12",
+   "slug": "class-12",
+   "sort_order": 16
+  },
+  {
+   "name": "NEET Prep",
+   "short_name": "NEET Prep",
+   "slug": "neet-prep",
+   "sort_order": 17
+  },
+  {
+   "name": "JEE Prep",
+   "short_name": "JEE Prep",
+   "slug": "jee-prep",
+   "sort_order": 18
+  },
+  {
+   "name": "CUET Prep",
+   "short_name": "CUET Prep",
+   "slug": "cuet-prep",
+   "sort_order": 19
+  },
+  {
+   "name": "CA Prep",
+   "short_name": "CA Prep",
+   "slug": "ca-prep",
+   "sort_order": 20
+  },
+  {
+   "name": "UPSC Prep",
+   "short_name": "UPSC Prep",
+   "slug": "upsc-prep",
+   "sort_order": 21
+  }
+ ],
+ "subjects": [
+  {
+   "name": "Mathematics",
+   "slug": "mathematics"
+  },
+  {
+   "name": "Science",
+   "slug": "science"
+  },
+  {
+   "name": "Social Science",
+   "slug": "social-science"
+  },
+  {
+   "name": "Computer Science",
+   "slug": "computer-science"
+  },
+  {
+   "name": "Art",
+   "slug": "art"
+  },
+  {
+   "name": "Physical Education",
+   "slug": "physical-education"
+  },
+  {
+   "name": "English",
+   "slug": "english"
+  },
+  {
+   "name": "Hindi",
+   "slug": "hindi"
+  },
+  {
+   "name": "Sanskrit",
+   "slug": "sanskrit"
+  },
+  {
+   "name": "Physics",
+   "slug": "physics"
+  },
+  {
+   "name": "Chemistry",
+   "slug": "chemistry"
+  },
+  {
+   "name": "Biology",
+   "slug": "biology"
+  },
+  {
+   "name": "Psychology",
+   "slug": "psychology"
+  },
+  {
+   "name": "Environmental Science",
+   "slug": "environmental-science"
+  },
+  {
+   "name": "Accounts",
+   "slug": "accounts"
+  },
+  {
+   "name": "Business Studies",
+   "slug": "business-studies"
+  },
+  {
+   "name": "Economics",
+   "slug": "economics"
+  },
+  {
+   "name": "Information Practices",
+   "slug": "information-practices"
+  },
+  {
+   "name": "History",
+   "slug": "history"
+  },
+  {
+   "name": "Geography",
+   "slug": "geography"
+  },
+  {
+   "name": "Civics",
+   "slug": "civics"
+  },
+  {
+   "name": "Political Science",
+   "slug": "political-science"
+  },
+  {
+   "name": "French",
+   "slug": "french"
+  },
+  {
+   "name": "German",
+   "slug": "german"
+  },
+  {
+   "name": "Spanish",
+   "slug": "spanish"
+  }
+ ],
+ "qualifications": [
+  {
+   "name": "10th",
+   "slug": "10th"
+  },
+  {
+   "name": "12th",
+   "slug": "12th"
+  },
+  {
+   "name": "Diploma",
+   "slug": "diploma"
+  },
+  {
+   "name": "D.El.Ed",
+   "slug": "deled"
+  },
+  {
+   "name": "B.A.",
+   "slug": "ba"
+  },
+  {
+   "name": "B.Sc.",
+   "slug": "bsc"
+  },
+  {
+   "name": "B.Com",
+   "slug": "bcom"
+  },
+  {
+   "name": "BBA",
+   "slug": "bba"
+  },
+  {
+   "name": "BCA",
+   "slug": "bca"
+  },
+  {
+   "name": "B.E.",
+   "slug": "be"
+  },
+  {
+   "name": "B.Tech",
+   "slug": "btech"
+  },
+  {
+   "name": "B.Ed.",
+   "slug": "bed"
+  },
+  {
+   "name": "LL.B.",
+   "slug": "llb"
+  },
+  {
+   "name": "M.A.",
+   "slug": "ma"
+  },
+  {
+   "name": "M.Sc.",
+   "slug": "msc"
+  },
+  {
+   "name": "M.Com",
+   "slug": "mcom"
+  },
+  {
+   "name": "MBA",
+   "slug": "mba"
+  },
+  {
+   "name": "MCA",
+   "slug": "mca"
+  },
+  {
+   "name": "M.Ed.",
+   "slug": "med"
+  },
+  {
+   "name": "M.Tech",
+   "slug": "mtech"
+  },
+  {
+   "name": "LL.M.",
+   "slug": "llm"
+  },
+  {
+   "name": "M.Phil",
+   "slug": "mphil"
+  },
+  {
+   "name": "Ph.D",
+   "slug": "phd"
+  },
+  {
+   "name": "CA",
+   "slug": "ca"
+  },
+  {
+   "name": "CS",
+   "slug": "cs"
+  },
+  {
+   "name": "MBBS",
+   "slug": "mbbs"
+  },
+  {
+   "name": "BDS",
+   "slug": "bds"
+  }
+ ],
+ "specializations": [
+  {
+   "name": "Mathematics",
+   "slug": "mathematics"
+  },
+  {
+   "name": "Physics",
+   "slug": "physics"
+  },
+  {
+   "name": "Chemistry",
+   "slug": "chemistry"
+  },
+  {
+   "name": "Biology",
+   "slug": "biology"
+  },
+  {
+   "name": "English",
+   "slug": "english"
+  },
+  {
+   "name": "Hindi",
+   "slug": "hindi"
+  },
+  {
+   "name": "Sanskrit",
+   "slug": "sanskrit"
+  },
+  {
+   "name": "History",
+   "slug": "history"
+  },
+  {
+   "name": "Geography",
+   "slug": "geography"
+  },
+  {
+   "name": "Political Science",
+   "slug": "political-science"
+  },
+  {
+   "name": "Civics",
+   "slug": "civics"
+  },
+  {
+   "name": "Economics",
+   "slug": "economics"
+  },
+  {
+   "name": "Commerce",
+   "slug": "commerce"
+  },
+  {
+   "name": "Accounting",
+   "slug": "accounting"
+  },
+  {
+   "name": "Business Studies",
+   "slug": "business-studies"
+  },
+  {
+   "name": "Psychology",
+   "slug": "psychology"
+  },
+  {
+   "name": "Sociology",
+   "slug": "sociology"
+  },
+  {
+   "name": "Science",
+   "slug": "science"
+  },
+  {
+   "name": "Social Science",
+   "slug": "social-science"
+  },
+  {
+   "name": "Computer Science",
+   "slug": "computer-science"
+  },
+  {
+   "name": "Computer Applications",
+   "slug": "computer-applications"
+  },
+  {
+   "name": "Information Technology",
+   "slug": "information-technology"
+  },
+  {
+   "name": "Data Science",
+   "slug": "data-science"
+  },
+  {
+   "name": "Civil Engineering",
+   "slug": "civil-engineering"
+  },
+  {
+   "name": "Mechanical Engineering",
+   "slug": "mechanical-engineering"
+  },
+  {
+   "name": "Electrical Engineering",
+   "slug": "electrical-engineering"
+  },
+  {
+   "name": "Electronics Engineering",
+   "slug": "electronics-engineering"
+  },
+  {
+   "name": "Chemical Engineering",
+   "slug": "chemical-engineering"
+  },
+  {
+   "name": "Pharmaceutical Chemistry",
+   "slug": "pharmaceutical-chemistry"
+  },
+  {
+   "name": "Food Science",
+   "slug": "food-science"
+  },
+  {
+   "name": "Physiotherapy",
+   "slug": "physiotherapy"
+  },
+  {
+   "name": "Education",
+   "slug": "education"
+  },
+  {
+   "name": "Elementary Education",
+   "slug": "elementary-education"
+  },
+  {
+   "name": "Preschool Education",
+   "slug": "preschool-education"
+  },
+  {
+   "name": "Special Education",
+   "slug": "special-education"
+  },
+  {
+   "name": "Business Administration",
+   "slug": "business-administration"
+  },
+  {
+   "name": "Finance",
+   "slug": "finance"
+  },
+  {
+   "name": "Journalism & Mass Communication",
+   "slug": "journalism-and-mass-communication"
+  },
+  {
+   "name": "Mass Communication",
+   "slug": "mass-communication"
+  },
+  {
+   "name": "French",
+   "slug": "french"
+  },
+  {
+   "name": "German",
+   "slug": "german"
+  },
+  {
+   "name": "Spanish",
+   "slug": "spanish"
+  },
+  {
+   "name": "Pharmacy",
+   "slug": "pharmacy"
+  },
+  {
+   "name": "Medical Imaging",
+   "slug": "medical-imaging"
+  },
+  {
+   "name": "Operational Research",
+   "slug": "operational-research"
+  },
+  {
+   "name": "VLSI",
+   "slug": "vlsi"
+  },
+  {
+   "name": "Other",
+   "slug": "other"
+  }
+ ],
+ "locations": [
+  {
+   "name": "Delhi",
+   "slug": "delhi-state",
+   "location_type": "state",
+   "parent_slug": null
+  },
+  {
+   "name": "Haryana",
+   "slug": "haryana-state",
+   "location_type": "state",
+   "parent_slug": null
+  },
+  {
+   "name": "Uttar Pradesh",
+   "slug": "uttar-pradesh-state",
+   "location_type": "state",
+   "parent_slug": null
+  },
+  {
+   "name": "Delhi",
+   "slug": "delhi-city",
+   "location_type": "city",
+   "parent_slug": "delhi-state"
+  },
+  {
+   "name": "Faridabad",
+   "slug": "faridabad-city",
+   "location_type": "city",
+   "parent_slug": "haryana-state"
+  },
+  {
+   "name": "Gurugram",
+   "slug": "gurugram-city",
+   "location_type": "city",
+   "parent_slug": "haryana-state"
+  },
+  {
+   "name": "Kundli",
+   "slug": "kundli-city",
+   "location_type": "city",
+   "parent_slug": "haryana-state"
+  },
+  {
+   "name": "Ghaziabad",
+   "slug": "ghaziabad-city",
+   "location_type": "city",
+   "parent_slug": "uttar-pradesh-state"
+  },
+  {
+   "name": "Greater Noida",
+   "slug": "greater-noida-city",
+   "location_type": "city",
+   "parent_slug": "uttar-pradesh-state"
+  },
+  {
+   "name": "Noida",
+   "slug": "noida-city",
+   "location_type": "city",
+   "parent_slug": "uttar-pradesh-state"
+  },
+  {
+   "name": "AIIMS",
+   "slug": "aiims",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Adarsh Nagar",
+   "slug": "adarsh-nagar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Alaknanda",
+   "slug": "alaknanda",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Alipur",
+   "slug": "alipur",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Anand Parbat",
+   "slug": "anand-parbat",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Anand Vihar",
+   "slug": "anand-vihar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Andrews Ganj",
+   "slug": "andrews-ganj",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Ashok Nagar",
+   "slug": "ashok-nagar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Ashok Vihar",
+   "slug": "ashok-vihar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Avantika",
+   "slug": "avantika",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Aya Nagar",
+   "slug": "aya-nagar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Azadpur",
+   "slug": "azadpur",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Badarpur",
+   "slug": "badarpur",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Bawana",
+   "slug": "bawana",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Begumpur",
+   "slug": "begumpur",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Bhajanpura",
+   "slug": "bhajanpura",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Bhikaji Cama Place",
+   "slug": "bhikaji-cama-place",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Budh Vihar",
+   "slug": "budh-vihar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Burari",
+   "slug": "burari",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "CR Park",
+   "slug": "cr-park",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Chhattarpur",
+   "slug": "chhattarpur",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Civil Lines",
+   "slug": "civil-lines",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Connaught Place",
+   "slug": "connaught-place",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Dabri",
+   "slug": "dabri",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Darya Ganj",
+   "slug": "darya-ganj",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Dashrath Puri",
+   "slug": "dashrath-puri",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Deepali",
+   "slug": "deepali",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Deepali Chowk",
+   "slug": "deepali-chowk",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Defence Colony",
+   "slug": "defence-colony",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Delhi Cantt",
+   "slug": "delhi-cantt",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Derawal Nagar",
+   "slug": "derawal-nagar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Dhaka",
+   "slug": "dhaka",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Dilshad Garden",
+   "slug": "dilshad-garden",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Dwarka",
+   "slug": "dwarka",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Dwarka Mor",
+   "slug": "dwarka-mor",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "East of Kailash",
+   "slug": "east-of-kailash",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Fateh Nagar",
+   "slug": "fateh-nagar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "GTB Nagar",
+   "slug": "gtb-nagar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Gagan Vihar",
+   "slug": "gagan-vihar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Gandhi Vihar",
+   "slug": "gandhi-vihar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Geeta Colony",
+   "slug": "geeta-colony",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Govindpuri",
+   "slug": "govindpuri",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Greater Kailash",
+   "slug": "greater-kailash",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Green Park",
+   "slug": "green-park",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Gujranwala Town",
+   "slug": "gujranwala-town",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Gulabi Bagh",
+   "slug": "gulabi-bagh",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Guru Ramdas Nagar",
+   "slug": "guru-ramdas-nagar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Haiderpur",
+   "slug": "haiderpur",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Hakikat Nagar",
+   "slug": "hakikat-nagar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Hari Nagar",
+   "slug": "hari-nagar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Harsh Vihar",
+   "slug": "harsh-vihar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Hauz Khas",
+   "slug": "hauz-khas",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Hudson Lane",
+   "slug": "hudson-lane",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "IP Extension",
+   "slug": "ip-extension",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Inderlok",
+   "slug": "inderlok",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Inderpuri",
+   "slug": "inderpuri",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Jahangirpuri",
+   "slug": "jahangirpuri",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Jail Road",
+   "slug": "jail-road",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Jaitpur",
+   "slug": "jaitpur",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Jamia Nagar",
+   "slug": "jamia-nagar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Janakpuri",
+   "slug": "janakpuri",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Jhilmil",
+   "slug": "jhilmil",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Jyoti Nagar",
+   "slug": "jyoti-nagar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Kailash Colony",
+   "slug": "kailash-colony",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Kakrola",
+   "slug": "kakrola",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Kalindi Kunj",
+   "slug": "kalindi-kunj",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Kalkaji",
+   "slug": "kalkaji",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Kamla Nagar",
+   "slug": "kamla-nagar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Kapil Vihar",
+   "slug": "kapil-vihar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Karala",
+   "slug": "karala",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Karampura",
+   "slug": "karampura",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Karawal Nagar",
+   "slug": "karawal-nagar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Karkardooma",
+   "slug": "karkardooma",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Karol Bagh",
+   "slug": "karol-bagh",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Kashmere Gate",
+   "slug": "kashmere-gate",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Keshav Puram",
+   "slug": "keshav-puram",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Khanpur",
+   "slug": "khanpur",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Kirari",
+   "slug": "kirari",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Kirti Nagar",
+   "slug": "kirti-nagar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Kohat Enclave",
+   "slug": "kohat-enclave",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Kotla Mubarakpur",
+   "slug": "kotla-mubarakpur",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Krishan Vihar",
+   "slug": "krishan-vihar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Krishna Nagar",
+   "slug": "krishna-nagar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Lado Sarai",
+   "slug": "lado-sarai",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Lajpat Nagar",
+   "slug": "lajpat-nagar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Laxmi Nagar",
+   "slug": "laxmi-nagar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Lok Vihar",
+   "slug": "lok-vihar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Madhuban Chowk",
+   "slug": "madhuban-chowk",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Madipur",
+   "slug": "madipur",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Mahavir Enclave",
+   "slug": "mahavir-enclave",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Mahendra Park",
+   "slug": "mahendra-park",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Mahipalpur",
+   "slug": "mahipalpur",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Maidan Garhi",
+   "slug": "maidan-garhi",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Malka Ganj",
+   "slug": "malka-ganj",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Malviya Nagar",
+   "slug": "malviya-nagar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Mangolpuri",
+   "slug": "mangolpuri",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Mansarovar Garden",
+   "slug": "mansarovar-garden",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Mayapuri",
+   "slug": "mayapuri",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Mayur Vihar",
+   "slug": "mayur-vihar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Meethapur",
+   "slug": "meethapur",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Mehrauli",
+   "slug": "mehrauli",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Model Town",
+   "slug": "model-town",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Mohan Garden",
+   "slug": "mohan-garden",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Moolchand",
+   "slug": "moolchand",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Mother Dairy",
+   "slug": "mother-dairy",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Moti Nagar",
+   "slug": "moti-nagar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Mukherjee Nagar",
+   "slug": "mukherjee-nagar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Multan Nagar",
+   "slug": "multan-nagar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Mundka",
+   "slug": "mundka",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Munirka",
+   "slug": "munirka",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Najafgarh",
+   "slug": "najafgarh",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Nangloi",
+   "slug": "nangloi",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Naraina",
+   "slug": "naraina",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Nawada",
+   "slug": "nawada",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Neb Sarai",
+   "slug": "neb-sarai",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Nehru Place",
+   "slug": "nehru-place",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Netaji Subash Palace",
+   "slug": "netaji-subash-palace",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Nihal Vihar",
+   "slug": "nihal-vihar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Nirankari Colony",
+   "slug": "nirankari-colony",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Nirman Vihar",
+   "slug": "nirman-vihar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Niti Bagh",
+   "slug": "niti-bagh",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Okhla",
+   "slug": "okhla",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Outram Lines",
+   "slug": "outram-lines",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Paharganj",
+   "slug": "paharganj",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Palam",
+   "slug": "palam",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Pandav Nagar",
+   "slug": "pandav-nagar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Parmanand Colony",
+   "slug": "parmanand-colony",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Paschim Puri",
+   "slug": "paschim-puri",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Paschim Vihar",
+   "slug": "paschim-vihar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Patel Nagar",
+   "slug": "patel-nagar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Patparganj",
+   "slug": "patparganj",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Peeragarhi",
+   "slug": "peeragarhi",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Pitampura",
+   "slug": "pitampura",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Prashant Vihar",
+   "slug": "prashant-vihar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Pratap Nagar",
+   "slug": "pratap-nagar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Preet Vihar",
+   "slug": "preet-vihar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Punjabi Bagh",
+   "slug": "punjabi-bagh",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Pushpanjali Enclave",
+   "slug": "pushpanjali-enclave",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "RK Puram",
+   "slug": "rk-puram",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Raja Park",
+   "slug": "raja-park",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Rajapuri",
+   "slug": "rajapuri",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Rajendra Nagar",
+   "slug": "rajendra-nagar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Rajendra Place",
+   "slug": "rajendra-place",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Rajouri Garden",
+   "slug": "rajouri-garden",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Ramesh Nagar",
+   "slug": "ramesh-nagar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Rani Bagh",
+   "slug": "rani-bagh",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Rishi Nagar",
+   "slug": "rishi-nagar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Rithala",
+   "slug": "rithala",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Rohini",
+   "slug": "rohini",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Safdarjung Enclave",
+   "slug": "safdarjung-enclave",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Sainik Vihar",
+   "slug": "sainik-vihar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Saket",
+   "slug": "saket",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Samaypur Badli",
+   "slug": "samaypur-badli",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Sandesh Vihar",
+   "slug": "sandesh-vihar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Sangam Vihar",
+   "slug": "sangam-vihar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Sant Nagar",
+   "slug": "sant-nagar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Sarai Kale Khan",
+   "slug": "sarai-kale-khan",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Saraswati Vihar",
+   "slug": "saraswati-vihar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Sarita Vihar",
+   "slug": "sarita-vihar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Seelampur",
+   "slug": "seelampur",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Shadipur",
+   "slug": "shadipur",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Shahdara",
+   "slug": "shahdara",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Shakti Nagar",
+   "slug": "shakti-nagar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Shakti Vihar",
+   "slug": "shakti-vihar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Shakurpur",
+   "slug": "shakurpur",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Shalimar Bagh",
+   "slug": "shalimar-bagh",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Shastri Nagar",
+   "slug": "shastri-nagar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "South Extension",
+   "slug": "south-extension",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Sri Nagar",
+   "slug": "sri-nagar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Subhash Nagar",
+   "slug": "subhash-nagar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Sultanpuri",
+   "slug": "sultanpuri",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Surajmal Vihar",
+   "slug": "surajmal-vihar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Tagore Garden",
+   "slug": "tagore-garden",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Tarun Enclave",
+   "slug": "tarun-enclave",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Tilak Nagar",
+   "slug": "tilak-nagar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Timarpur",
+   "slug": "timarpur",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Tri Nagar",
+   "slug": "tri-nagar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Uttam Nagar",
+   "slug": "uttam-nagar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Vasant Kunj",
+   "slug": "vasant-kunj",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Vasant Vihar",
+   "slug": "vasant-vihar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Vidhan Sabha",
+   "slug": "vidhan-sabha",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Vijay Nagar",
+   "slug": "vijay-nagar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Vijay Vihar",
+   "slug": "vijay-vihar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Vikaspuri",
+   "slug": "vikaspuri",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Vinod Nagar",
+   "slug": "vinod-nagar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Vishwavidyalaya",
+   "slug": "vishwavidyalaya",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Vivek Vihar",
+   "slug": "vivek-vihar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Wazirabad",
+   "slug": "wazirabad",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Wazirpur",
+   "slug": "wazirpur",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Welcome",
+   "slug": "welcome",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "West Enclave",
+   "slug": "west-enclave",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Yamuna Vihar",
+   "slug": "yamuna-vihar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "DLF",
+   "slug": "dlf",
+   "location_type": "locality",
+   "parent_slug": "gurugram-city"
+  },
+  {
+   "name": "MG Road",
+   "slug": "mg-road",
+   "location_type": "locality",
+   "parent_slug": "gurugram-city"
+  },
+  {
+   "name": "Brij Vihar",
+   "slug": "brij-vihar",
+   "location_type": "locality",
+   "parent_slug": "ghaziabad-city"
+  },
+  {
+   "name": "Indirapuram",
+   "slug": "indirapuram",
+   "location_type": "locality",
+   "parent_slug": "ghaziabad-city"
+  },
+  {
+   "name": "Mohan Nagar",
+   "slug": "mohan-nagar",
+   "location_type": "locality",
+   "parent_slug": "ghaziabad-city"
+  },
+  {
+   "name": "Raj Nagar",
+   "slug": "raj-nagar",
+   "location_type": "locality",
+   "parent_slug": "ghaziabad-city"
+  },
+  {
+   "name": "Shalimar Garden",
+   "slug": "shalimar-garden",
+   "location_type": "locality",
+   "parent_slug": "ghaziabad-city"
+  },
+  {
+   "name": "Surya Nagar",
+   "slug": "surya-nagar",
+   "location_type": "locality",
+   "parent_slug": "ghaziabad-city"
+  },
+  {
+   "name": "Vaishali",
+   "slug": "vaishali",
+   "location_type": "locality",
+   "parent_slug": "ghaziabad-city"
+  },
+  {
+   "name": "Vasundhara",
+   "slug": "vasundhara",
+   "location_type": "locality",
+   "parent_slug": "ghaziabad-city"
+  },
+  {
+   "name": "Alpha 1",
+   "slug": "alpha-1",
+   "location_type": "locality",
+   "parent_slug": "greater-noida-city"
+  },
+  {
+   "name": "Alpha 2",
+   "slug": "alpha-2",
+   "location_type": "locality",
+   "parent_slug": "greater-noida-city"
+  },
+  {
+   "name": "Knowledge Park",
+   "slug": "knowledge-park",
+   "location_type": "locality",
+   "parent_slug": "greater-noida-city"
+  },
+  {
+   "name": "Pari Chowk",
+   "slug": "pari-chowk",
+   "location_type": "locality",
+   "parent_slug": "greater-noida-city"
+  },
+  {
+   "name": "Rajdhani Enclave",
+   "slug": "rajdhani-enclave",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "MP Enclave",
+   "slug": "mp-enclave",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Nehru Vihar",
+   "slug": "nehru-vihar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Kanhaiya Nagar",
+   "slug": "kanhaiya-nagar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Indra Vihar",
+   "slug": "indra-vihar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Multani Mohalla",
+   "slug": "multani-mohalla",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Sharda Niketan",
+   "slug": "sharda-niketan",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Chander Lok",
+   "slug": "chander-lok",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Nimri Colony",
+   "slug": "nimri-colony",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Kalyan Vihar",
+   "slug": "kalyan-vihar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Meera Bagh",
+   "slug": "meera-bagh",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Baljeet Nagar",
+   "slug": "baljeet-nagar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Shivaji Park",
+   "slug": "shivaji-park",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Vasudha Enclave",
+   "slug": "vasudha-enclave",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Polstar",
+   "slug": "polstar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Rajinder Nagar",
+   "slug": "rajinder-nagar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Sagarpur",
+   "slug": "sagarpur",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Lajwanti",
+   "slug": "lajwanti",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Gopalpur",
+   "slug": "gopalpur",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Roshnara Road",
+   "slug": "roshnara-road",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Jhandewalan",
+   "slug": "jhandewalan",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Yojna Vihar",
+   "slug": "yojna-vihar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Chander Nagar",
+   "slug": "chander-nagar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Shree Nagar",
+   "slug": "shree-nagar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Samrat Enclave",
+   "slug": "samrat-enclave",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Roop Nagar",
+   "slug": "roop-nagar",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Shiva Market",
+   "slug": "shiva-market",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Raja Garden",
+   "slug": "raja-garden",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Pooth Kalan",
+   "slug": "pooth-kalan",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Rohit Kunj",
+   "slug": "rohit-kunj",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  },
+  {
+   "name": "Mahendru Enclave",
+   "slug": "mahendru-enclave",
+   "location_type": "locality",
+   "parent_slug": "delhi-city"
+  }
+ ]
+}

@@ -97,6 +97,26 @@ export async function middleware(request, event) {
     }
   }
 
+  // ── 3. Protect /tutor/* routes ────────────────────────────────
+  // A separate cookie and a required audience claim, so an admin token cannot
+  // open the tutor panel and a tutor token cannot open the admin panel.
+  const TUTOR_PUBLIC = ["/tutor/login", "/tutor/signup", "/tutor/verify", "/tutor/forgot-password", "/tutor/reset-password"];
+  if (pathname.startsWith("/tutor") && !TUTOR_PUBLIC.includes(pathname)) {
+    const token = request.cookies.get("ght_tutor_token")?.value;
+    let valid = false;
+    if (token) {
+      try {
+        await jwtVerify(token, SECRET, { audience: "tutor-panel" });
+        valid = true;
+      } catch {}
+    }
+    if (!valid) {
+      const loginUrl = new URL("/tutor/login", request.url);
+      loginUrl.searchParams.set("from", pathname);
+      return NextResponse.redirect(loginUrl);
+    }
+  }
+
   return NextResponse.next();
 }
 

@@ -1,0 +1,233 @@
+========================================================================
+TUTORS.JSON -> GHT V3 MIGRATION ANALYSIS   (1498 source records)
+========================================================================
+
+── Gender ──────────────────────────────────────────────────────
+     775   51.7%  Female
+     723   48.3%  Male
+
+── Marital status ──────────────────────────────────────────────
+    1024   68.4%  Single
+     461   30.8%  Married
+       8    0.5%  Divorced
+       5    0.3%  Widowed
+
+── Residential status ──────────────────────────────────────────
+     534   35.6%  Parental
+     508   33.9%  Rented
+     456   30.4%  Own
+
+── English fluency ─────────────────────────────────────────────
+     971   64.8%  Yes
+     514   34.3%  Average
+      13    0.9%  No
+
+── Source channel ──────────────────────────────────────────────
+     967   64.6%  Google
+     281   18.8%  Friend / Referral
+     172   11.5%  Website
+      30    2.0%  Flex Banner
+      21    1.4%  Facebook
+      15    1.0%  Instagram
+      12    0.8%  YouTube
+
+── Date of birth ───────────────────────────────────────────────
+    1428   95.3%  parsed
+      51    3.4%  implausible age 0
+       8    0.5%  unparseable
+       4    0.3%  implausible age 1
+       2    0.1%  implausible age 2
+       1    0.1%  implausible age 5
+       1    0.1%  implausible age -45
+       1    0.1%  implausible age 12
+       1    0.1%  implausible age 15
+       1    0.1%  implausible age -1
+
+── WhatsApp number ─────────────────────────────────────────────
+    1483   99.0%  parsed
+      15    1.0%  MISSING/INVALID
+
+── Teaching experience -> start year ───────────────────────────
+    1471   98.2%  parsed
+      24    1.6%  unparseable
+       2    0.1%  empty
+       1    0.1%  implausible 2014
+
+── Highest qualification ───────────────────────────────────────
+     985   65.8%  mapped
+     319   21.3%  generic:bachelors
+     139    9.3%  UNMAPPED
+      55    3.7%  generic:masters
+
+── Classes parsed ──────────────────────────────────────────────
+     195   13.0%  5 classes
+     191   12.8%  8 classes
+     171   11.4%  12 classes
+     158   10.5%  2 classes
+     148    9.9%  4 classes
+     131    8.7%  7 classes
+     122    8.1%  10 classes
+      92    6.1%  6 classes
+      90    6.0%  1 classes
+      85    5.7%  3 classes
+      40    2.7%  NONE
+      39    2.6%  11 classes
+      36    2.4%  9 classes
+
+── Subjects parsed ─────────────────────────────────────────────
+    1475   98.5%  mapped
+      16    1.1%  custom-only
+       7    0.5%  NONE
+
+── Areas parsed ────────────────────────────────────────────────
+     676   45.1%  1 areas
+     187   12.5%  2 areas
+     181   12.1%  NONE
+     158   10.5%  3 areas
+     122    8.1%  4 areas
+      68    4.5%  5 areas
+      47    3.1%  6 areas
+      30    2.0%  7 areas
+      18    1.2%  8 areas
+       7    0.5%  10 areas
+       4    0.3%  9 areas
+
+── Duplicates ────────────────────────────────────────────────
+   WhatsApp numbers used by >1 record : 116 groups, 134 extra rows
+   Emails used by >1 record           : 108 groups, 132 extra rows
+
+── Rows the import will write ────────────────────────────────
+   tutors                    : 1498
+   tutor_teaching_profiles   : ~33731  (class x subject pairs)
+   tutor_locations           : ~3100
+   tutor_custom_subjects     : ~212 (from 165 distinct strings)
+
+── Top unmatched AREA strings (306 distinct) ────────────────
+      4  english
+      4  near by areas
+      3  north
+      3  near by me
+      3  north west
+      2  commerce
+      2  around
+      2  near by area
+      2  hindi
+      2  nearby my location
+      2  near by of this places
+      2  camp
+      2  surrounding
+      2  nearby places
+      2  maths
+      1  ranhola
+      1  keshopur
+      1  mukharjinagar
+      1  bhai parmanand colony
+      1  radio colony
+      1  madel town 1st
+      1  sukurpur
+      1  devli
+      1  banarasi das estate
+      1  near saini niwas gour college
+      1  or online
+      1  gk 2
+      1  gk 1
+      1  tajpur
+      1  rajpur
+
+── Top leftover SUBJECT strings (165 distinct) ──────────────
+     10  sociology
+      5  economic
+      5  reasoning
+      5  punjabi
+      3  b.st
+      3  xii
+      3  arts
+      2  #039
+      2  all subjects upto 10th
+      2  java
+      2  ved path in dav
+      2  taxation
+      2  law
+      2  legal studies
+      2  any subject
+      2  all subjects upto 8th
+      2  financial management
+      2  all subjects upto 7th
+      2  quantitative aptitude
+      2  pcm
+      2  all subjects upto 10
+      2  any subject 1st to 5th
+      2  general knowledge
+      2  grammar
+      2  e.v.s
+
+── Top unmapped QUALIFICATION strings ────────────────────────
+    100  Graduation
+     71  Graduate
+     20  Graduated
+     12  Masters
+      8  Pursuing graduation
+      8  Undergraduate
+      8  Post graduate
+      6  Pursuing undergraduation
+      5  12
+      4  Masters in English
+      4  12 pass
+      3  Pursuing Graduation
+      3  Post graduation
+      3  GRADUATION
+      3  graduation
+      3  Graduated from Delhi University
+      3  Persuing graduation
+      3  Post Graduation
+      2  English honours
+      2  Bachelors degree
+      2  Post Graduate
+      2  12 passed
+      2  First year in college
+      2  Bachelors
+      2  Master degree
+
+── Records with NO parseable class (40) ────────────────────
+   # 131  "Nil"
+   # 145  "1to10th"
+   # 172  "1to8th"
+   # 183  "1to8th class"
+   # 191  "East Delhi shahdara"
+   # 276  "Yes"
+   # 278  "All subjects"
+   # 296  "5to10"
+   # 298  "5to10"
+   # 355  "1to8"
+   # 384  "Counseling, psychology"
+   # 401  "Junior classes"
+   # 404  "Commerce"
+   # 415  "High School"
+   # 445  "Senior secondary"
+   # 577  "From A1 to C2"
+   # 601  "A1 and A2 level in french"
+   # 636  "Yes"
+   # 647  "1to5"
+   # 744  "-"
+
+── Records with NO parseable area (181) ─────────────────────
+   #   3  "Sec 22,21,and 24"
+   #   4  "Any area"
+   #  13  "at my place"
+   #  22  "Any"
+   #  36  "Yes"
+   #  45  "Near saini niwas gour college"
+   #  50  "All"
+   #  58  "Commerce"
+   #  59  "Commerce"
+   #  68  "At my own home"
+   #  80  "Nearby"
+   #  94  "Sec1-sec7"
+   # 122  "Sector 24, 23"
+   # 131  "Nil"
+   # 137  "Bageshwar"
+   # 152  "Near by raha park or shreenagar"
+   # 158  "Balurghat"
+   # 166  "English"
+   # 174  "Sector-8, sector -9, sector -5, sector -6 and sector -7"
+   # 186  "Haldwani"
