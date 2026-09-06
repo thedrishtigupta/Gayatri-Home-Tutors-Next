@@ -3021,3 +3021,83 @@ img { max-width: 100%; height: auto; }
   .nf-hero { padding: 60px 16px 68px; }
   .nf-links { grid-template-columns: 1fr; }
 }
+
+/* ════════════════════════════════════════════════════════════════
+   Book a demo  (/book-demo, optionally ?tutor=<id>)
+   ════════════════════════════════════════════════════════════════ */
+
+.bd-page { max-width: 1140px; margin: 0 auto; padding: 40px 20px 72px; }
+
+/* One column for a general enquiry. With a tutor chosen, their card sits
+   alongside the form as confirmation of who was picked — and stays visible
+   while the form is filled in, so the choice is never in doubt. */
+.bd-layout { display: grid; grid-template-columns: minmax(0, 1fr); gap: 32px; }
+.bd-layout.has-tutor {
+  grid-template-columns: minmax(0, 380px) minmax(0, 1fr);
+  align-items: start;
+}
+
+.bd-tutor { position: sticky; top: 96px; }
+.bd-tutor-heading {
+  font-family: var(--font-heading), sans-serif;
+  font-size: 15px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: #64748b;
+  margin: 0 0 12px;
+}
+.bd-tutor-note { margin-top: 14px; font-size: 13px; line-height: 1.6; color: #64748b; }
+.bd-tutor-note a { color: var(--brand-primary); font-weight: 600; }
+
+.bd-form-side { min-width: 0; }
+.bd-form-heading {
+  font-family: var(--font-heading), sans-serif;
+  font-size: 26px;
+  color: var(--brand-primary);
+  line-height: 1.25;
+  margin: 0 0 6px;
+}
+.bd-form-lead { margin: 0 0 22px; font-size: 15px; line-height: 1.65; color: #64748b; }
+
+/* Shown when ?tutor= named someone who is no longer active. Amber, not red:
+   nothing has gone wrong for the visitor, and the booking still works. */
+.bd-notice {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 24px;
+  padding: 14px 16px;
+  border: 1px solid #f0d48a;
+  border-left: 4px solid var(--brand-accent);
+  border-radius: var(--radius-sm);
+  background: var(--brand-accent-soft);
+  font-size: 14px;
+  line-height: 1.6;
+  color: #6b4d06;
+}
+.bd-notice strong { color: #4a3504; }
+
+/* The running confirmation inside the form itself. */
+.bd-requesting {
+  margin: 0 0 18px;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  background: #eef3fc;
+  border: 1px solid var(--brand-primary-light);
+  font-size: 14px;
+  color: var(--brand-primary);
+}
+.bd-requesting strong { font-weight: 700; }
+
+.bd-hint { margin: 4px 0 8px; font-size: 12.5px; line-height: 1.5; color: #64748b; }
+
+@media (max-width: 900px) {
+  /* Below this the card would be too narrow to read, so it stacks above the
+     form rather than shrinking. */
+  .bd-layout.has-tutor { grid-template-columns: minmax(0, 1fr); }
+  .bd-tutor { position: static; max-width: 460px; }
+}
+
+@media (max-width: 560px) {
+  .bd-page { padding: 28px 16px 56px; }
+}

@@ -1134,3 +1134,18 @@
 .admin-table th.is-sorted .admin-sort-arrow { opacity: 1; }
 
 .admin-sort-note { font-weight: 600; color: var(--a-text-soft); }
+
+/* A tutor the family asked for by name, in the demo queue. Tinted so staff can
+   see at a glance which leads came from a specific tutor's profile — those
+   convert differently from generic enquiries. */
+.requested-tutor {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #eef3fc;
+  border: 1px solid #c3d4f2;
+  color: #0b2e6b;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}

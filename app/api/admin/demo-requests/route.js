@@ -12,12 +12,18 @@ export const GET = requireAdmin(async (req) => {
   const status = searchParams.get("status");
   const search = searchParams.get("search");
 
+  // Two joins to tutors, because a request carries two different tutors:
+  // the one the family asked for (fixed) and the one the office assigned
+  // (can change). Seeing both is what tells staff whether a reassignment
+  // still honoured the family's original choice.
   let sql = `
     SELECT dr.*,
            t.first_name AS tutor_first, t.last_name AS tutor_last,
-           t.whatsapp AS tutor_whatsapp
+           t.whatsapp AS tutor_whatsapp,
+           rt.first_name AS requested_first, rt.last_name AS requested_last
     FROM demo_requests dr
-    LEFT JOIN tutors t ON t.id = dr.assigned_tutor_id
+    LEFT JOIN tutors t  ON t.id  = dr.assigned_tutor_id
+    LEFT JOIN tutors rt ON rt.id = dr.requested_tutor_id
     WHERE 1=1
   `;
   const params = [];

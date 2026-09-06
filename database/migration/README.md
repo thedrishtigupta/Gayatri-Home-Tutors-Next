@@ -60,6 +60,10 @@ single transaction, so a failure rolls back cleanly.
 | `check-connection.js` | Probes DNS → TCP → MySQL handshake → auth → schema |
 | `001_add_own_vehicle.sql` | Restores the `own_vehicle` column |
 | `002_operational_tables.sql` | `admin_users`, `demo_requests`, `class_assignments`, `telegram_broadcasts`, `page_views` |
+| `003_tutor_accounts.sql` | Tutor login and the profile-change approval queue |
+| `004_tutor_email_unique.sql` | `UNIQUE` index on `tutors.email` |
+| `005_impersonation_log.sql` | Audit trail for admin "view as tutor" |
+| `006_demo_requested_tutor.sql` | `demo_requests.requested_tutor_id` — the tutor a family asked for, kept separate from the one the office assigns |
 | `extract-reference.js` | Reads the seed SQL into `reference.json` (the vocabulary) |
 | `normalize.js` | All parsers. Pure functions, no side effects |
 | `analyse.js` | Dry-run coverage report → `analysis-report.txt`, `review-unmatched.json` |

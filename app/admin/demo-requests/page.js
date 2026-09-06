@@ -92,7 +92,10 @@ export default function DemoRequestsPage() {
                 <tr>
                   <th>#</th><th>Name</th><th>Phone</th><th>Class</th>
                   <th>Subjects</th><th>Area</th><th>Source</th>
-                  <th>Status</th><th>Tutor</th><th>Date</th><th>Actions</th>
+                  {/* "Requested" is who the family picked; "Assigned" is who
+                      the office sent. They are not always the same person. */}
+                  <th>Requested</th>
+                  <th>Status</th><th>Assigned</th><th>Date</th><th>Actions</th>
                 </tr>
               </thead>
               <tbody>
@@ -106,6 +109,13 @@ export default function DemoRequestsPage() {
                     <td>{r.area || "—"}</td>
                     <td>
                       <span className="source-badge">{r.source}</span>
+                    </td>
+                    <td>
+                      {r.requested_first
+                        ? <span className="requested-tutor" title="This family asked for this tutor by name">
+                            {r.requested_first} {r.requested_last}
+                          </span>
+                        : <span className="text-muted">—</span>}
                     </td>
                     <td>
                       <span className="status-pill" style={{
@@ -197,7 +207,7 @@ export default function DemoRequestsPage() {
                   </tr>
                 ))}
                 {!rows.length && (
-                  <tr><td colSpan={11} className="text-center text-muted">No results found</td></tr>
+                  <tr><td colSpan={12} className="text-center text-muted">No results found</td></tr>
                 )}
               </tbody>
             </table>

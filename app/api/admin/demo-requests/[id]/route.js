@@ -184,9 +184,11 @@ export const GET = requireAdmin(async (_req, { params }) => {
 
   const [row] = await query(
     `SELECT dr.*, t.first_name AS tutor_first, t.last_name AS tutor_last,
-            t.whatsapp AS tutor_whatsapp, t.email AS tutor_email
+            t.whatsapp AS tutor_whatsapp, t.email AS tutor_email,
+            rt.first_name AS requested_first, rt.last_name AS requested_last
      FROM demo_requests dr
-     LEFT JOIN tutors t ON t.id = dr.assigned_tutor_id
+     LEFT JOIN tutors t  ON t.id  = dr.assigned_tutor_id
+     LEFT JOIN tutors rt ON rt.id = dr.requested_tutor_id
      WHERE dr.id = ?`,
     [id]
   );

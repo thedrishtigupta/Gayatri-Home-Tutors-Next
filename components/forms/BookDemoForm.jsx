@@ -1,4 +1,11 @@
 // components/forms/BookDemoForm.jsx
+//
+// Used in two places, and must keep working in both:
+//   • /contact and the home page — no props, a general enquiry
+//   • /book-demo?tutor=<id>      — a request for one named tutor
+//
+// The tutor-aware behaviour is entirely additive: with no `requestedTutor` this
+// renders exactly the form it always did.
 "use client";
 
 import { useState } from "react";
@@ -9,6 +16,8 @@ const SUBJECTS_LIST = [
   "Business Studies","Computer Science",
 ];
 
+const CLASS_RANGES = ["Class 1–5", "Class 6–8", "Class 9–10", "Class 11–12"];
+
 const initialState = {
   fullName:"", email:"", phone:"",
   studentClass:"", time:"",
@@ -16,11 +25,23 @@ const initialState = {
   area:"", message:"",
 };
 
-export default function BookDemoForm() {
+export default function BookDemoForm({ requestedTutor = null }) {
   const [form, setForm]       = useState(initialState);
   const [loading, setLoading] = useState(false);
   const [status, setStatus]   = useState(null); // "success" | "error"
   const [msg, setMsg]         = useState("");
+
+  /*
+   * When a specific tutor is being requested, the choices narrow to what that
+   * tutor actually teaches. Offering Class 12 Physics for a tutor who teaches
+   * Class 1–5 would take a booking the office cannot honour, and the family
+   * only finds out on the phone.
+   */
+  const tutorSubjects = requestedTutor?.subjects?.map((s) => s.name) ?? [];
+  const tutorClasses  = requestedTutor?.classes?.map((c) => c.name) ?? [];
+
+  const subjectOptions = tutorSubjects.length ? tutorSubjects : SUBJECTS_LIST;
+  const classOptions   = tutorClasses.length ? tutorClasses : CLASS_RANGES;
 
   const handleChange = e => {
     const { name, value } = e.target;
@@ -44,12 +65,26 @@ export default function BookDemoForm() {
       const res = await fetch("/api/demo", {
         method:  "POST",
         headers: { "Content-Type": "application/json" },
-        body:    JSON.stringify(form),
+        body:    JSON.stringify({
+          ...form,
+          requestedTutorId: requestedTutor?.id ?? null,
+        }),
       });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || "Submission failed");
+      const payload = await res.json();
+      if (!res.ok) throw new Error(payload.error || "Submission failed");
+
+      // The envelope is { success, data }, but tolerate a bare body too.
+      const data = payload?.data ?? payload;
+
       setStatus("success");
-      setMsg("Thank you! We'll contact you shortly to confirm your free demo.");
+      setMsg(
+        // Only name the tutor if the server confirmed it kept them. If the
+        // tutor went inactive between page load and submit, promising a
+        // specific person here would be a promise nobody can keep.
+        requestedTutor && data?.requestedTutorId
+          ? `Thank you! We'll contact you shortly to arrange your free demo with ${requestedTutor.name}.`
+          : "Thank you! We'll contact you shortly to confirm your free demo."
+      );
       setForm(initialState);
     } catch (err) {
       setStatus("error");
@@ -67,6 +102,12 @@ export default function BookDemoForm() {
       )}
       {status === "error" && (
         <div className="form-error">❌ {msg}</div>
+      )}
+
+      {requestedTutor && (
+        <p className="bd-requesting">
+          Requesting a demo with <strong>{requestedTutor.name}</strong>
+        </p>
       )}
 
       <div className="form-group">
@@ -90,10 +131,7 @@ export default function BookDemoForm() {
           <label htmlFor="studentClass">Student&apos;s Class</label>
           <select id="studentClass" name="studentClass" value={form.studentClass} onChange={handleChange}>
             <option value="">Select Class</option>
-            <option>Class 1–5</option>
-            <option>Class 6–8</option>
-            <option>Class 9–10</option>
-            <option>Class 11–12</option>
+            {classOptions.map(c => <option key={c} value={c}>{c}</option>)}
           </select>
         </div>
         <div className="form-group">
@@ -109,8 +147,11 @@ export default function BookDemoForm() {
 
       <div className="form-group">
         <label>Subjects Required</label>
+        {requestedTutor && tutorSubjects.length > 0 && (
+          <p className="bd-hint">Subjects {requestedTutor.name.split(" ")[0]} teaches</p>
+        )}
         <div className="checkbox-grid">
-          {SUBJECTS_LIST.map(subject => (
+          {subjectOptions.map(subject => (
             <label key={subject}>
               <input
                 type="checkbox"
@@ -127,6 +168,15 @@ export default function BookDemoForm() {
         <label htmlFor="area">Your Area</label>
         <input type="text" id="area" name="area" value={form.area} onChange={handleChange}
           placeholder="e.g. Pitampura, Rohini" />
+        {/* The tutor's areas are shown as a hint, never prefilled: this field is
+            where the FAMILY lives, and quietly filling it with the tutor's
+            locality would send the office to the wrong address. */}
+        {requestedTutor?.areas?.length > 0 && (
+          <p className="bd-hint">
+            {requestedTutor.name.split(" ")[0]} teaches in{" "}
+            {requestedTutor.areas.map((a) => a.name).join(", ")}
+          </p>
+        )}
       </div>
 
       <div className="form-group">

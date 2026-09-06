@@ -12,10 +12,18 @@ const path = require("path");
 
 const ROOT = path.join(__dirname, "..");
 
+// Every migration belongs here, in numeric order. This list is what a fresh
+// database is built from, so a migration missing from it exists only on
+// machines that happened to run it by hand — which is precisely how the
+// admin_users table went absent and turned the admin login into a 500.
 const FILES = [
   ["ght-v3-schema.sql", "tutor + reference tables"],
-  ["migration/002_operational_tables.sql", "admin_users, demo_requests, …"],
   ["migration/001_add_own_vehicle.sql", "own_vehicle column"],
+  ["migration/002_operational_tables.sql", "admin_users, demo_requests, …"],
+  ["migration/003_tutor_accounts.sql", "tutor login + profile-change approval"],
+  ["migration/004_tutor_email_unique.sql", "UNIQUE index on tutors.email"],
+  ["migration/005_impersonation_log.sql", "admin 'view as tutor' audit trail"],
+  ["migration/006_demo_requested_tutor.sql", "demo_requests.requested_tutor_id"],
   ["seed_reference_data_v3.sql", "classes, subjects, locations"],
   ["seed_education_reference_v3.sql", "qualifications, specializations"],
 ];

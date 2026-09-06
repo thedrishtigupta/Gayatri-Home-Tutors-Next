@@ -58,3 +58,6 @@ database/tutors.json
 database/migration/import-tutors.sql
 database/migration/duplicate-emails.txt
 database/migration/email-merge-plan.*
+
+# Local scratch space for one-off scripts and logs
+.scratch/
